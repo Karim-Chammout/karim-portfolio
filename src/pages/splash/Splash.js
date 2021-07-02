@@ -39,3 +39,25 @@ class Splash extends Component {
 }
 
 export default Splash;
+
+
+// Trying to write the same functinalaty with functional component
+
+// const Splash = ({ theme }) => {
+//   const [redirect, setRedirect] = useState(false)
+
+//   useEffect(() => {
+//     setTimeout(() => setRedirect(true), 5500);
+//     return () => clearTimeout()
+//   }, [])
+
+//   return (
+//     <>
+//     { redirect ? (
+//       <Redirect to="/home" />
+//       ) : (
+//         <AnimatedSplash theme={theme} />)
+//     }
+//     </>
+//   );
+// }
