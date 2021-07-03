@@ -6,16 +6,15 @@ import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 
 const Home = ({ theme }) => {
-    console.log(theme);
-    return (
-      <div>
-        <Header theme={theme} />
-        <Greeting theme={theme} />
-        <Skills theme={theme} />
-        <Footer theme={theme} />
-        <TopButton theme={theme} />
-      </div>
-    );
-}
+  return (
+    <div>
+      <Header theme={theme} />
+      <Greeting theme={theme} />
+      <Skills theme={theme} />
+      <Footer theme={theme} />
+      <TopButton theme={theme} />
+    </div>
+  );
+};
 
 export default Home;

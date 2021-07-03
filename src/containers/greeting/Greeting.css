@@ -32,19 +32,13 @@
 
 .greeting-text {
   margin-top: 80px;
-  font-size: 70px;
+  font-size: 50px;
   line-height: 1.1;
   font-family: "Google Sans Bold";
 }
 
-.greeting-nickname {
-  font-size: 30px;
-  line-height: 0px;
-  font-family: "Google Sans Bold Italic";
-}
-
 .greeting-text-p {
-  font-size: 40px;
+  font-size: 20px;
   line-height: 40px;
   margin-right: 40px;
   font-family: "Google Sans Medium";
