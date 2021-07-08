@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "I'm a Front-end developer who's writing code and moving pixels in the WWW.😎 I'm looking for learning new things and new experiences in this vast world of creativity.",
   resumeLink:
-    "https://drive.google.com/file/d/1nizaDxnpVhYJtcbA10Mjr7zdNtXjUoZ0/view",
+    "https://docs.google.com/document/d/16_Y4P6geQLNJUTQuvt66PRpT58OoNjucQE7o-wuZQdQ/edit?usp=sharing",
   portfolio_repository: "https://github.com/Karim-Chammout",
 };
 
