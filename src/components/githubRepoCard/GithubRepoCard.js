@@ -31,6 +31,13 @@ const projectsData = [
     description: "TV Shows Application To search for your favorite shows",
     tools: "HTML - CSS - BootStrap - React - React-router-dom"
   },
+  {
+    id: 5,
+    name: "React Tesla clone",
+    url: "https://github.com/Karim-Chammout/tesla-clone",
+    description: "Cloning the original Tesla website using React.js",
+    tools: "HTML - CSS - Styled-components - React - React-redux - React-reveal"
+  },
 ];
 
 const GithubRepoCard = ({ theme }) => {
