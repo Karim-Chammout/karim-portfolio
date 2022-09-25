@@ -1,7 +1,8 @@
 import React from "react";
+import { Fade } from "react-reveal";
+
 import "./Skills.css";
 import SkillSection from "./SkillSection";
-import { Fade } from "react-reveal";
 
 const Skills = ({ theme }) => {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
-import "./Footer.css";
 import { Fade } from "react-reveal";
+
+import "./Footer.css";
 import { greeting } from "../../portfolio.js";
 
 const Footer = ({ theme }) => {

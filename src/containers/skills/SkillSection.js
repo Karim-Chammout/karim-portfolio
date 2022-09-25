@@ -1,21 +1,18 @@
 import React from "react";
-import "./Skills.css";
-// import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import { skills } from "../../portfolio";
 import { Fade } from "react-reveal";
+
+import "./Skills.css";
+import { skills } from "../../portfolio";
 import DataScienceImg from "./DataScienceImg";
 import FullStackImg from "./FullStackImg";
 import CloudInfraImg from "./CloudInfraImg";
 import DesignImg from "./DesignImg";
 
-function GetSkillSvg(props) {
-  if (props.fileName === "DataScienceImg")
-    return <DataScienceImg theme={props.theme} />;
-  else if (props.fileName === "FullStackImg")
-    return <FullStackImg theme={props.theme} />;
-  else if (props.fileName === "CloudInfraImg")
-    return <CloudInfraImg theme={props.theme} />;
-  return <DesignImg theme={props.theme} />;
+function GetSkillSvg({ fileName, theme }) {
+  if (fileName === "DataScienceImg") return <DataScienceImg theme={theme} />;
+  else if (fileName === "FullStackImg") return <FullStackImg theme={theme} />;
+  else if (fileName === "CloudInfraImg") return <CloudInfraImg theme={theme} />;
+  return <DesignImg theme={theme} />;
 }
 
 const SkillSection = ({ theme }) => {
@@ -36,9 +33,6 @@ const SkillSection = ({ theme }) => {
                   {skill.title}
                 </h1>
               </Fade>
-              {/* <Fade right duration={1500}>
-                  <SoftwareSkill logos={skill.softwareSkills} />
-                </Fade> */}
               <Fade right duration={2000}>
                 <div>
                   {skill.skills.map((skillSentence) => {

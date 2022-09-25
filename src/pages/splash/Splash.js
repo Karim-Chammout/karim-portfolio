@@ -1,63 +1,36 @@
-import React, { Component } from "react";
-import "./Splash.css";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
+
+import "./Splash.css";
 import LoaderLogo from "../../components/Loader/LoaderLogo.js";
 
-function AnimatedSplash(props) {
+function AnimatedSplash({ theme }) {
   return (
     <div className="logo_wrapper">
-      <div className="screen" style={{ backgroundColor: props.theme.text }}>
-        <LoaderLogo id="logo" theme={props.theme} />
+      <div className="screen" style={{ backgroundColor: theme.text }}>
+        <LoaderLogo id="logo" theme={theme} />
       </div>
     </div>
   );
 }
 
-class Splash extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirect: false,
-    };
-  }
+const Splash = ({ theme }) => {
+  const [redirect, setRedirect] = useState(false)
 
-  componentDidMount() {
-    this.id = setTimeout(() => this.setState({ redirect: true }), 5500);
-  }
+  useEffect(() => {
+    setTimeout(() => setRedirect(true), 5300);
+    return () => clearTimeout()
+  }, [])
 
-  componentWillMount() {
-    clearTimeout(this.id);
-  }
-
-  render() {
-    return this.state.redirect ? (
+  return (
+    <>
+    { redirect ? (
       <Redirect to="/home" />
-    ) : (
-      <AnimatedSplash theme={this.props.theme} />
-    );
-  }
+      ) : (
+        <AnimatedSplash theme={theme} />)
+    }
+    </>
+  );
 }
 
 export default Splash;
-
-
-// Trying to write the same functinalaty with functional component
-
-// const Splash = ({ theme }) => {
-//   const [redirect, setRedirect] = useState(false)
-
-//   useEffect(() => {
-//     setTimeout(() => setRedirect(true), 5500);
-//     return () => clearTimeout()
-//   }, [])
-
-//   return (
-//     <>
-//     { redirect ? (
-//       <Redirect to="/home" />
-//       ) : (
-//         <AnimatedSplash theme={theme} />)
-//     }
-//     </>
-//   );
-// }

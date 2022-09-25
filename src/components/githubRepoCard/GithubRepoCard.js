@@ -5,47 +5,55 @@ import { Fade } from "react-reveal";
 const projectsData = [
   {
     id: 1,
-    name: "OxygenDevs",
-    url: "https://github.com/Karim-Chammout/Oxygen-Devs",
+    name: "The fact of the day",
+    url: "https://fact-of-the-day.karim-dev.com",
     description: "Web Design Agency",
-    tools: "HTML - CSS - BootStrap"
+    tools: "HTML - CSS - @emotion/react - React - Firebase",
   },
   {
     id: 2,
-    name: "Google Assistant Bootstrap",
-    url: "https://github.com/Karim-Chammout/Google-Assistant-Bootstrap",
-    description: "Google Assistant Design with Bootstrap",
-    tools: "HTML - CSS - BootStrap"
+    name: "OxygenDevs",
+    url: "https://github.com/Karim-Chammout/Oxygen-Devs",
+    description: "Web Design Agency",
+    tools: "HTML - CSS - BootStrap",
   },
   {
     id: 3,
-    name: "Portfolio Design",
-    url: "https://github.com/Karim-Chammout/Temporary-Portfolio",
-    description: "Designing a template for a portfolio",
-    tools: "HTML - CSS - BootStrap"
+    name: "Google Assistant Bootstrap",
+    url: "https://github.com/Karim-Chammout/Google-Assistant-Bootstrap",
+    description: "Google Assistant Design with Bootstrap",
+    tools: "HTML - CSS - BootStrap",
   },
   {
     id: 4,
-    name: "React TV Show",
-    url: "https://github.com/Karim-Chammout/react-tvshow-project",
-    description: "TV Shows Application To search for your favorite shows",
-    tools: "HTML - CSS - BootStrap - React - React-router-dom"
+    name: "Portfolio Design",
+    url: "https://github.com/Karim-Chammout/Temporary-Portfolio",
+    description: "Designing a template for a portfolio",
+    tools: "HTML - CSS - BootStrap",
   },
   {
     id: 5,
+    name: "React TV Show",
+    url: "https://github.com/Karim-Chammout/react-tvshow-project",
+    description: "TV Shows Application To search for your favorite shows",
+    tools: "HTML - CSS - BootStrap - React - React-router-dom",
+  },
+  {
+    id: 6,
     name: "React Tesla clone",
     url: "https://github.com/Karim-Chammout/tesla-clone",
     description: "Cloning the original Tesla website using React.js",
-    tools: "HTML - CSS - Styled-components - React - React-redux - React-reveal"
+    tools:
+      "HTML - CSS - Styled-components - React - React-redux - React-reveal",
   },
 ];
 
 const GithubRepoCard = ({ theme }) => {
   const openRepo = (url) => {
-    let win = window.open(url, "_blank")
-    win.focus()
-  }
-  
+    let win = window.open(url, "_blank");
+    win.focus();
+  };
+
   return (
     <div className="cards_container">
       <Fade bottom duration={2000} distance="40px">

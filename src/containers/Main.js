@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+
 import Home from "../pages/home/HomeComponent";
 import Splash from "../pages/splash/Splash";
 import Contact from "../pages/contact/ContactComponent";
@@ -7,7 +8,6 @@ import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";
 
 const Main = ({ theme }) => {
-  console.log(theme);
   if (settings.isSplash) {
     return (
       <div>
