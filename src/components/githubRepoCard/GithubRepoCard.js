@@ -7,8 +7,8 @@ const projectsData = [
     id: 1,
     name: "The fact of the day",
     url: "https://fact-of-the-day.karim-dev.com",
-    description: "Web Design Agency",
-    tools: "HTML - CSS - @emotion/react - React - Firebase",
+    description: "A web application where we share a new fact everyday to learn something new",
+    tools: "HTML - CSS - @emotion/react - MUI - React - Firebase",
   },
   {
     id: 2,
