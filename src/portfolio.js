@@ -217,7 +217,7 @@ const contactPageData = {
   addressSection: {
     title: "Address",
     subtitle:
-      "Turkey - Istanbul 34235",
+      "Turkey - Istanbul",
     avatar_image_path: "address_image.svg",
     location_map_link: "https://goo.gl/maps/Nd8VGEBZYKLXc4oB6",
   },
