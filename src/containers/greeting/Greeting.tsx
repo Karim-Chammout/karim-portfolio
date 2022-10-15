@@ -1,11 +1,11 @@
 import { Fade } from 'react-reveal';
 
-import './Greeting.css';
-import SocialMedia from '../../components/socialMedia/SocialMedia';
 import Button from '../../components/button/Button';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
 import { greeting } from '../../portfolio';
-import FeelingProud from './FeelingProud';
 import { ThemeType } from '../../theme';
+import FeelingProud from './FeelingProud';
+import './Greeting.css';
 
 const Greeting = ({ theme }: { theme: ThemeType }) => {
   return (
@@ -24,10 +24,10 @@ const Greeting = ({ theme }: { theme: ThemeType }) => {
               <div className="portfolio-repo-btn-div">
                 <Button
                   text="Follow Me On GitHub"
-                  newTab={true}
                   href={greeting.portfolio_repository}
                   theme={theme}
                   className="portfolio-repo-btn"
+                  newTab
                 />
               </div>
             </div>

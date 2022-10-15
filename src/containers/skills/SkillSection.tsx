@@ -1,23 +1,22 @@
 import { Fade } from 'react-reveal';
 
-import './Skills.css';
 import { skills } from '../../portfolio';
-import DataScienceImg from './DataScienceImg';
-import FullStackImg from './FullStackImg';
-import CloudInfraImg from './CloudInfraImg';
-import DesignImg from './DesignImg';
 import { ThemeType } from '../../theme';
+import CloudInfraImg from './CloudInfraImg';
+import DataScienceImg from './DataScienceImg';
+import DesignImg from './DesignImg';
+import FullStackImg from './FullStackImg';
+import './Skills.css';
 
 function GetSkillSvg({ fileName, theme }: { fileName: string; theme: ThemeType }) {
   if (fileName === 'DataScienceImg') return <DataScienceImg theme={theme} />;
-  else if (fileName === 'FullStackImg') return <FullStackImg theme={theme} />;
-  else if (fileName === 'CloudInfraImg') return <CloudInfraImg theme={theme} />;
+  if (fileName === 'FullStackImg') return <FullStackImg theme={theme} />;
+  if (fileName === 'CloudInfraImg') return <CloudInfraImg theme={theme} />;
 
   return <DesignImg theme={theme} />;
 }
 
 const SkillSection = ({ theme }: { theme: ThemeType }) => {
-
   return (
     <div>
       {skills.data.map((skill) => (

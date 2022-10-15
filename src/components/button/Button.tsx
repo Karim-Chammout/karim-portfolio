@@ -1,4 +1,4 @@
-import "./Button.css";
+import './Button.css';
 
 const onMouseEnter = (event: any, color: string, bgColor: string) => {
   const el = event.target;
@@ -30,7 +30,7 @@ const Button = ({
       <a
         className="main-button"
         href={href}
-        target={newTab ? "_blank" : "_self"}
+        target={newTab ? '_blank' : '_self'}
         rel="noreferrer"
         style={{
           color: theme.body,
