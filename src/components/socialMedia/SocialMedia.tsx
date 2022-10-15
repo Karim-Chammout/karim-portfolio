@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-
-import { socialMediaLinks } from '../../portfolio';
-import { ThemeType } from '../../theme';
 import './SocialMedia.css';
+import { socialMediaLinks } from '../../portfolio';
+import styled from 'styled-components';
+import { ThemeType } from '../../theme';
 
 const IconWrapper = styled.span`
   i {
@@ -21,12 +20,12 @@ const socialMedia = ({ theme }: { theme: ThemeType }) => {
         <a
           key={media.name}
           href={media.link}
-          className="icon-button"
+          className={`icon-button`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <IconWrapper {...media} theme={theme}>
-            <i className={`fab ${media.fontAwesomeIcon}`} />
+            <i className={`fab ${media.fontAwesomeIcon}`}></i>
           </IconWrapper>
         </a>
       ))}

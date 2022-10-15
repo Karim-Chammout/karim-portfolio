@@ -1,14 +1,14 @@
 import { Fade } from 'react-reveal';
 
-import Button from '../../components/button/Button';
+import './Projects.css';
+import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import GithubRepoCard from '../../components/githubRepoCard/GithubRepoCard';
-import Header from '../../components/header/Header';
+import Button from '../../components/button/Button';
 import TopButton from '../../components/topButton/TopButton';
 import { projectsHeader } from '../../portfolio';
-import { ThemeType } from '../../theme';
-import './Projects.css';
 import ProjectsImg from './ProjectsImg';
+import { ThemeType } from '../../theme';
 
 const Projects = ({ theme }: { theme: ThemeType }) => {
   return (
@@ -28,7 +28,7 @@ const Projects = ({ theme }: { theme: ThemeType }) => {
                 className="projects-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {projectsHeader.description}
+                {projectsHeader['description']}
               </p>
             </div>
           </div>
@@ -38,11 +38,11 @@ const Projects = ({ theme }: { theme: ThemeType }) => {
         <GithubRepoCard theme={theme} />
       </div>
       <Button
-        text="More Projects"
+        text={'More Projects'}
         className="project-button"
         href="https://github.com/Karim-Chammout"
+        newTab={true}
         theme={theme}
-        newTab
       />
       <Footer theme={theme} />
       <TopButton theme={theme} />

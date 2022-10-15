@@ -1,10 +1,9 @@
-import { Fade } from 'react-reveal';
-import { NavLink } from 'react-router-dom';
-
-import { greeting, settings } from '../../portfolio';
-import { ThemeType } from '../../theme';
-import SeoHeader from '../seoHeader/SeoHeader';
-import './Header.css';
+import "./Header.css";
+import { Fade } from "react-reveal";
+import { NavLink, Link } from "react-router-dom";
+import { greeting, settings } from "../../portfolio";
+import SeoHeader from "../seoHeader/SeoHeader";
+import { ThemeType } from "../../theme";
 
 const onMouseEnter = (event: any, color: string) => {
   const el = event.target;
@@ -13,11 +12,11 @@ const onMouseEnter = (event: any, color: string) => {
 
 const onMouseOut = (event: any) => {
   const el = event.target;
-  el.style.backgroundColor = 'transparent';
+  el.style.backgroundColor = "transparent";
 };
 
 const Header = ({ theme }: { theme: ThemeType }) => {
-  const link = settings.isSplash ? '/splash' : 'home';
+  const link = settings.isSplash ? "/splash" : "home";
 
   return (
     <Fade top duration={1000} distance="20px">
@@ -39,7 +38,7 @@ const Header = ({ theme }: { theme: ThemeType }) => {
             <li>
               <NavLink
                 to="/home"
-                activeStyle={{ fontWeight: 'bold' }}
+                activeStyle={{ fontWeight: "bold" }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                 onMouseOut={(event) => onMouseOut(event)}
@@ -50,7 +49,7 @@ const Header = ({ theme }: { theme: ThemeType }) => {
             <li>
               <NavLink
                 to="/projects"
-                activeStyle={{ fontWeight: 'bold' }}
+                activeStyle={{ fontWeight: "bold" }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                 onMouseOut={(event) => onMouseOut(event)}
@@ -61,7 +60,7 @@ const Header = ({ theme }: { theme: ThemeType }) => {
             <li>
               <NavLink
                 to="/contact"
-                activeStyle={{ fontWeight: 'bold' }}
+                activeStyle={{ fontWeight: "bold" }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                 onMouseOut={(event) => onMouseOut(event)}

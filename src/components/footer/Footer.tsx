@@ -1,8 +1,8 @@
 import { Fade } from 'react-reveal';
 
+import './Footer.css';
 import { greeting } from '../../portfolio';
 import { ThemeType } from '../../theme';
-import './Footer.css';
 
 const Footer = ({ theme }: { theme: ThemeType }) => {
   return (
