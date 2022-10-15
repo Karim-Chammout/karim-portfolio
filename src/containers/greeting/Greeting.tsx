@@ -1,13 +1,13 @@
-import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from 'react-reveal';
 
-import "./Greeting.css";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
-import FeelingProud from "./FeelingProud";
+import './Greeting.css';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
+import Button from '../../components/button/Button';
+import { greeting } from '../../portfolio';
+import FeelingProud from './FeelingProud';
+import { ThemeType } from '../../theme';
 
-const Greeting = ({ theme }) => {
+const Greeting = ({ theme }: { theme: ThemeType }) => {
   return (
     <Fade bottom duration={2000} distance="50px">
       <div className="greet-main" id="greeting">
@@ -17,10 +17,7 @@ const Greeting = ({ theme }) => {
               <h1 className="greeting-text" style={{ color: theme.text }}>
                 {greeting.title}
               </h1>
-              <p
-                className="greeting-text-p subTitle"
-                style={{ color: theme.secondaryText }}
-              >
+              <p className="greeting-text-p subTitle" style={{ color: theme.secondaryText }}>
                 {greeting.subTitle}
               </p>
               <SocialMedia theme={theme} />

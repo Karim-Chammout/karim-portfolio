@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+import { ThemeType } from './theme';
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -9,8 +10,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     align-items: center;
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
+    background: ${({ theme }: { theme: ThemeType }) => theme.body};
+    color: ${({ theme }: { theme: ThemeType }) => theme.text};
     display: flex;
     // flex-direction: column;
     // justify-content: center;

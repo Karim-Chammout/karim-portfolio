@@ -1,6 +1,6 @@
-import React from "react";
+import { ThemeType } from '../../theme';
 
-const AddressImg = ({ theme }) => {
+const AddressImg = ({ theme }: { theme: ThemeType }) => {
   return (
     <svg
       id="aaafdec0-95c8-49a3-a8f8-64216c6da511"
@@ -30,7 +30,7 @@ const AddressImg = ({ theme }) => {
         transform="translate(-93.27537 -144.85931)"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <rect
         x="303.45419"
@@ -49,34 +49,10 @@ const AddressImg = ({ theme }) => {
         transform="translate(-93.27537 -144.85931)"
         fill={theme.text}
       />
-      <rect
-        x="333.95419"
-        y="268.99156"
-        width="99"
-        height="14"
-        fill={theme.compImgHighlight}
-      />
-      <rect
-        x="325.95419"
-        y="319.99156"
-        width="294"
-        height="8"
-        fill={theme.compImgHighlight}
-      />
-      <rect
-        x="325.95419"
-        y="346.99156"
-        width="294"
-        height="8"
-        fill={theme.compImgHighlight}
-      />
-      <rect
-        x="325.95419"
-        y="373.99156"
-        width="294"
-        height="8"
-        fill={theme.compImgHighlight}
-      />
+      <rect x="333.95419" y="268.99156" width="99" height="14" fill={theme.compImgHighlight} />
+      <rect x="325.95419" y="319.99156" width="294" height="8" fill={theme.compImgHighlight} />
+      <rect x="325.95419" y="346.99156" width="294" height="8" fill={theme.compImgHighlight} />
+      <rect x="325.95419" y="373.99156" width="294" height="8" fill={theme.compImgHighlight} />
       <line
         x1="60.95419"
         y1="608.49156"
@@ -84,7 +60,7 @@ const AddressImg = ({ theme }) => {
         y2="608.49156"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M93.27537,630.2124c0,58.96027,36.98858,106.67017,82.69935,106.67017"
@@ -192,13 +168,7 @@ const AddressImg = ({ theme }) => {
         transform="translate(-93.27537 -144.85931)"
         fill={theme.text}
       />
-      <ellipse
-        cx="317.95419"
-        cy="242.06613"
-        rx="41"
-        ry="41.07457"
-        fill="#fff"
-      />
+      <ellipse cx="317.95419" cy="242.06613" rx="41" ry="41.07457" fill="#fff" />
       <path
         d="M411.22956,338.85087a49,49,0,1,0,49,49A49.14406,49.14406,0,0,0,411.22956,338.85087Zm-10.05913,75.12548-25.1125-25.11251,7.04374-7.04374L401.194,399.91241l38.187-38.187,7.04375,7.04375-45.25433,45.20721Z"
         transform="translate(-93.27537 -144.85931)"

@@ -1,10 +1,10 @@
-import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from 'react-reveal';
 
-import "./Footer.css";
-import { greeting } from "../../portfolio.js";
+import './Footer.css';
+import { greeting } from '../../portfolio';
+import { ThemeType } from '../../theme';
 
-const Footer = ({ theme }) => {
+const Footer = ({ theme }: { theme: ThemeType }) => {
   return (
     <div className="footer-div">
       <Fade>

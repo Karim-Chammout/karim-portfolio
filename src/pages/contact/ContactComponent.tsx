@@ -1,21 +1,20 @@
-import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from 'react-reveal';
 
-import "./ContactComponent.css";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import TopButton from "../../components/topButton/TopButton";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import AddressImg from "./AddressImg";
-import { greeting, contactPageData } from "../../portfolio.js";
+import './ContactComponent.css';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+import TopButton from '../../components/topButton/TopButton';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
+import Button from '../../components/button/Button';
+import AddressImg from './AddressImg';
+import { greeting, contactPageData } from '../../portfolio';
+import { ThemeType } from '../../theme';
 
 const ContactData = contactPageData.contactSection;
 const addressSection = contactPageData.addressSection;
 const phoneSection = contactPageData.phoneSection;
 
-const Contact = ({ theme }) => {
-
+const Contact = ({ theme }: { theme: ThemeType }) => {
   return (
     <div className="contact-main">
       <Header theme={theme} />
@@ -24,32 +23,23 @@ const Contact = ({ theme }) => {
           <div className="contact-heading-div">
             <div className="contact-heading-img-div">
               <img
-                src={
-                  require(`../../assets/images/${ContactData.profile_image_path}`)
-                    .default
-                }
+                src={require(`../../assets/images/${ContactData.profile_image_path}`).default}
                 alt="Karim Chammout"
-                style={{ borderRadius: "50%", marginBottom: "10px" }}
+                style={{ borderRadius: '50%', marginBottom: '10px' }}
               />
             </div>
             <div className="contact-heading-text-div">
-              <h1
-                className="contact-heading-text"
-                style={{ color: theme.text }}
-              >
-                {ContactData["title"]}
+              <h1 className="contact-heading-text" style={{ color: theme.text }}>
+                {ContactData['title']}
               </h1>
-              <sapn
-                className="contact-header-detail-text subTitle"
-                style={{ fontWeight: "bold" }}
-              >
+              <span className="contact-header-detail-text subTitle" style={{ fontWeight: 'bold' }}>
                 Say Hello, I won't bite... 😁
-              </sapn>
+              </span>
               <p
                 className="contact-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {ContactData["description"]}
+                {ContactData['description']}
               </p>
               <SocialMedia theme={theme} />
               <div className="resume-btn-div">
@@ -69,29 +59,23 @@ const Contact = ({ theme }) => {
               <AddressImg theme={theme} />
             </div>
             <div className="address-heading-text-div">
-              <h1
-                className="address-heading-text"
-                style={{ color: theme.text }}
-              >
-                {addressSection["title"]}
+              <h1 className="address-heading-text" style={{ color: theme.text }}>
+                {addressSection['title']}
               </h1>
               <p
                 className="contact-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {addressSection["subtitle"]}
+                {addressSection['subtitle']}
               </p>
-              <h1
-                className="address-heading-text"
-                style={{ color: theme.text }}
-              >
-                {phoneSection["title"]}
+              <h1 className="address-heading-text" style={{ color: theme.text }}>
+                {phoneSection['title']}
               </h1>
               <p
                 className="contact-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {phoneSection["subtitle"]}
+                {phoneSection['subtitle']}
               </p>
               <div className="address-btn-div">
                 <Button

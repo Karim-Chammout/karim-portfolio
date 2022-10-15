@@ -1,6 +1,6 @@
-import React from "react";
+import { ThemeType } from '../../theme';
 
-const FeelingProud = ({ theme }) => {
+const FeelingProud = ({ theme }: { theme: ThemeType }) => {
   return (
     <svg
       id="b52d7e2d-d80f-4111-b6ed-d15502ee1edd"
@@ -72,13 +72,7 @@ const FeelingProud = ({ theme }) => {
         transform="translate(-244.40605 -115.15866)"
         fill={theme.text}
       />
-      <rect
-        x="365.82336"
-        y="130.42445"
-        width="249.99557"
-        height="139.87094"
-        fill="#f2f2f2"
-      />
+      <rect x="365.82336" y="130.42445" width="249.99557" height="139.87094" fill="#f2f2f2" />
       <circle cx="490.82114" cy="125.99415" r="1.58225" fill="#f2f2f2" />
       <circle cx="490.82114" cy="294.34559" r="6.01255" fill="#f2f2f2" />
       <polygon
@@ -95,13 +89,7 @@ const FeelingProud = ({ theme }) => {
         transform="translate(-244.40605 -115.15866)"
         opacity="0.1"
       />
-      <ellipse
-        cx="532.40017"
-        cy="350.99016"
-        rx="4.11385"
-        ry="1.2658"
-        fill="#f2f2f2"
-      />
+      <ellipse cx="532.40017" cy="350.99016" rx="4.11385" ry="1.2658" fill="#f2f2f2" />
       <polygon
         points="481.452 357.952 481.452 361.117 311.202 361.117 311.202 358.585 311.436 357.952 481.452 357.952"
         opacity="0.1"

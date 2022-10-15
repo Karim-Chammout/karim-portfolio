@@ -1,7 +1,6 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
-import { seo } from "../../portfolio.js";
+import { seo } from '../../portfolio';
 
 const SeoHeader = () => {
   return (

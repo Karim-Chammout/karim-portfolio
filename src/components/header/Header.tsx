@@ -1,21 +1,21 @@
-import React from "react";
 import "./Header.css";
 import { Fade } from "react-reveal";
 import { NavLink, Link } from "react-router-dom";
-import { greeting, settings } from "../../portfolio.js";
+import { greeting, settings } from "../../portfolio";
 import SeoHeader from "../seoHeader/SeoHeader";
+import { ThemeType } from "../../theme";
 
-const onMouseEnter = (event, color) => {
+const onMouseEnter = (event: any, color: string) => {
   const el = event.target;
   el.style.backgroundColor = color;
 };
 
-const onMouseOut = (event) => {
+const onMouseOut = (event: any) => {
   const el = event.target;
   el.style.backgroundColor = "transparent";
 };
 
-const Header = ({ theme }) => {
+const Header = ({ theme }: { theme: ThemeType }) => {
   const link = settings.isSplash ? "/splash" : "home";
 
   return (
@@ -23,7 +23,7 @@ const Header = ({ theme }) => {
       <SeoHeader />
       <div>
         <header className="header">
-          <NavLink to={link} tag={Link} className="logo">
+          <NavLink to={link} className="logo">
             <span style={{ color: theme.text }}> &lt;</span>
             <span className="logo-name" style={{ color: theme.text }}>
               {greeting.logo_name}
@@ -38,7 +38,6 @@ const Header = ({ theme }) => {
             <li>
               <NavLink
                 to="/home"
-                tag={Link}
                 activeStyle={{ fontWeight: "bold" }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
@@ -50,7 +49,6 @@ const Header = ({ theme }) => {
             <li>
               <NavLink
                 to="/projects"
-                tag={Link}
                 activeStyle={{ fontWeight: "bold" }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
@@ -62,7 +60,6 @@ const Header = ({ theme }) => {
             <li>
               <NavLink
                 to="/contact"
-                tag={Link}
                 activeStyle={{ fontWeight: "bold" }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}

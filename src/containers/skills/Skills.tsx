@@ -1,10 +1,10 @@
-import React from "react";
-import { Fade } from "react-reveal";
+import { Fade } from 'react-reveal';
+import { ThemeType } from '../../theme';
 
-import "./Skills.css";
-import SkillSection from "./SkillSection";
+import './Skills.css';
+import SkillSection from './SkillSection';
 
-const Skills = ({ theme }) => {
+const Skills = ({ theme }: { theme: ThemeType }) => {
   return (
     <div className="main" id="skills">
       <div className="skills-header-div">

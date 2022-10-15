@@ -1,6 +1,6 @@
-import React from "react";
+import { ThemeType } from '../../theme';
 
-const ProjectsImg = ({ theme }) => {
+const ProjectsImg = ({ theme }: { theme: ThemeType }) => {
   return (
     <svg
       id="a6dc9487-50e2-4fb9-af91-bf1b7118d463"
@@ -19,20 +19,13 @@ const ProjectsImg = ({ theme }) => {
           y2="522.9"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-          <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-          <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+          <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+          <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+          <stop offset="1" stopColor="gray" stopOpacity="0.1" />
         </linearGradient>
       </defs>
       <title>mind map</title>
-      <ellipse
-        cx="843.39"
-        cy="664.8"
-        rx="192"
-        ry="43"
-        fill={theme.imageHighlight}
-        opacity="0.1"
-      />
+      <ellipse cx="843.39" cy="664.8" rx="192" ry="43" fill={theme.imageHighlight} opacity="0.1" />
       <g opacity="0.1">
         <path
           d="M673.12,122.89c0,156.1,97.93,282.41,219,282.41"
@@ -81,16 +74,9 @@ const ProjectsImg = ({ theme }) => {
         points="491.81 203.17 561.89 294.68 634.08 202.74"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
-      <rect
-        x="508.37"
-        y="291.75"
-        width="107.03"
-        height="50.79"
-        rx="8.57"
-        opacity="0.1"
-      />
+      <rect x="508.37" y="291.75" width="107.03" height="50.79" rx="8.57" opacity="0.1" />
       <rect
         x="510.55"
         y="292.79"
@@ -106,13 +92,13 @@ const ProjectsImg = ({ theme }) => {
         y2="138.35"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <polyline
         points="675.22 139.93 634.08 170.7 590.81 139.93"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <rect
         x="456.61"
@@ -148,20 +134,20 @@ const ProjectsImg = ({ theme }) => {
         y2="430.01"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M609.53,558.59v0Z"
         transform="translate(-48.1 -96.1)"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <polyline
         points="462.42 493.11 561.42 462.48 660.82 492.89"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <rect
         x="526.62"
@@ -228,7 +214,7 @@ const ProjectsImg = ({ theme }) => {
         y2="374.94"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <line
         x1="735.11"
@@ -237,7 +223,7 @@ const ProjectsImg = ({ theme }) => {
         y2="319.78"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <line
         x1="613.23"
@@ -246,7 +232,7 @@ const ProjectsImg = ({ theme }) => {
         y2="319.78"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <line
         x1="832.16"
@@ -255,7 +241,7 @@ const ProjectsImg = ({ theme }) => {
         y2="320.21"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <rect
         x="732.22"
@@ -304,7 +290,7 @@ const ProjectsImg = ({ theme }) => {
         y2="374.94"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <line
         x1="388.66"
@@ -313,7 +299,7 @@ const ProjectsImg = ({ theme }) => {
         y2="319.78"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <line
         x1="510.55"
@@ -322,7 +308,7 @@ const ProjectsImg = ({ theme }) => {
         y2="319.78"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <line
         x1="291.61"
@@ -331,7 +317,7 @@ const ProjectsImg = ({ theme }) => {
         y2="320.21"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <rect
         x="417.76"

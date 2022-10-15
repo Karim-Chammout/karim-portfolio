@@ -1,25 +1,37 @@
-import React from "react";
 import "./Button.css";
 
-const onMouseEnter = (event, color, bgColor) => {
+const onMouseEnter = (event: any, color: string, bgColor: string) => {
   const el = event.target;
   el.style.color = color;
   el.style.backgroundColor = bgColor;
 };
 
-const onMouseOut = (event, color, bgColor) => {
+const onMouseOut = (event: any, color: string, bgColor: string) => {
   const el = event.target;
   el.style.color = color;
   el.style.backgroundColor = bgColor;
 };
 
-const Button = ({ text, className, href, newTab, theme }) => {
+const Button = ({
+  text,
+  className,
+  href,
+  newTab,
+  theme,
+}: {
+  text: string;
+  className?: string;
+  href: string;
+  newTab: boolean;
+  theme: any;
+}) => {
   return (
     <div className={className}>
       <a
-        class="main-button"
+        className="main-button"
         href={href}
-        target={newTab && "_blank"}
+        target={newTab ? "_blank" : "_self"}
+        rel="noreferrer"
         style={{
           color: theme.body,
           backgroundColor: theme.text,

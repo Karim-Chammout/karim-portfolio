@@ -1,4 +1,3 @@
-// theme.js
 export const blueTheme = {
   body: "#EDF9FE",
   text: "#001C55",
@@ -120,3 +119,4 @@ export const orangeTheme = {
 };
 
 export const chosenTheme = blueTheme;
+export type ThemeType = typeof chosenTheme;

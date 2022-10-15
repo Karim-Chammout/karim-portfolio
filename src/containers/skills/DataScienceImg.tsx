@@ -1,6 +1,6 @@
-import React from "react";
+import { ThemeType } from '../../theme';
 
-const DataScienceImg = ({ theme }) => {
+const DataScienceImg = ({ theme }: { theme: ThemeType }) => {
   return (
     <svg
       id="fa973782-3a18-4630-a762-87130b613ac3"
@@ -11,13 +11,7 @@ const DataScienceImg = ({ theme }) => {
       viewBox="0 0 1120 829.80067"
     >
       <title>Front-end Development</title>
-      <ellipse
-        cx="975.57906"
-        cy="811.05902"
-        rx="144.42094"
-        ry="18.74165"
-        fill={theme.text}
-      />
+      <ellipse cx="975.57906" cy="811.05902" rx="144.42094" ry="18.74165" fill={theme.text} />
       <rect y="27.5" width="436" height="272" fill={theme.compImgHighlight} />
       <rect
         x="27.5"
@@ -26,8 +20,8 @@ const DataScienceImg = ({ theme }) => {
         height="272"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <path
         d="M352.468,237.56768A94,94,0,0,0,286,77.09967v94Z"
@@ -44,25 +38,13 @@ const DataScienceImg = ({ theme }) => {
         transform="translate(-40 -34.59967)"
         fill={theme.jacketColor}
       />
-      <rect
-        x="44"
-        y="216.5"
-        width="18"
-        height="18"
-        fill={theme.imageHighlight}
-      />
+      <rect x="44" y="216.5" width="18" height="18" fill={theme.imageHighlight} />
       <rect x="70" y="216.5" width="18" height="18" fill={theme.text} />
       <rect x="96" y="216.5" width="18" height="18" fill={theme.jacketColor} />
       <rect x="355" y="220.5" width="74" height="3" fill={theme.text} />
       <rect x="355" y="229.5" width="74" height="3" fill={theme.text} />
       <rect x="355" y="238.5" width="74" height="3" fill={theme.text} />
-      <rect
-        x="137"
-        y="406.5"
-        width="248"
-        height="272"
-        fill={theme.compImgHighlight}
-      />
+      <rect x="137" y="406.5" width="248" height="272" fill={theme.compImgHighlight} />
       <rect
         x="162"
         y="380.5"
@@ -70,23 +52,11 @@ const DataScienceImg = ({ theme }) => {
         height="272"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
-      <rect
-        x="175"
-        y="621.81429"
-        width="13.37143"
-        height="13.37143"
-        fill={theme.imageHighlight}
-      />
-      <rect
-        x="194.31429"
-        y="621.81429"
-        width="13.37143"
-        height="13.37143"
-        fill={theme.text}
-      />
+      <rect x="175" y="621.81429" width="13.37143" height="13.37143" fill={theme.imageHighlight} />
+      <rect x="194.31429" y="621.81429" width="13.37143" height="13.37143" fill={theme.text} />
       <rect
         x="213.62857"
         y="621.81429"
@@ -94,27 +64,9 @@ const DataScienceImg = ({ theme }) => {
         height="13.37143"
         fill={theme.jacketColor}
       />
-      <rect
-        x="325"
-        y="627.62162"
-        width="52"
-        height="2.10811"
-        fill={theme.text}
-      />
-      <rect
-        x="325"
-        y="633.94595"
-        width="52"
-        height="2.10811"
-        fill={theme.text}
-      />
-      <rect
-        x="325"
-        y="640.27027"
-        width="52"
-        height="2.10811"
-        fill={theme.text}
-      />
+      <rect x="325" y="627.62162" width="52" height="2.10811" fill={theme.text} />
+      <rect x="325" y="633.94595" width="52" height="2.10811" fill={theme.text} />
+      <rect x="325" y="640.27027" width="52" height="2.10811" fill={theme.text} />
       <path
         d="M326,463.09967v22a66,66,0,0,1,46.66907,112.66906l15.55633,15.55634A88,88,0,0,0,326,463.09967Z"
         transform="translate(-40 -34.59967)"
@@ -209,13 +161,7 @@ const DataScienceImg = ({ theme }) => {
         transform="translate(-40 -34.59967)"
         fill={theme.dark}
       />
-      <rect
-        x="507"
-        y="236.5"
-        width="248"
-        height="272"
-        fill={theme.compImgHighlight}
-      />
+      <rect x="507" y="236.5" width="248" height="272" fill={theme.compImgHighlight} />
       <rect
         x="532"
         y="210.5"
@@ -223,39 +169,21 @@ const DataScienceImg = ({ theme }) => {
         height="272"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <polyline
         points="556 227.5 556 435.5 757 435.5"
         fill="none"
         stroke={theme.text}
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <rect x="567" y="362.5" width="45" height="72" fill={theme.jacketColor} />
       <rect x="632" y="313.5" width="45" height="121" fill={theme.text} />
-      <rect
-        x="697"
-        y="256.5"
-        width="45"
-        height="178"
-        fill={theme.imageHighlight}
-      />
-      <rect
-        x="553"
-        y="451.81429"
-        width="13.37143"
-        height="13.37143"
-        fill={theme.imageHighlight}
-      />
-      <rect
-        x="572.31429"
-        y="451.81429"
-        width="13.37143"
-        height="13.37143"
-        fill={theme.text}
-      />
+      <rect x="697" y="256.5" width="45" height="178" fill={theme.imageHighlight} />
+      <rect x="553" y="451.81429" width="13.37143" height="13.37143" fill={theme.imageHighlight} />
+      <rect x="572.31429" y="451.81429" width="13.37143" height="13.37143" fill={theme.text} />
       <rect
         x="591.62857"
         y="451.81429"
@@ -263,27 +191,9 @@ const DataScienceImg = ({ theme }) => {
         height="13.37143"
         fill={theme.jacketColor}
       />
-      <rect
-        x="703"
-        y="457.62162"
-        width="52"
-        height="2.10811"
-        fill={theme.text}
-      />
-      <rect
-        x="703"
-        y="463.94595"
-        width="52"
-        height="2.10811"
-        fill={theme.text}
-      />
-      <rect
-        x="703"
-        y="470.27027"
-        width="52"
-        height="2.10811"
-        fill={theme.text}
-      />
+      <rect x="703" y="457.62162" width="52" height="2.10811" fill={theme.text} />
+      <rect x="703" y="463.94595" width="52" height="2.10811" fill={theme.text} />
+      <rect x="703" y="470.27027" width="52" height="2.10811" fill={theme.text} />
       <path
         d="M764.3076,212.28192c10.62848.46211,18.52575,10.10069,17.376,20.67691-1.04159,9.58175-4.884,21.50465-16.98745,26.08434-21.56716,8.16055-20.40137-37.88827-16.3211-39.637C751.09528,218.24042,755.36985,211.89333,764.3076,212.28192Z"
         transform="translate(-40 -34.59967)"
