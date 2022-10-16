@@ -10,6 +10,7 @@ const Footer = ({ theme }: { theme: ThemeType }) => {
       <Fade>
         <p className="footer-text" style={{ color: theme.secondaryText }}>
           Made with <span role="img">☕ & ❤️</span> by {greeting.title}
+          <p>Copyright © {new Date().getFullYear()}</p>
         </p>
       </Fade>
     </div>

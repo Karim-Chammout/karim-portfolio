@@ -5,6 +5,7 @@
   max-width: 90%;
   padding: 20px 10px;
   margin: 0px auto;
+  margin-bottom: 50px;
 }
 
 .header ul {
@@ -12,7 +13,6 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
-  /* background-color: #fff; */
 }
 .grey-color {
   color: #868e96;

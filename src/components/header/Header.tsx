@@ -38,13 +38,13 @@ const Header = ({ theme }: { theme: ThemeType }) => {
           <ul className="menu" style={{ backgroundColor: theme.body }}>
             <li>
               <NavLink
-                to="/home"
+                to="/blog"
                 activeStyle={{ fontWeight: 'bold' }}
                 style={{ color: theme.text }}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                 onMouseOut={(event) => onMouseOut(event)}
               >
-                Home
+                Blog
               </NavLink>
             </li>
             <li>
@@ -56,6 +56,17 @@ const Header = ({ theme }: { theme: ThemeType }) => {
                 onMouseOut={(event) => onMouseOut(event)}
               >
                 Projects
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                activeStyle={{ fontWeight: 'bold' }}
+                style={{ color: theme.text }}
+                onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
+                onMouseOut={(event) => onMouseOut(event)}
+              >
+                About
               </NavLink>
             </li>
             <li>

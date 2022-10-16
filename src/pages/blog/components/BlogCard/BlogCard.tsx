@@ -1,7 +1,8 @@
 import { Fade } from 'react-reveal';
+import { Link, useParams } from 'react-router-dom';
 
-import { ThemeType } from '../../theme';
-import './GithubRepoCard.css';
+import { ThemeType } from '../../../../theme';
+import './BlogCard.css';
 
 const projectsData = [
   {
@@ -48,40 +49,38 @@ const projectsData = [
   },
 ];
 
-const GithubRepoCard = ({ theme }: { theme: ThemeType }) => {
-  const openRepo = (url: string) => {
-    const win: any = window.open(url, '_blank');
-    win.focus();
-  };
+const BlogCard = ({ theme }: { theme: ThemeType }) => {
+  const { slug } = useParams<{ slug: string }>();
 
   return (
-    <div className="cards_container">
+    <div className="blog_cards_container">
       <Fade bottom duration={2000} distance="40px">
         {projectsData.map((project) => (
-          <div
+          <article
             key={project.id}
-            className="repo-card-div"
+            className="blog-card-div"
             style={{ backgroundColor: theme.highlight }}
-            onClick={() => openRepo(project.url)}
           >
-            <div className="repo-name-div">
-              <p className="repo-name" style={{ color: theme.text }}>
-                {project.name}
+            <Link to={`/blog/${slug}`} className="blog-link">
+              <div className="blog-name-div">
+                <p className="blog-name" style={{ color: theme.text }}>
+                  {project.name}
+                </p>
+              </div>
+              <p className="blog-description" style={{ color: theme.text }}>
+                {project.description}
+              </p>
+            </Link>
+            <div className="blog-details">
+              <p className="blog-tags subTitle" style={{ color: theme.secondaryText }}>
+                Tags: {project.tools}
               </p>
             </div>
-            <p className="repo-description" style={{ color: theme.text }}>
-              {project.description}
-            </p>
-            <div className="repo-details">
-              <p className="repo-creation-date subTitle" style={{ color: theme.secondaryText }}>
-                Tools: {project.tools}
-              </p>
-            </div>
-          </div>
+          </article>
         ))}
       </Fade>
     </div>
   );
 };
 
-export default GithubRepoCard;
+export default BlogCard;

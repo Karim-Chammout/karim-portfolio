@@ -27,6 +27,7 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'import/prefer-default-export': 0,
     'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/label-has-associated-control': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
   },

@@ -5,7 +5,7 @@ import Greeting from '../../containers/greeting/Greeting';
 import Skills from '../../containers/skills/Skills';
 import { ThemeType } from '../../theme';
 
-const Home = ({ theme }: { theme: ThemeType }) => {
+const About = ({ theme }: { theme: ThemeType }) => {
   return (
     <div>
       <Header theme={theme} />
@@ -17,4 +17,4 @@ const Home = ({ theme }: { theme: ThemeType }) => {
   );
 };
 
-export default Home;
+export default About;

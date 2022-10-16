@@ -1,9 +1,3 @@
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
 .greet-main {
   width: 90%;
   padding: 20px 10px;
@@ -11,14 +5,9 @@
   margin-top: 2rem;
 }
 
-.gretting-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-}
-
 .greeting-main {
   display: flex;
+  gap: 20px;
 }
 
 .greeting-main > * {
@@ -34,14 +23,14 @@
   margin-top: 80px;
   font-size: 50px;
   line-height: 1.1;
-  font-family: "Google Sans Bold";
+  font-family: 'Google Sans Bold';
 }
 
 .greeting-text-p {
   font-size: 20px;
   line-height: 40px;
   margin-right: 40px;
-  font-family: "Google Sans Medium";
+  font-family: 'Google Sans Medium';
 }
 
 .greeting-image-div > * {

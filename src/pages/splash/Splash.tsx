@@ -26,7 +26,7 @@ const Splash = ({ theme }: { theme: ThemeType }) => {
 
   if (!redirect) return <AnimatedSplash theme={theme} />;
 
-  return <Redirect to="/home" />;
+  return <Redirect to="/blog" />;
 };
 
 export default Splash;
