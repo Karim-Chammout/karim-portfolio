@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import sanityClient from '../../../../client';
 import { ThemeType } from '../../../../theme';
+import { Post } from '../../Blog';
 
 interface BlogDetailsType {
   theme?: ThemeType;
@@ -10,7 +11,7 @@ interface BlogDetailsType {
 
 const BlogDetails = ({ theme }: BlogDetailsType) => {
   const { slug } = useParams<{ slug: string }>();
-  const [singlePost, setSinglePosts] = useState<any>({});
+  const [singlePost, setSinglePosts] = useState<Post>();
 
   useEffect(() => {
     const singlePostQuery = `

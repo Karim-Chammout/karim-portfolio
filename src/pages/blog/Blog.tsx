@@ -10,8 +10,22 @@ import './Blog.css';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
 
+export interface Post {
+  _id: string;
+  title?: string;
+  author?: {
+    name: string;
+    image: string;
+  };
+  body?: object;
+  slug: {
+    current: string;
+  },
+  description: string;
+}
+
 const Blog = ({ theme }: { theme: ThemeType }) => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const postQuery = `
