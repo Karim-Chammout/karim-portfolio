@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import sanityClient from '../../../../client';
+import { ThemeType } from '../../../../theme';
 
-// interface BlogDetailsType {
-//   theme?: ThemeType;
-// }
+interface BlogDetailsType {
+  theme?: ThemeType;
+}
 
-const BlogDetails = () => {
+const BlogDetails = ({ theme }: BlogDetailsType) => {
   const { slug } = useParams<{ slug: string }>();
   const [singlePost, setSinglePosts] = useState<any>({});
 
