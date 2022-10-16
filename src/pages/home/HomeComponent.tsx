@@ -1,8 +1,8 @@
+import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
+import TopButton from '../../components/topButton/TopButton';
 import Greeting from '../../containers/greeting/Greeting';
 import Skills from '../../containers/skills/Skills';
-import Footer from '../../components/footer/Footer';
-import TopButton from '../../components/topButton/TopButton';
 import { ThemeType } from '../../theme';
 
 const Home = ({ theme }: { theme: ThemeType }) => {

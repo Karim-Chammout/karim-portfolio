@@ -3,7 +3,14 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/eslint-recommended'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -16,8 +23,11 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'newline-before-return': 'error',
     'react/function-component-definition': 0,
+    'react/jsx-props-no-spreading': 0,
     'react/no-unescaped-entities': 0,
     'import/prefer-default-export': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
   },
   settings: {

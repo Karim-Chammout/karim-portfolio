@@ -1,18 +1,17 @@
 import { Fade } from 'react-reveal';
 
-import './ContactComponent.css';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
-import TopButton from '../../components/topButton/TopButton';
-import SocialMedia from '../../components/socialMedia/SocialMedia';
+import profile_image from '../../assets/images/karim_image.png';
 import Button from '../../components/button/Button';
-import AddressImg from './AddressImg';
-import { greeting, contactPageData } from '../../portfolio';
+import Footer from '../../components/footer/Footer';
+import Header from '../../components/header/Header';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
+import TopButton from '../../components/topButton/TopButton';
+import { contactPageData, greeting } from '../../portfolio';
 import { ThemeType } from '../../theme';
+import AddressImg from './AddressImg';
+import './ContactComponent.css';
 
-const ContactData = contactPageData.contactSection;
-const addressSection = contactPageData.addressSection;
-const phoneSection = contactPageData.phoneSection;
+const { contactSection, addressSection, phoneSection } = contactPageData;
 
 const Contact = ({ theme }: { theme: ThemeType }) => {
   return (
@@ -23,14 +22,14 @@ const Contact = ({ theme }: { theme: ThemeType }) => {
           <div className="contact-heading-div">
             <div className="contact-heading-img-div">
               <img
-                src={require(`../../assets/images/${ContactData.profile_image_path}`).default}
+                src={profile_image}
                 alt="Karim Chammout"
                 style={{ borderRadius: '50%', marginBottom: '10px' }}
               />
             </div>
             <div className="contact-heading-text-div">
               <h1 className="contact-heading-text" style={{ color: theme.text }}>
-                {ContactData['title']}
+                {contactSection.title}
               </h1>
               <span className="contact-header-detail-text subTitle" style={{ fontWeight: 'bold' }}>
                 Say Hello, I won't bite... 😁
@@ -39,16 +38,11 @@ const Contact = ({ theme }: { theme: ThemeType }) => {
                 className="contact-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {ContactData['description']}
+                {contactSection.description}
               </p>
               <SocialMedia theme={theme} />
               <div className="resume-btn-div">
-                <Button
-                  text="See My Resume"
-                  newTab={true}
-                  href={greeting.resumeLink}
-                  theme={theme}
-                />
+                <Button text="See My Resume" href={greeting.resumeLink} theme={theme} newTab />
               </div>
             </div>
           </div>
@@ -60,29 +54,29 @@ const Contact = ({ theme }: { theme: ThemeType }) => {
             </div>
             <div className="address-heading-text-div">
               <h1 className="address-heading-text" style={{ color: theme.text }}>
-                {addressSection['title']}
+                {addressSection.title}
               </h1>
               <p
                 className="contact-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {addressSection['subtitle']}
+                {addressSection.subtitle}
               </p>
               <h1 className="address-heading-text" style={{ color: theme.text }}>
-                {phoneSection['title']}
+                {phoneSection.title}
               </h1>
               <p
                 className="contact-header-detail-text subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                {phoneSection['subtitle']}
+                {phoneSection.subtitle}
               </p>
               <div className="address-btn-div">
                 <Button
                   text="Visit on Google Maps"
-                  newTab={true}
                   href={addressSection.location_map_link}
                   theme={theme}
+                  newTab
                 />
               </div>
             </div>
