@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Fade } from 'react-reveal';
 
+import sanityClient from '../../client';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import TopButton from '../../components/topButton/TopButton';
@@ -9,6 +11,32 @@ import BlogImage from './BLogImage';
 import { BlogCard } from './components';
 
 const Blog = ({ theme }: { theme: ThemeType }) => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const postQuery = `
+      *[_type == 'post']{
+        _id,
+        title,
+        author-> {
+          name,
+          image
+        },
+        slug,
+        description,
+        category-> {
+          title,
+          description
+        },
+        body
+      }
+    `;
+    sanityClient
+      .fetch(postQuery)
+      .then((data) => setPosts(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="blog-main">
       <Header theme={theme} />
@@ -34,7 +62,7 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
         </Fade>
       </header>
       <div className="blog-cards-div-main">
-        <BlogCard theme={theme} />
+        <BlogCard theme={theme} posts={posts} />
       </div>
       <Footer theme={theme} />
       <TopButton theme={theme} />
