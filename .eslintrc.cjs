@@ -22,6 +22,8 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 0,
     'newline-before-return': 'error',
+    'react/require-default-props': 0,
+    'react/no-unused-prop-types': 0,
     'react/function-component-definition': 0,
     'react/jsx-props-no-spreading': 0,
     'react/no-unescaped-entities': 0,

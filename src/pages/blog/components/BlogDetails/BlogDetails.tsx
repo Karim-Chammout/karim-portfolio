@@ -1,4 +1,11 @@
-const BlogDetails = ({ slug }: { slug: string }) => {
+import { ThemeType } from '../../../../theme';
+
+interface BlogDetailsType {
+  slug?: string;
+  theme?: ThemeType;
+}
+
+const BlogDetails = ({ slug }: BlogDetailsType) => {
   return (
     <div>
       <h1>Blog Details {slug}</h1>
