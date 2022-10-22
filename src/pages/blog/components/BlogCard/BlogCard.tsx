@@ -4,36 +4,32 @@ import { Link } from 'react-router-dom';
 import { ThemeType } from '../../../../theme';
 import { Post } from '../../Blog';
 import './BlogCard.css';
+import { Card, CardContainer } from './BlogCard.style';
 
 const BlogCard = ({ theme, posts }: { theme: ThemeType; posts: Post[] }) => {
   return (
     <Fade bottom duration={2000} distance="40px">
-      <div className="blog_cards_container">
-        {posts &&
-          posts?.map((post) => (
-            <article
-              key={post.title}
-              className="blog-card-div"
-              style={{ backgroundColor: theme.highlight }}
-            >
-              <Link to={`/blog/${post.slug.current}`} className="blog-link">
-                <div className="blog-name-div">
-                  <p className="blog-name" style={{ color: theme.text }}>
-                    {post.title}
-                  </p>
-                </div>
-                <p className="blog-description" style={{ color: theme.text }}>
-                  {post.description}
-                </p>
-              </Link>
-              <div className="blog-details">
-                <p className="blog-tags subTitle" style={{ color: theme.secondaryText }}>
-                  Tags: {post.author?.name}
+      <CardContainer>
+        {posts.map((post) => (
+          <Card key={post.title}>
+            <Link to={`/blog/${post.slug.current}`} className="blog-link">
+              <div className="blog-name-div">
+                <p className="blog-name" style={{ color: theme.text }}>
+                  {post.title}
                 </p>
               </div>
-            </article>
-          ))}
-      </div>
+              <p className="blog-description" style={{ color: theme.text }}>
+                {post.description}
+              </p>
+            </Link>
+            <div className="blog-details">
+              <p className="blog-tags subTitle" style={{ color: theme.secondaryText }}>
+                Tags: {post.author?.name}
+              </p>
+            </div>
+          </Card>
+        ))}
+      </CardContainer>
     </Fade>
   );
 };

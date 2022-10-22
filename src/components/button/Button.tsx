@@ -39,6 +39,7 @@ const Button = ({
         }}
         onMouseEnter={(event) => onMouseEnter(event, theme.text, theme.body)}
         onMouseOut={(event) => onMouseOut(event, theme.body, theme.text)}
+        onBlur={() => {}}
       >
         {text}
       </a>

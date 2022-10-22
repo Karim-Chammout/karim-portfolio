@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useQuery } from 'react-query';
 import { Fade } from 'react-reveal';
 
 import sanityClient from '../../client';
@@ -20,15 +21,12 @@ export interface Post {
   body?: object;
   slug: {
     current: string;
-  },
+  };
   description: string;
 }
 
-const Blog = ({ theme }: { theme: ThemeType }) => {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    const postQuery = `
+const fetchAllPosts = async () => {
+  const postQuery = `
       *[_type == 'post']{
         _id,
         title,
@@ -45,11 +43,25 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
         body
       }
     `;
-    sanityClient
-      .fetch(postQuery)
-      .then((data) => setPosts(data))
-      .catch((err) => console.log(err));
-  }, []);
+
+  return sanityClient.fetch(postQuery);
+};
+
+const Blog = ({ theme }: { theme: ThemeType }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const { data, isLoading, error } = useQuery<Post[]>('posts', fetchAllPosts);
+
+  if (error || !data) {
+    return null;
+  }
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  const filteredPosts = data.filter((post) => {
+    return post.title?.toLowerCase().includes(searchQuery.toLowerCase());
+  });
 
   return (
     <div className="blog-main">
@@ -75,9 +87,30 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
           </div>
         </Fade>
       </header>
-      <div className="blog-cards-div-main">
-        <BlogCard theme={theme} posts={posts} />
-      </div>
+      <Fade bottom duration={2000} distance="40px">
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search for an article..."
+            style={{
+              width: '300px',
+              height: '40px',
+              padding: '8px',
+              border: `1px solid ${theme.secondaryText}`,
+              borderRadius: '4px',
+            }}
+          />
+        </div>
+        <div className="blog-cards-div-main">
+          {filteredPosts.length > 0 ? (
+            <BlogCard theme={theme} posts={filteredPosts} />
+          ) : (
+            <h1>No result found!</h1>
+          )}
+        </div>
+      </Fade>
       <Footer theme={theme} />
       <TopButton theme={theme} />
     </div>
