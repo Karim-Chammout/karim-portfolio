@@ -1,6 +1,6 @@
 import { Fade } from 'react-reveal';
 
-import { ThemeType } from '../../theme';
+import { ThemeType } from '../../../../theme';
 import './Skills.css';
 import SkillSection from './SkillSection';
 

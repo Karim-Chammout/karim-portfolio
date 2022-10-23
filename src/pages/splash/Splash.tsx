@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import LoaderLogo from '../../components/Loader/LoaderLogo';
 import { ThemeType } from '../../theme';
@@ -26,7 +26,7 @@ const Splash = ({ theme }: { theme: ThemeType }) => {
 
   if (!redirect) return <AnimatedSplash theme={theme} />;
 
-  return <Redirect to="/blog" />;
+  return <Navigate to="/blog" replace />;
 };
 
 export default Splash;

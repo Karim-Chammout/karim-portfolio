@@ -9,7 +9,7 @@ interface BlogDetailsType {
   theme?: ThemeType;
 }
 
-const fetchPost = async (slug: string) => {
+const fetchPost = async (slug?: string) => {
   const singlePostQuery = `
     *[_type == 'post' && slug.current == '${slug}'][0]{
       _id,

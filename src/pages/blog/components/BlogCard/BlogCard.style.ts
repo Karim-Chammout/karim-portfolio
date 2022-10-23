@@ -20,10 +20,8 @@ const cardStyles = styled.article`
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
   }
   @media (max-width: 768px) {
-    .blog-card-div {
-      width: 80%;
-      margin: 20px auto;
-    }
+    width: 100%;
+    margin: 20px auto;
   }
 `;
 

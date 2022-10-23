@@ -1,22 +1,5 @@
 /* Change this file to get your personal Porfolio */
 
-// Website related settings
-const settings = {
-  isSplash: true, // Change this to false if you don't want Splash screen.
-};
-
-// SEO Related settings
-const seo = {
-  title: 'Karim Chammout',
-  description:
-    "I'm a Front-end developer who's writing code and moving pixels in the www. I'm looking for learning new things and new experiences in this vast world of creativity.",
-  og: {
-    title: 'Karim Chammout Portfolio',
-    type: 'website',
-    url: 'https://github.com/Karim-Chammout',
-  },
-};
-
 // Home Page
 const greeting = {
   title: 'Karim Chammout',
@@ -208,4 +191,4 @@ const contactPageData = {
   },
 };
 
-export { settings, seo, greeting, socialMediaLinks, skills, projectsHeader, contactPageData };
+export { greeting, socialMediaLinks, skills, projectsHeader, contactPageData };

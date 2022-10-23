@@ -1,7 +1,7 @@
 import { Fade } from 'react-reveal';
 
-import { skills } from '../../portfolio';
-import { ThemeType } from '../../theme';
+import { skills } from '../../../../portfolio';
+import { ThemeType } from '../../../../theme';
 import CloudInfraImg from './CloudInfraImg';
 import DataScienceImg from './DataScienceImg';
 import DesignImg from './DesignImg';

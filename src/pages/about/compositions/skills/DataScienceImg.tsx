@@ -1,4 +1,4 @@
-import { ThemeType } from '../../theme';
+import { ThemeType } from '../../../../theme';
 
 const DataScienceImg = ({ theme }: { theme: ThemeType }) => {
   return (

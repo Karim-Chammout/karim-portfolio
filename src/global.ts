@@ -10,15 +10,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    align-items: center;
     background: ${({ theme }: { theme: ThemeType }) => theme.body};
     color: ${({ theme }: { theme: ThemeType }) => theme.text};
-    display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // height: 100vh;
-    // margin: 0;
-    // padding: 0;
+    display: block;
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    transition: all 0.25s linear;
   }`;

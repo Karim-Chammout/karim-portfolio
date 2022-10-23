@@ -9,36 +9,36 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
 
   function scrollFunction() {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-      document.getElementById('topButton')!.style.visibility = 'visible';
+      (document.getElementById('topButton') as HTMLElement).style.visibility = 'visible';
     } else {
-      document.getElementById('topButton')!.style.visibility = 'hidden';
+      (document.getElementById('topButton') as HTMLElement).style.visibility = 'hidden';
     }
   }
 
-  window.onscroll = function () {
+  window.onscroll = () => {
     scrollFunction();
   };
 
   const onMouseEnter = (color: string, bgColor: string) => {
     /* For the button */
-    const topButton = document.getElementById('topButton')!;
+    const topButton = document.getElementById('topButton') as HTMLElement;
     topButton.style.color = color;
     topButton.style.backgroundColor = bgColor;
 
     /* For arrow icon */
-    const arrow = document.getElementById('arrow')!;
+    const arrow = document.getElementById('arrow') as HTMLElement;
     arrow.style.color = color;
     arrow.style.backgroundColor = bgColor;
   };
 
   const onMouseLeave = (color: string, bgColor: string) => {
     /* For the button */
-    const topButton = document.getElementById('topButton')!;
+    const topButton = document.getElementById('topButton') as HTMLElement;
     topButton.style.color = color;
     topButton.style.backgroundColor = bgColor;
 
     /* For arrow icon */
-    const arrow = document.getElementById('arrow')!;
+    const arrow = document.getElementById('arrow') as HTMLElement;
     arrow.style.color = color;
     arrow.style.backgroundColor = bgColor;
   };
@@ -51,6 +51,7 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
         color: theme.body,
         backgroundColor: theme.text,
         border: `solid 1px ${theme.text}`,
+        zIndex: 999,
       }}
       title="Go up"
       onMouseEnter={() => onMouseEnter(theme.text, theme.body)}

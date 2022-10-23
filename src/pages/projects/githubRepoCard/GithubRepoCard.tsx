@@ -1,6 +1,6 @@
 import { Fade } from 'react-reveal';
 
-import { ThemeType } from '../../theme';
+import { ThemeType } from '../../../theme';
 import './GithubRepoCard.css';
 
 const projectsData = [

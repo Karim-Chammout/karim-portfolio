@@ -1,4 +1,4 @@
-import { ThemeType } from '../../theme';
+import { ThemeType } from '../../../../theme';
 
 const FullStackImg = ({ theme }: { theme: ThemeType }) => {
   return (

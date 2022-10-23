@@ -1,19 +1,15 @@
 import { Fade } from 'react-reveal';
 
 import Button from '../../components/button/Button';
-import Footer from '../../components/footer/Footer';
-import GithubRepoCard from '../../components/githubRepoCard/GithubRepoCard';
-import Header from '../../components/header/Header';
-import TopButton from '../../components/topButton/TopButton';
 import { projectsHeader } from '../../portfolio';
 import { ThemeType } from '../../theme';
+import GithubRepoCard from './githubRepoCard/GithubRepoCard';
 import './Projects.css';
 import ProjectsImg from './ProjectsImg';
 
 const Projects = ({ theme }: { theme: ThemeType }) => {
   return (
     <div className="projects-main">
-      <Header theme={theme} />
       <div className="basic-projects">
         <Fade bottom duration={2000} distance="40px">
           <div className="projects-heading-div">
@@ -44,8 +40,6 @@ const Projects = ({ theme }: { theme: ThemeType }) => {
         theme={theme}
         newTab
       />
-      <Footer theme={theme} />
-      <TopButton theme={theme} />
     </div>
   );
 };

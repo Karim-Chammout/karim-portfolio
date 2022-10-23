@@ -107,7 +107,7 @@
 
 @media (max-width: 768px) {
   .repo-card-div {
-    width: 80%;
+    width: 100%;
     margin: 20px auto;
   }
 

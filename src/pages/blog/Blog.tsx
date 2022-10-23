@@ -3,9 +3,6 @@ import { useQuery } from 'react-query';
 import { Fade } from 'react-reveal';
 
 import sanityClient from '../../client';
-import Footer from '../../components/footer/Footer';
-import Header from '../../components/header/Header';
-import TopButton from '../../components/topButton/TopButton';
 import { ThemeType } from '../../theme';
 import './Blog.css';
 import BlogImage from './BLogImage';
@@ -65,7 +62,6 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
 
   return (
     <div className="blog-main">
-      <Header theme={theme} />
       <header className="blog-header-section">
         <Fade bottom duration={2000} distance="40px">
           <div className="blog-heading-div">
@@ -97,6 +93,7 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
             style={{
               width: '300px',
               height: '40px',
+              margin: '50px 0',
               padding: '8px',
               border: `1px solid ${theme.secondaryText}`,
               borderRadius: '4px',
@@ -111,8 +108,6 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
           )}
         </div>
       </Fade>
-      <Footer theme={theme} />
-      <TopButton theme={theme} />
     </div>
   );
 };
