@@ -2,7 +2,7 @@ import { Fade } from 'react-reveal';
 
 import profile_image from '../../assets/images/karim_image.png';
 import { Button } from '../../components';
-import SocialMedia from '../../components/SocialMedia/SocialMedia';
+import SocialMedia from '../../components/socialMedia/SocialMedia';
 import { contactPageData, greeting } from '../../portfolio';
 import { ThemeType } from '../../theme';
 import AddressImg from './AddressImg';

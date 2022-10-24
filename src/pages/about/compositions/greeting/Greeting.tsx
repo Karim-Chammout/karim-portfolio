@@ -1,7 +1,6 @@
 import { Fade } from 'react-reveal';
 
-import { Button } from '../../../../components';
-import SocialMedia from '../../../../components/SocialMedia/SocialMedia';
+import { Button, SocialMedia } from '../../../../components';
 import { greeting } from '../../../../portfolio';
 import { ThemeType } from '../../../../theme';
 import FeelingProud from './FeelingProud';
