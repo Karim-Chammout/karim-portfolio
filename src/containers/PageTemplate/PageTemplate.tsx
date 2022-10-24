@@ -17,7 +17,7 @@ const PageTemplate = ({ children, theme }: { children: ReactNode; theme: ThemeTy
 
   return (
     <Container>
-      <Navbar theme={theme} />
+      <Navbar />
       {children}
       <TopButton theme={theme} />
       <Footer theme={theme} />

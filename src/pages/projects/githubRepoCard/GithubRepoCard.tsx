@@ -73,7 +73,7 @@ const GithubRepoCard = ({ theme }: { theme: ThemeType }) => {
               {project.description}
             </p>
             <div className="repo-details">
-              <p className="repo-creation-date subTitle" style={{ color: theme.secondaryText }}>
+              <p className="repo-creation-date" style={{ color: theme.secondaryText }}>
                 Tools: {project.tools}
               </p>
             </div>

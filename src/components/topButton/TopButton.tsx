@@ -1,4 +1,5 @@
 import { ThemeType } from '../../theme';
+import ArrowUp from './ArrowUp';
 import './TopButton.css';
 
 const TopButton = ({ theme }: { theme: ThemeType }) => {
@@ -27,7 +28,7 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
 
     /* For arrow icon */
     const arrow = document.getElementById('arrow') as HTMLElement;
-    arrow.style.color = color;
+    arrow.style.fill = color;
     arrow.style.backgroundColor = bgColor;
   };
 
@@ -39,7 +40,7 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
 
     /* For arrow icon */
     const arrow = document.getElementById('arrow') as HTMLElement;
-    arrow.style.color = color;
+    arrow.style.fill = color;
     arrow.style.backgroundColor = bgColor;
   };
 
@@ -57,7 +58,7 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
       onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
       onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
     >
-      <i className="fas fa-arrow-up" id="arrow" aria-hidden="true" />
+      <ArrowUp />
     </div>
   );
 };

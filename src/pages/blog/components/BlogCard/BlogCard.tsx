@@ -2,11 +2,11 @@ import { Fade } from 'react-reveal';
 import { Link } from 'react-router-dom';
 
 import { ThemeType } from '../../../../theme';
-import { Post } from '../../Blog';
+import { PostType } from '../../types';
 import './BlogCard.css';
 import { Card, CardContainer } from './BlogCard.style';
 
-const BlogCard = ({ theme, posts }: { theme: ThemeType; posts: Post[] }) => {
+const BlogCard = ({ theme, posts }: { theme: ThemeType; posts: PostType[] }) => {
   return (
     <Fade bottom duration={2000} distance="40px">
       <CardContainer>
@@ -23,7 +23,7 @@ const BlogCard = ({ theme, posts }: { theme: ThemeType; posts: Post[] }) => {
               </p>
             </Link>
             <div className="blog-details">
-              <p className="blog-tags subTitle" style={{ color: theme.secondaryText }}>
+              <p className="blog-tags" style={{ color: theme.secondaryText }}>
                 Tags: {post.author?.name}
               </p>
             </div>

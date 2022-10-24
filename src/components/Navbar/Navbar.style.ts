@@ -1,44 +1,26 @@
-import { NavLink as NavLinkComponent } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-// import { ThemeType } from '../../theme';
+import { ThemeType } from '../../theme';
 
 const navStyles = styled.nav`
-  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 0;
-  margin: 0px auto;
   margin-bottom: 50px;
 
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media (max-width: 960px) and (min-width: 768px) {
-    font-size: 12px;
-  }
-
-  .logo {
-    display: block;
-    float: left;
-    font-size: 1.5em;
-    text-decoration: none;
-    margin-top: 10px;
-    line-height: normal;
-  }
-  .logo-name {
-    font-family: 'Google Sans Bold Italic';
-    font-weight: bold;
-    padding: 0 1px;
+  .menu-btn {
+    display: none;
   }
 
   .menu-icon {
     cursor: pointer;
-    display: inline-block;
-    float: right;
     padding: 28px 20px;
-    position: relative;
+    position: absolute;
+    right: 0;
+    margin-top: -15px;
+    display: none;
     user-select: none;
   }
 
@@ -55,10 +37,9 @@ const navStyles = styled.nav`
       content: '';
       display: block;
       height: 100%;
+      width: 100%;
       position: absolute;
       transition: all 0.2s ease-out;
-      width: 100%;
-      top: 0;
     }
     &:before {
       top: 5px;
@@ -67,25 +48,46 @@ const navStyles = styled.nav`
       top: -5px;
     }
   }
-  .menu-btn {
-    display: none;
+
+  .menu-btn:checked ~ ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 275px;
   }
-  .menu-btn:checked ~ .menu {
-    max-height: 370px;
-  }
+
   .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;
   }
+
   .menu-btn:checked ~ .menu-icon .navicon:before {
     transform: rotate(-45deg);
-  }
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
+    top: 0;
   }
 
-  @media (min-width: 768px) {
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    box-sizing: border-box;
+    color: ${({ theme }: { theme: ThemeType }) => theme.text};
+    &:hover {
+      background: ${({ theme }: { theme: ThemeType }) => theme.highlight};
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
     .menu-icon {
-      display: none;
+      display: flex;
     }
   }
 `;
@@ -94,29 +96,25 @@ const navListStyles = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
-  clear: both;
-  max-height: 0;
+  display: flex;
   transition: max-height 0.2s ease-out;
 
-  @media (min-width: 768px) {
-    max-height: none;
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
 const navItemStyles = styled.li`
-  a {
-    padding: 20px 20px;
-  }
-  @media (min-width: 768px) {
-    float: left;
-  }
+  list-style: none;
 `;
 
-const navLinkStyles = styled(NavLinkComponent)`
+const logoStyles = styled(NavLink)`
   display: block;
-  /* padding: 20px 20px; */
   text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: italic;
+  color: ${({ theme }: { theme: ThemeType }) => theme.text};
 `;
 
 /**
@@ -125,4 +123,4 @@ const navLinkStyles = styled(NavLinkComponent)`
 export const Nav = navStyles;
 export const NavList = navListStyles;
 export const NavItem = navItemStyles;
-export const NavLink = navLinkStyles;
+export const Logo = logoStyles;

@@ -5,10 +5,15 @@ import { ThemeType } from '../../theme';
 import './SocialMedia.css';
 
 const IconWrapper = styled.span`
-  i {
+  img {
     background-color: ${(props: { backgroundColor: string }) => props.backgroundColor};
+    height: 40px;
+    width: 40px;
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 25%;
   }
-  &:hover i {
+  img:hover {
     background-color: ${({ theme }) => theme.text};
     transition: 0.3s ease-in;
   }
@@ -25,8 +30,8 @@ const socialMedia = ({ theme }: { theme: ThemeType }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconWrapper {...media} theme={theme}>
-            <i className={`fab ${media.fontAwesomeIcon}`} />
+          <IconWrapper backgroundColor={media.backgroundColor} theme={theme}>
+            <img src={media.imgSrc} alt={media.name} />
           </IconWrapper>
         </a>
       ))}

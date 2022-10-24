@@ -1,91 +1,80 @@
+import { useEffect, useRef } from 'react';
 import { Fade } from 'react-reveal';
 import { NavLink } from 'react-router-dom';
 
 import { greeting } from '../../portfolio';
-import { ThemeType } from '../../theme';
-import './Navbar.css';
-// import { Nav, NavItem, NavLink, NavList } from './Navbar.style';
+import { Logo, Nav, NavItem, NavList } from './Navbar.style';
 import SeoHeader from './seoHeader/SeoHeader';
 
-const onMouseEnter = (event: any, color: string) => {
-  const el = event.target;
-  el.style.backgroundColor = color;
-};
+const links = [
+  {
+    to: '/blog',
+    name: 'Blog',
+  },
+  {
+    to: '/projects',
+    name: 'Projects',
+  },
+  {
+    to: '/about',
+    name: 'About',
+  },
+  {
+    to: '/contact',
+    name: 'Contact Me',
+  },
+];
 
-const onMouseOut = (event: any) => {
-  const el = event.target;
-  el.style.backgroundColor = 'transparent';
-};
+const Navbar = () => {
+  const checkedInput = useRef<HTMLInputElement>(null);
 
-const Navbar = ({ theme }: { theme: ThemeType }) => {
+  const closeNav = () => {
+    if (checkedInput.current) {
+      checkedInput.current.checked = false;
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        closeNav();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Fade top duration={1000} distance="20px">
       <SeoHeader />
-      <nav className="header">
-        <NavLink to="/splash" className="logo">
-          <span className="logo-name" style={{ color: theme.text }}>
-            {`<${greeting.logo_name} />`}
-          </span>
-        </NavLink>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <Nav>
+        <Logo to="/splash">{`<${greeting.logo_name} />`}</Logo>
+        <input className="menu-btn" type="checkbox" id="menu-btn" ref={checkedInput} />
         <label className="menu-icon" htmlFor="menu-btn">
           <span className="navicon" />
         </label>
-        <ul className="menu">
-          <li>
-            <NavLink
-              to="/blog"
-              style={({ isActive }) => ({
-                color: theme.text,
-                fontWeight: isActive ? 'bold' : '',
-              })}
-              onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-              onMouseOut={(event) => onMouseOut(event)}
-            >
-              Blog
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/projects"
-              style={({ isActive }) => ({
-                color: theme.text,
-                fontWeight: isActive ? 'bold' : '',
-              })}
-              onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-              onMouseOut={(event) => onMouseOut(event)}
-            >
-              Projects
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              style={({ isActive }) => ({
-                color: theme.text,
-                fontWeight: isActive ? 'bold' : '',
-              })}
-              onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-              onMouseOut={(event) => onMouseOut(event)}
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              style={({ isActive }) => ({
-                color: theme.text,
-                fontWeight: isActive ? 'bold' : '',
-              })}
-              onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-              onMouseOut={(event) => onMouseOut(event)}
-            >
-              Contact Me
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+        <NavList>
+          {links.map((link) => (
+            <NavItem key={link.name}>
+              <NavLink
+                className="nav-link"
+                to={link.to}
+                onClick={closeNav}
+                style={({ isActive }) => ({
+                  fontWeight: isActive ? 'bold' : '',
+                })}
+              >
+                {link.name}
+              </NavLink>
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
     </Fade>
   );
 };

@@ -17,7 +17,7 @@ const Greeting = ({ theme }: { theme: ThemeType }) => {
               <h1 className="greeting-text" style={{ color: theme.text }}>
                 {greeting.title}
               </h1>
-              <p className="greeting-text-p subTitle" style={{ color: theme.secondaryText }}>
+              <p className="greeting-text-p" style={{ color: theme.secondaryText }}>
                 {greeting.subTitle}
               </p>
               <SocialMedia theme={theme} />

@@ -7,20 +7,7 @@ import { ThemeType } from '../../theme';
 import './Blog.css';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
-
-export interface Post {
-  _id: string;
-  title?: string;
-  author?: {
-    name: string;
-    image: string;
-  };
-  body?: object;
-  slug: {
-    current: string;
-  };
-  description: string;
-}
+import { PostType } from './types';
 
 const fetchAllPosts = async () => {
   const postQuery = `
@@ -46,7 +33,7 @@ const fetchAllPosts = async () => {
 
 const Blog = ({ theme }: { theme: ThemeType }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const { data, isLoading, error } = useQuery<Post[]>('posts', fetchAllPosts);
+  const { data, isLoading, error } = useQuery<PostType[]>('posts', fetchAllPosts);
 
   if (error || !data) {
     return null;
@@ -72,10 +59,7 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
               <h1 className="blog-heading-text" style={{ color: theme.text }}>
                 This is my Blog
               </h1>
-              <p
-                className="blog-header-detail-text subTitle"
-                style={{ color: theme.secondaryText }}
-              >
+              <p className="blog-header-detail-text" style={{ color: theme.secondaryText }}>
                 I post in my blog once a week, you can find here things related to JavaScript,
                 TypeScript, React, Web design, Styles, Tips and Tricks, Clean code Web design
               </p>

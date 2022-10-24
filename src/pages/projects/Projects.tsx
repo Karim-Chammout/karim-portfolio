@@ -20,10 +20,7 @@ const Projects = ({ theme }: { theme: ThemeType }) => {
               <h1 className="projects-heading-text" style={{ color: theme.text }}>
                 {projectsHeader.title}
               </h1>
-              <p
-                className="projects-header-detail-text subTitle"
-                style={{ color: theme.secondaryText }}
-              >
+              <p className="projects-header-detail-text" style={{ color: theme.secondaryText }}>
                 {projectsHeader.description}
               </p>
             </div>

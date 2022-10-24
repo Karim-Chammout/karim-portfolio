@@ -38,7 +38,7 @@ const SkillSection = ({ theme }: { theme: ThemeType }) => {
                 {skill.skills.map((skillSentence) => (
                   <p
                     key={skillSentence}
-                    className="subTitle skills-text"
+                    className="skills-text"
                     style={{ color: theme.secondaryText }}
                   >
                     {skillSentence}
