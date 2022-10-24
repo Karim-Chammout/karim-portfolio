@@ -11,7 +11,7 @@ import PageTemplate from './PageTemplate';
 
 const Main = ({ theme }: { theme: ThemeType }) => {
   return (
-    <PageTemplate theme={theme}>
+    <PageTemplate>
       <Routes>
         <Route path="/" element={<Splash theme={theme} />} />
         <Route path="/splash" element={<Splash theme={theme} />} />

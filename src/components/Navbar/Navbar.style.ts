@@ -106,15 +106,22 @@ const navListStyles = styled.ul`
 
 const navItemStyles = styled.li`
   list-style: none;
+  font-size: 18px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const logoStyles = styled(NavLink)`
   display: block;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: bold;
   font-style: italic;
   color: ${({ theme }: { theme: ThemeType }) => theme.text};
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `;
 
 /**

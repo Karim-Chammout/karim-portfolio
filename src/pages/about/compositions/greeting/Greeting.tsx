@@ -1,7 +1,7 @@
 import { Fade } from 'react-reveal';
 
-import Button from '../../../../components/button/Button';
-import SocialMedia from '../../../../components/socialMedia/SocialMedia';
+import { Button } from '../../../../components';
+import SocialMedia from '../../../../components/SocialMedia/SocialMedia';
 import { greeting } from '../../../../portfolio';
 import { ThemeType } from '../../../../theme';
 import FeelingProud from './FeelingProud';
@@ -20,15 +20,11 @@ const Greeting = ({ theme }: { theme: ThemeType }) => {
               <p className="greeting-text-p" style={{ color: theme.secondaryText }}>
                 {greeting.subTitle}
               </p>
-              <SocialMedia theme={theme} />
-              <div className="portfolio-repo-btn-div">
-                <Button
-                  text="Follow Me On GitHub"
-                  href={greeting.portfolio_repository}
-                  theme={theme}
-                  className="portfolio-repo-btn"
-                  newTab
-                />
+              <div className="social-media-icons">
+                <SocialMedia />
+              </div>
+              <div className="portfolio-repo-btn-div" style={{ marginTop: '20px' }}>
+                <Button text="Follow Me On GitHub" href={greeting.portfolio_repository} newTab />
               </div>
             </div>
           </div>

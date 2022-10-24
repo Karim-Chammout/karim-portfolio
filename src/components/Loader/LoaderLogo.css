@@ -1,5 +1,11 @@
 .raw_logo {
   height: 305;
   width: 440;
-  margin-left: 60px;
+  margin-left: 75px;
+}
+
+@media screen and (min-width: 768px) {
+  .raw_logo {
+    margin-left: 160px;
+  }
 }

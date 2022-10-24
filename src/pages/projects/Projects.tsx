@@ -1,6 +1,6 @@
 import { Fade } from 'react-reveal';
 
-import Button from '../../components/button/Button';
+import { Button } from '../../components';
 import { projectsHeader } from '../../portfolio';
 import { ThemeType } from '../../theme';
 import GithubRepoCard from './githubRepoCard/GithubRepoCard';
@@ -30,13 +30,9 @@ const Projects = ({ theme }: { theme: ThemeType }) => {
       <div className="repo-cards-div-main">
         <GithubRepoCard theme={theme} />
       </div>
-      <Button
-        text="More Projects"
-        className="project-button"
-        href="https://github.com/Karim-Chammout"
-        theme={theme}
-        newTab
-      />
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+        <Button text={projectsHeader.ctaText} href="https://github.com/Karim-Chammout" newTab />
+      </div>
     </div>
   );
 };

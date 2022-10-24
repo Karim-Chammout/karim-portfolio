@@ -1,8 +1,8 @@
 import { Fade } from 'react-reveal';
 
 import profile_image from '../../assets/images/karim_image.png';
-import Button from '../../components/button/Button';
-import SocialMedia from '../../components/socialMedia/SocialMedia';
+import { Button } from '../../components';
+import SocialMedia from '../../components/SocialMedia/SocialMedia';
 import { contactPageData, greeting } from '../../portfolio';
 import { ThemeType } from '../../theme';
 import AddressImg from './AddressImg';
@@ -36,9 +36,9 @@ const Contact = ({ theme }: { theme: ThemeType }) => {
               <p className="contact-header-detail-text" style={{ color: theme.secondaryText }}>
                 {contactSection.description}
               </p>
-              <SocialMedia theme={theme} />
+              <SocialMedia />
               <div className="resume-btn-div">
-                <Button text="See My Resume" href={greeting.resumeLink} theme={theme} newTab />
+                <Button text="See My Resume" href={greeting.resumeLink} newTab />
               </div>
             </div>
           </div>
@@ -65,7 +65,6 @@ const Contact = ({ theme }: { theme: ThemeType }) => {
                 <Button
                   text="Visit on Google Maps"
                   href={addressSection.location_map_link}
-                  theme={theme}
                   newTab
                 />
               </div>

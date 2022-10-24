@@ -1,13 +1,9 @@
 import { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import Container from '../../components/Container';
-import Footer from '../../components/footer/Footer';
-import Navbar from '../../components/Navbar/Navbar';
-import TopButton from '../../components/topButton/TopButton';
-import { ThemeType } from '../../theme';
+import { Container, Footer, Navbar, TopButton } from '../../components';
 
-const PageTemplate = ({ children, theme }: { children: ReactNode; theme: ThemeType }) => {
+const PageTemplate = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
   const isSplash = location.pathname === '/' || location.pathname === '/splash';
 
@@ -19,8 +15,8 @@ const PageTemplate = ({ children, theme }: { children: ReactNode; theme: ThemeTy
     <Container>
       <Navbar />
       {children}
-      <TopButton theme={theme} />
-      <Footer theme={theme} />
+      <TopButton />
+      <Footer />
     </Container>
   );
 };

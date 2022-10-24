@@ -1,65 +1,40 @@
-import { ThemeType } from '../../theme';
+import { useEffect, useRef } from 'react';
+
 import ArrowUp from './ArrowUp';
-import './TopButton.css';
+import { Wrapper } from './TopButton.style';
 
-const TopButton = ({ theme }: { theme: ThemeType }) => {
-  function GoUpEvent() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
 
-  function scrollFunction() {
-    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-      (document.getElementById('topButton') as HTMLElement).style.visibility = 'visible';
-    } else {
-      (document.getElementById('topButton') as HTMLElement).style.visibility = 'hidden';
-    }
-  }
+const TopButton = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  window.onscroll = () => {
-    scrollFunction();
-  };
+  useEffect(() => {
+    const scrollListener = () => {
+      if (scrollRef.current) {
+        if (window.scrollY > 100) {
+          scrollRef.current.style.visibility = 'visible';
+        } else {
+          scrollRef.current.style.visibility = 'hidden';
+        }
+      }
+    };
 
-  const onMouseEnter = (color: string, bgColor: string) => {
-    /* For the button */
-    const topButton = document.getElementById('topButton') as HTMLElement;
-    topButton.style.color = color;
-    topButton.style.backgroundColor = bgColor;
+    window.addEventListener('scroll', scrollListener);
 
-    /* For arrow icon */
-    const arrow = document.getElementById('arrow') as HTMLElement;
-    arrow.style.color = color;
-    arrow.style.backgroundColor = bgColor;
-  };
-
-  const onMouseLeave = (color: string, bgColor: string) => {
-    /* For the button */
-    const topButton = document.getElementById('topButton') as HTMLElement;
-    topButton.style.color = color;
-    topButton.style.backgroundColor = bgColor;
-
-    /* For arrow icon */
-    const arrow = document.getElementById('arrow') as HTMLElement;
-    arrow.style.color = color;
-    arrow.style.backgroundColor = bgColor;
-  };
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
 
   return (
-    <div
-      onClick={GoUpEvent}
-      id="topButton"
-      style={{
-        color: theme.body,
-        backgroundColor: theme.text,
-        border: `solid 1px ${theme.text}`,
-        zIndex: 999,
-      }}
-      title="Go up"
-      onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
-      onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
-    >
+    <Wrapper onClick={scrollToTop} ref={scrollRef} title="Go up">
       <ArrowUp />
-    </div>
+    </Wrapper>
   );
 };
 export default TopButton;

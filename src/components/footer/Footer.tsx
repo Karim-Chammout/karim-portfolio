@@ -1,23 +1,20 @@
 import { Fade } from 'react-reveal';
 
 import { greeting } from '../../portfolio';
-import { ThemeType } from '../../theme';
-import './Footer.css';
+import { Name, Text, Wrapper } from './Footer.style';
 
-const Footer = ({ theme }: { theme: ThemeType }) => {
+const Footer = () => {
+  const currentDate = new Date().getFullYear();
+
   return (
-    <div className="footer-div">
+    <Wrapper>
       <Fade>
-        <div>
-          <p className="footer-text" style={{ color: theme.secondaryText }}>
-            Made with <span role="img">☕ & ❤️</span> by {greeting.title}
-          </p>
-          <p className="footer-text" style={{ color: theme.secondaryText }}>
-            Copyright © {new Date().getFullYear()}
-          </p>
-        </div>
+        <Text>
+          Made with <span role="img">☕ & ❤️</span> by <Name>{greeting.title}</Name>
+        </Text>
+        <Text>Copyright © {currentDate}</Text>
       </Fade>
-    </div>
+    </Wrapper>
   );
 };
 

@@ -114,6 +114,7 @@ const projectsHeader = {
   title: 'Projects',
   description:
     'I always strive to include new and innovative interactions to enhance the user experience. My projects makes use of vast variety of latest technology tools.',
+  ctaText: 'More Projects',
   avatar_image_path: 'projects_image.svg',
 };
 
