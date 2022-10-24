@@ -1,13 +1,15 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import About from '../pages/About/index';
-import BlogDetails from '../pages/Blog/BlogDetails/index';
-import Blog from '../pages/Blog/index';
-import Contact from '../pages/Contact/index';
-import Projects from '../pages/Projects/index';
-import Splash from '../pages/Splash/index';
 import { ThemeType } from '../theme';
 import PageTemplate from './PageTemplate';
+
+const About = React.lazy(() => import('../pages/About'));
+const Blog = React.lazy(() => import('../pages/Blog'));
+const BlogDetails = React.lazy(() => import('../pages/Blog/BlogDetails'));
+const Contact = React.lazy(() => import('../pages/Contact'));
+const Projects = React.lazy(() => import('../pages/Projects'));
+const Splash = React.lazy(() => import('../pages/Splash'));
 
 const Main = ({ theme }: { theme: ThemeType }) => {
   return (
