@@ -4,12 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 import { ThemeType } from '../theme';
 import PageTemplate from './PageTemplate';
 
-const About = React.lazy(() => import('../pages/About/About'));
-const Blog = React.lazy(() => import('../pages/Blog/Blog'));
-const BlogDetails = React.lazy(() => import('../pages/Blog/BlogDetails/BlogDetails'));
-const Contact = React.lazy(() => import('../pages/Contact/Contact'));
-const Projects = React.lazy(() => import('../pages/Projects/Projects'));
-const Splash = React.lazy(() => import('../pages/Splash/Splash'));
+const About = React.lazy(() => import('../pages/About'));
+const Blog = React.lazy(() => import('../pages/Blog'));
+const BlogDetails = React.lazy(() => import('../pages/Blog/BlogDetails'));
+const Contact = React.lazy(() => import('../pages/Contact'));
+const Projects = React.lazy(() => import('../pages/Projects'));
+const Splash = React.lazy(() => import('../pages/Splash'));
 
 const Main = ({ theme }: { theme: ThemeType }) => {
   return (
