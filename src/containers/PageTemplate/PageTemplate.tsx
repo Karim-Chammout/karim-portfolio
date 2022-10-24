@@ -1,10 +1,9 @@
-import { ReactNode, Suspense } from 'react';
+import { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Container from '../../components/Container';
 import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
-import Spinner from '../../components/Spinner/Spinner';
 import TopButton from '../../components/topButton/TopButton';
 import { ThemeType } from '../../theme';
 
@@ -17,14 +16,12 @@ const PageTemplate = ({ children, theme }: { children: ReactNode; theme: ThemeTy
   }
 
   return (
-    <Suspense fallback={<Spinner />}>
-      <Container>
-        <Navbar />
-        {children}
-        <TopButton theme={theme} />
-        <Footer theme={theme} />
-      </Container>
-    </Suspense>
+    <Container>
+      <Navbar />
+      {children}
+      <TopButton theme={theme} />
+      <Footer theme={theme} />
+    </Container>
   );
 };
 

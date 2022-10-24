@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { ThemeType } from '../../theme';
 
-const spinnerStles = styled.div`
+export default styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,8 +31,3 @@ const spinnerStles = styled.div`
     }
   }
 `;
-
-/**
- * Component style declarations
- */
-export const StyledSpinner = spinnerStles;

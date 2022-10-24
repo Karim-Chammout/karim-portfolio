@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { Fade } from 'react-reveal';
 
 import sanityClient from '../../client';
+import { Spinner } from '../../components/Spinner';
 import { ThemeType } from '../../theme';
 import './Blog.css';
 import BlogImage from './BLogImage';
@@ -40,7 +41,7 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
   }
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   const filteredPosts = data.filter((post) => {

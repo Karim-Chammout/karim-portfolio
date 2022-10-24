@@ -2,6 +2,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
 import sanityClient from '../../../client';
+import { Spinner } from '../../../components/Spinner';
 import { PostType } from '../types';
 
 const fetchPost = async (slug?: string) => {
@@ -35,19 +36,7 @@ const BlogDetails = () => {
   }
 
   if (isLoading) {
-    return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          alignContent: 'center',
-          height: '100vh',
-        }}
-      >
-        Loading...
-      </div>
-    );
+    return <Spinner />;
   }
 
   return (

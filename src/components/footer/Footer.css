@@ -1,9 +1,8 @@
+.footer-div {
+  margin: 6rem 0 2rem 0;
+}
+
 .footer-text {
   text-align: center;
   font-weight: bold;
-  /* font-family: "Google Sans Regular"; */
-}
-
-.footer-div {
-  margin: 6rem 0 2rem 0;
 }
