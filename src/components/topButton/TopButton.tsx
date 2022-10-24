@@ -28,7 +28,7 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
 
     /* For arrow icon */
     const arrow = document.getElementById('arrow') as HTMLElement;
-    arrow.style.fill = color;
+    arrow.style.color = color;
     arrow.style.backgroundColor = bgColor;
   };
 
@@ -40,7 +40,7 @@ const TopButton = ({ theme }: { theme: ThemeType }) => {
 
     /* For arrow icon */
     const arrow = document.getElementById('arrow') as HTMLElement;
-    arrow.style.fill = color;
+    arrow.style.color = color;
     arrow.style.backgroundColor = bgColor;
   };
 
