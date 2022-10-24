@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 
-import About from '../pages/About';
-import Blog from '../pages/Blog';
-import BlogDetails from '../pages/Blog/BlogDetails';
-import Contact from '../pages/Contact';
-import Projects from '../pages/Projects';
-import Splash from '../pages/Splash';
+import About from '../pages/About/index';
+import BlogDetails from '../pages/Blog/BlogDetails/index';
+import Blog from '../pages/Blog/index';
+import Contact from '../pages/Contact/index';
+import Projects from '../pages/Projects/index';
+import Splash from '../pages/Splash/index';
 import { ThemeType } from '../theme';
 import PageTemplate from './PageTemplate';
 
