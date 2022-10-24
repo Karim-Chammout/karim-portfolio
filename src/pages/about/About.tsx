@@ -1,11 +1,10 @@
 import { ThemeType } from '../../theme';
-import Greeting from './compositions/greeting/Greeting';
-import Skills from './compositions/skills/Skills';
+import { Greeting, Skills } from './compositions';
 
 const About = ({ theme }: { theme: ThemeType }) => {
   return (
     <>
-      <Greeting theme={theme} />
+      <Greeting />
       <Skills theme={theme} />
     </>
   );
