@@ -75,7 +75,7 @@ const cardStyles = styled.article`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin: 10px 0;
+    margin: 15px 0;
   }
 `;
 
@@ -101,6 +101,7 @@ const projectDescStyles = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin: 10px 0;
 
   @media (max-width: 768px) {
     font-size: 1em;

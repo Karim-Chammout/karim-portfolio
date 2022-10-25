@@ -4,8 +4,7 @@ import { Fade } from 'react-reveal';
 
 import sanityClient from '../../client';
 import { Spinner } from '../../components/Spinner';
-import { ThemeType } from '../../theme';
-import './Blog.css';
+import { H1, ImgWrapper, InfoWrapper, SectionWrapper, Text } from './Blog.style';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
 import { PostType } from './types';
@@ -32,7 +31,7 @@ const fetchAllPosts = async () => {
   return sanityClient.fetch(postQuery);
 };
 
-const Blog = ({ theme }: { theme: ThemeType }) => {
+const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { data, isLoading, error } = useQuery<PostType[]>('posts', fetchAllPosts);
 
@@ -49,25 +48,21 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
   });
 
   return (
-    <div className="blog-main">
-      <header className="blog-header-section">
-        <Fade bottom duration={2000} distance="40px">
-          <div className="blog-heading-div">
-            <div className="blog-heading-img-div">
-              <BlogImage theme={theme} />
-            </div>
-            <div className="blog-heading-text-div">
-              <h1 className="blog-heading-text" style={{ color: theme.text }}>
-                This is my Blog
-              </h1>
-              <p className="blog-header-detail-text" style={{ color: theme.secondaryText }}>
-                I post in my blog once a week, you can find here things related to JavaScript,
-                TypeScript, React, Web design, Styles, Tips and Tricks, Clean code Web design
-              </p>
-            </div>
-          </div>
-        </Fade>
-      </header>
+    <>
+      <Fade bottom duration={2000} distance="40px">
+        <SectionWrapper>
+          <ImgWrapper>
+            <BlogImage />
+          </ImgWrapper>
+          <InfoWrapper>
+            <H1>This is my Blog</H1>
+            <Text>
+              I post in my blog once a week, you can find here things related to JavaScript,
+              TypeScript, React, Web design, Styles, Tips and Tricks, Clean code Web design
+            </Text>
+          </InfoWrapper>
+        </SectionWrapper>
+      </Fade>
       <Fade bottom duration={2000} distance="40px">
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <input
@@ -80,20 +75,14 @@ const Blog = ({ theme }: { theme: ThemeType }) => {
               height: '40px',
               margin: '50px 0',
               padding: '8px',
-              border: `1px solid ${theme.secondaryText}`,
+              border: `1px solid #7F8DAA`,
               borderRadius: '4px',
             }}
           />
         </div>
-        <div className="blog-cards-div-main">
-          {filteredPosts.length > 0 ? (
-            <BlogCard theme={theme} posts={filteredPosts} />
-          ) : (
-            <h1>No result found!</h1>
-          )}
-        </div>
+        {filteredPosts.length > 0 ? <BlogCard posts={filteredPosts} /> : <h1>No result found!</h1>}
       </Fade>
-    </div>
+    </>
   );
 };
 

@@ -15,7 +15,7 @@ const App = () => {
       <GlobalStyles />
       <QueryClientProvider client={client}>
         <Router>
-          <Main theme={chosenTheme} />
+          <Main />
         </Router>
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>

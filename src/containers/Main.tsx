@@ -6,16 +6,15 @@ import BlogDetails from '../pages/blog/BlogDetails';
 import Contact from '../pages/contact';
 import Projects from '../pages/projects';
 import Splash from '../pages/splash';
-import { ThemeType } from '../theme';
 import PageTemplate from './PageTemplate';
 
-const Main = ({ theme }: { theme: ThemeType }) => {
+const Main = () => {
   return (
     <PageTemplate>
       <Routes>
-        <Route path="/" element={<Splash theme={theme} />} />
-        <Route path="/splash" element={<Splash theme={theme} />} />
-        <Route path="/blog" element={<Blog theme={theme} />} />
+        <Route path="/" element={<Splash />} />
+        <Route path="/splash" element={<Splash />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
