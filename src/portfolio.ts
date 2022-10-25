@@ -115,21 +115,22 @@ const projectsHeader = {
   description:
     'I always strive to include new and innovative interactions to enhance the user experience. My projects makes use of vast variety of latest technology tools.',
   ctaText: 'More Projects',
-  avatar_image_path: 'projects_image.svg',
 };
 
 // Contact Page
 const contactPageData = {
   contactSection: {
     title: 'Contact Me',
-    profile_image_path: 'karim_image.png',
+    alt_img_name: 'Karim Chammout',
+    subHeader: "Say Hello, I won't bite... 😁",
     description:
       'I am available on almost every social media. You can fire me an email and I will reply within 24 hours.',
+    ctaText: 'See My Resume',
   },
   addressSection: {
     title: 'Address',
     subtitle: 'Turkey - Istanbul',
-    avatar_image_path: 'address_image.svg',
+    ctaText: 'Visit on Google Maps',
     location_map_link: 'https://goo.gl/maps/Nd8VGEBZYKLXc4oB6',
   },
   phoneSection: {

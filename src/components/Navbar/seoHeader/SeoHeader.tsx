@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 const SeoHeader = () => {
   return (
     <Helmet>
+      <title>Karim Chammout</title>
       {/* <!-- Primary Meta Tags --> */}
       <meta name="title" content="Karim Chammout" />
       <meta

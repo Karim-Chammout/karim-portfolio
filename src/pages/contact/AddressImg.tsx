@@ -1,6 +1,6 @@
-import { ThemeType } from '../../theme';
+import { chosenTheme as theme } from '../../theme';
 
-const AddressImg = ({ theme }: { theme: ThemeType }) => {
+const AddressImg = () => {
   return (
     <svg
       id="aaafdec0-95c8-49a3-a8f8-64216c6da511"
