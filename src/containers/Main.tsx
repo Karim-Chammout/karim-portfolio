@@ -18,7 +18,7 @@ const Main = ({ theme }: { theme: ThemeType }) => {
         <Route path="/blog" element={<Blog theme={theme} />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/projects" element={<Projects theme={theme} />} />
-        <Route path="/about" element={<About theme={theme} />} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact theme={theme} />} />
       </Routes>
     </PageTemplate>

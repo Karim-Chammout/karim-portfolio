@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /* eslint-disable react/no-danger */
-import { ThemeType } from '../../theme';
+import { chosenTheme as theme } from '../../theme';
 import './LoaderLogo.css';
 
-const LogoLoader = ({ theme }: { theme: ThemeType; id?: string }) => {
+const LogoLoader = ({ id }: { id?: string }) => {
   return (
     <svg
       className="raw_logo"

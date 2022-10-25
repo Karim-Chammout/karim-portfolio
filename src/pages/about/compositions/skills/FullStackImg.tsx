@@ -1,6 +1,6 @@
-import { ThemeType } from '../../../../theme';
+import { chosenTheme as theme } from '../../../../theme';
 
-const FullStackImg = ({ theme }: { theme: ThemeType }) => {
+const FullStackImg = () => {
   return (
     <svg
       id="f0a8f4ba-cc2b-4400-9e08-d246a0bad060"

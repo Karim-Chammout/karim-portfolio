@@ -1,11 +1,10 @@
-import { ThemeType } from '../../theme';
 import { Greeting, Skills } from './compositions';
 
-const About = ({ theme }: { theme: ThemeType }) => {
+const About = () => {
   return (
     <>
       <Greeting />
-      <Skills theme={theme} />
+      <Skills />
     </>
   );
 };

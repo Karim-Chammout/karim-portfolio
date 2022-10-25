@@ -1,6 +1,6 @@
-import { ThemeType } from '../../../../theme';
+import { chosenTheme as theme } from '../../../../theme';
 
-const DesignImg = ({ theme }: { theme: ThemeType }) => {
+const DesignImg = () => {
   return (
     <svg
       id="1c51936f-ad83-4493-a1e8-5a7ca1846cda"

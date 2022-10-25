@@ -1,53 +1,42 @@
 import { Fade } from 'react-reveal';
 
 import { skills } from '../../../../portfolio';
-import { ThemeType } from '../../../../theme';
 import DataScienceImg from './DataScienceImg';
 import DesignImg from './DesignImg';
 import FullStackImg from './FullStackImg';
-import './Skills.css';
+import { ContentWrapper, H3, ImgWrapper, SkillWrapper, Text } from './Skills.style';
 
-const GetSkillSvg = ({ fileName, theme }: { fileName: string; theme: ThemeType }) => {
-  if (fileName === 'DataScienceImg') return <DataScienceImg theme={theme} />;
-  if (fileName === 'FullStackImg') return <FullStackImg theme={theme} />;
+const GetSkillSvg = ({ fileName }: { fileName: string }) => {
+  if (fileName === 'DataScienceImg') return <DataScienceImg />;
+  if (fileName === 'FullStackImg') return <FullStackImg />;
 
-  return <DesignImg theme={theme} />;
+  return <DesignImg />;
 };
 
-const SkillSection = ({ theme }: { theme: ThemeType }) => {
+const SkillSection = () => {
   return (
-    <div>
+    <>
       {skills.data.map((skill) => (
-        <div key={skill.title} className="skills-main-div">
+        <SkillWrapper key={skill.title}>
           <Fade left duration={2000}>
-            <div className="skills-image-div">
-              <GetSkillSvg fileName={skill.fileName} theme={theme} />
-            </div>
+            <ImgWrapper>
+              <GetSkillSvg fileName={skill.fileName} />
+            </ImgWrapper>
           </Fade>
 
-          <div className="skills-text-div">
+          <ContentWrapper>
             <Fade right duration={1000}>
-              <h1 className="skills-heading" style={{ color: theme.text }}>
-                {skill.title}
-              </h1>
+              <H3>{skill.title}</H3>
             </Fade>
             <Fade right duration={2000}>
-              <div>
-                {skill.skills.map((skillSentence) => (
-                  <p
-                    key={skillSentence}
-                    className="skills-text"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {skillSentence}
-                  </p>
-                ))}
-              </div>
+              {skill.skills.map((skillSentence) => (
+                <Text key={skillSentence}>{skillSentence}</Text>
+              ))}
             </Fade>
-          </div>
-        </div>
+          </ContentWrapper>
+        </SkillWrapper>
       ))}
-    </div>
+    </>
   );
 };
 

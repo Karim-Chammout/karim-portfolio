@@ -5,15 +5,15 @@ import LoaderLogo from '../../components/Loader/LoaderLogo';
 import { ThemeType } from '../../theme';
 import './Splash.css';
 
-function AnimatedSplash({ theme }: { theme: ThemeType }) {
+const AnimatedSplash = ({ theme }: { theme: ThemeType }) => {
   return (
     <div className="logo_wrapper">
       <div className="screen" style={{ backgroundColor: theme.text }}>
-        <LoaderLogo id="logo" theme={theme} />
+        <LoaderLogo id="logo" />
       </div>
     </div>
   );
-}
+};
 
 const Splash = ({ theme }: { theme: ThemeType }) => {
   const [redirect, setRedirect] = useState(false);

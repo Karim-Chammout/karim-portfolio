@@ -1,6 +1,6 @@
-import { ThemeType } from '../../../../theme';
+import { chosenTheme as theme } from '../../../../theme';
 
-const DataScienceImg = ({ theme }: { theme: ThemeType }) => {
+const DataScienceImg = () => {
   return (
     <svg
       id="fa973782-3a18-4630-a762-87130b613ac3"
