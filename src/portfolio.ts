@@ -110,11 +110,55 @@ const skills = {
 };
 
 // Projects Page
-const projectsHeader = {
+const projectsData = {
   title: 'Projects',
   description:
     'I always strive to include new and innovative interactions to enhance the user experience. My projects makes use of vast variety of latest technology tools.',
   ctaText: 'More Projects',
+  projectsList: [
+    {
+      id: 1,
+      name: 'The fact of the day',
+      url: 'https://fact-of-the-day.karim-dev.com',
+      description: 'A web application where we share a new fact everyday to learn something new',
+      tools: 'HTML - CSS - JS - TS - @emotion/react - MUI - React - Firebase',
+    },
+    {
+      id: 2,
+      name: 'OxygenDevs',
+      url: 'https://github.com/Karim-Chammout/Oxygen-Devs',
+      description: 'Web Design Agency',
+      tools: 'HTML - CSS - BootStrap',
+    },
+    {
+      id: 3,
+      name: 'Google Assistant Bootstrap',
+      url: 'https://github.com/Karim-Chammout/Google-Assistant-Bootstrap',
+      description: 'Google Assistant Design with Bootstrap',
+      tools: 'HTML - CSS - BootStrap',
+    },
+    {
+      id: 4,
+      name: 'Portfolio Design',
+      url: 'https://github.com/Karim-Chammout/Temporary-Portfolio',
+      description: 'Designing a template for a portfolio',
+      tools: 'HTML - CSS - BootStrap',
+    },
+    {
+      id: 5,
+      name: 'React TV Show',
+      url: 'https://github.com/Karim-Chammout/react-tvshow-project',
+      description: 'TV Shows Application To search for your favorite shows',
+      tools: 'HTML - CSS - BootStrap - React - React-router-dom',
+    },
+    {
+      id: 6,
+      name: 'React Tesla clone',
+      url: 'https://github.com/Karim-Chammout/tesla-clone',
+      description: 'Cloning the original Tesla website using React.js',
+      tools: 'HTML - CSS - Styled-components - React - React-redux - React-reveal',
+    },
+  ],
 };
 
 // Contact Page
@@ -139,4 +183,4 @@ const contactPageData = {
   },
 };
 
-export { greeting, socialMediaLinks, skills, projectsHeader, contactPageData };
+export { greeting, socialMediaLinks, skills, projectsData, contactPageData };
