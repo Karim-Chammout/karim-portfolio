@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-const SeoHeader = () => {
+const Seo = () => {
   return (
     <Helmet>
       <title>Karim Chammout</title>
@@ -59,4 +59,4 @@ const SeoHeader = () => {
   );
 };
 
-export default SeoHeader;
+export default Seo;

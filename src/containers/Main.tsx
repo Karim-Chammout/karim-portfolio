@@ -1,12 +1,15 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import About from '../pages/about';
-import Blog from '../pages/blog';
-import BlogDetails from '../pages/blog/BlogDetails';
 import Contact from '../pages/contact';
+import NotFound from '../pages/notFound';
 import Projects from '../pages/projects';
 import Splash from '../pages/splash';
 import PageTemplate from './PageTemplate';
+
+const Blog = lazy(() => import('../pages/blog'));
+const BlogDetails = lazy(() => import('../pages/blog/BlogDetails'));
 
 const Main = () => {
   return (
@@ -19,6 +22,7 @@ const Main = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </PageTemplate>
   );

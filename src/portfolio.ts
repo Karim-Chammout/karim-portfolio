@@ -7,7 +7,6 @@ import twitterImg from './assets/images/twitter.svg';
 // About Page
 const greeting = {
   title: 'Karim Chammout',
-  logo_name: 'Karim Chammout',
   ctaText: 'Follow Me On GitHub',
   subTitle:
     "I'm a Front-end developer who's writing code and moving pixels in the WWW.😎 I'm looking for learning new things and new experiences in this vast world of creativity.",

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const sectionWrapperStyles = styled.div`
   margin: 0 13%;
+  overflow: hidden;
 
   @media (max-width: 1200px) {
     margin: 0 10%;
@@ -54,6 +55,13 @@ const authorImgStyles = styled.img`
   border-radius: 50%;
   height: 75px;
   width: 75px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+    transition: 0.3s ease-in-out;
+    scale: 1.009;
+  }
 `;
 
 const authorNameStyles = styled.p`
@@ -70,11 +78,13 @@ const imgStyles = styled.img`
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
     transition: 0.3s ease-in-out;
+    scale: 1.01;
   }
 `;
 
 const portableStylesStyles = styled.div`
   margin-top: 50px;
+
   * > p {
     font-size: 1.25em;
     line-height: 1.5;
@@ -83,14 +93,6 @@ const portableStylesStyles = styled.div`
     @media (max-width: 768px) {
       font-size: 1em;
     }
-  }
-
-  * > figure,
-  img {
-    width: 100%;
-    height: 500px;
-    margin: 0;
-    object-fit: cover;
   }
 `;
 

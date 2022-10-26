@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { Container, Footer, Navbar, TopButton } from '../../components';
+import { Container, Footer, Navbar, Seo, TopButton } from '../../components';
+import { Spinner } from '../../components/Spinner';
 
 const PageTemplate = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
@@ -13,8 +14,9 @@ const PageTemplate = ({ children }: { children: ReactNode }) => {
 
   return (
     <Container>
+      <Seo />
       <Navbar />
-      {children}
+      <Suspense fallback={<Spinner />}>{children}</Suspense>
       <TopButton />
       <Footer />
     </Container>

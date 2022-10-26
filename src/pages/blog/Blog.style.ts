@@ -50,6 +50,19 @@ const textStyles = styled.p`
   }
 `;
 
+const noResultStyles = styled.div`
+  color: ${({ theme }) => theme.text};
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+
+  & > svg {
+    width: 100%;
+    height: 150px;
+  }
+`;
+
 /**
  * Component style declarations
  */
@@ -58,3 +71,4 @@ export const ImgWrapper = imgWrapperStyles;
 export const InfoWrapper = InfoWrapperStyles;
 export const H1 = h1Styles;
 export const Text = textStyles;
+export const NoResultWrapper = noResultStyles;

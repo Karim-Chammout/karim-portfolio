@@ -13,6 +13,10 @@ const textStyles = styled.p`
 const nameStyles = styled.span`
   font-weight: 900;
   font-style: italic;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 /**

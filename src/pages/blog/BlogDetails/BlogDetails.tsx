@@ -4,7 +4,9 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
 import sanityClient, { imgUrlFor } from '../../../client';
+import { ScrollToTop } from '../../../components';
 import { Spinner } from '../../../components/Spinner';
+import NotFound from '../../notFound';
 import { PostType } from '../types';
 import {
   AuthorImg,
@@ -41,48 +43,93 @@ const fetchPost = async (slug?: string) => {
   return sanityClient.fetch(singlePostQuery);
 };
 
+const imageLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
+
+const publishedAtDate = (date: string) =>
+  new Date(date).toDateString().split(' ').slice(1).join(' ');
+
+const StyledImage = ({ asset }: { asset: PostType['mainImage'] }) => (
+  <Img src={imgUrlFor(asset).url()} onClick={() => window.open(imageLink(asset), '_blank')} />
+);
+
+const PortableContent = ({ content }: { content: any }) => {
+  if (!content) return null;
+
+  return (
+    <PortableText
+      dataset={import.meta.env.VITE_PUBLIC_SANITY_DATASET}
+      projectId={import.meta.env.VITE_PUBLIC_SANITY_PROJECT_ID}
+      content={content}
+      serializers={{
+        image: (props: any) => StyledImage(props),
+      }}
+    />
+  );
+};
+
 const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { data: postData, isLoading, error } = useQuery<PostType>('post', () => fetchPost(slug));
 
-  if (error || !postData) {
-    return null;
+  const {
+    data: postData,
+    isLoading,
+    isFetched,
+    isFetching,
+    error,
+  } = useQuery<PostType>('post', () => fetchPost(slug));
+
+  /* TODO: Check react-query docs for the weird loading behaviour */
+  if ((error || !postData) && (!isFetching || !isLoading)) {
+    return <NotFound />;
   }
 
-  if (isLoading) {
+  /* TODO: Check react-query docs for the weird loading behaviour */
+  if (isLoading || (isFetching && !isFetched)) {
     return <Spinner />;
   }
 
-  const publishedAtDate = new Date(postData.publishedAt)
-    .toDateString()
-    .split(' ')
-    .slice(1)
-    .join(' ');
-
   return (
-    <SectionWrapper>
-      <BlogTitle>{postData.title}</BlogTitle>
-      <BlogDesc>{postData.description}</BlogDesc>
-      <AuthorSection>
-        <div>
-          <AuthorImg src={imgUrlFor(postData.author?.image).url()} alt={postData?.title} />
-        </div>
-        <div style={{ marginLeft: '10px' }}>
-          <AuthorName>{postData.author?.name}</AuthorName>
-          <p style={{ margin: '0 0 5px 0' }}>
-            Published at: <b>{publishedAtDate}</b>
-          </p>
-        </div>
-      </AuthorSection>
-      <Img src={imgUrlFor(postData.mainImage).url()} alt={postData.title} />
-      <PortableStyles>
-        <PortableText
-          dataset={import.meta.env.VITE_PUBLIC_SANITY_DATASET}
-          projectId={import.meta.env.VITE_PUBLIC_SANITY_PROJECT_ID}
-          content={postData.body as any}
-        />
-      </PortableStyles>
-    </SectionWrapper>
+    <>
+      <SectionWrapper>
+        <BlogTitle>{postData.title}</BlogTitle>
+        <BlogDesc>{postData.description}</BlogDesc>
+        <AuthorSection>
+          <div>
+            {postData.author && (
+              <AuthorImg
+                src={imgUrlFor(postData.author.image).url()}
+                alt={postData?.title}
+                loading="lazy"
+                onClick={() => window.open('https://github.com/Karim-Chammout', '_blank')}
+              />
+            )}
+          </div>
+          <div style={{ marginLeft: '10px' }}>
+            <AuthorName>
+              <em>{postData.author?.name}</em>
+            </AuthorName>
+            <p style={{ margin: '0 0 5px 0' }}>
+              Published at:{' '}
+              <b>
+                <em>{publishedAtDate(postData.publishedAt)}</em>
+              </b>
+            </p>
+          </div>
+        </AuthorSection>
+        {postData.mainImage && (
+          <Img
+            src={imgUrlFor(postData.mainImage).url()}
+            alt={postData.title}
+            onClick={() => window.open(imageLink(postData.mainImage), '_blank')}
+            loading="lazy"
+          />
+        )}
+        <PortableStyles>
+          <PortableContent content={postData.body} />
+        </PortableStyles>
+      </SectionWrapper>
+      <ScrollToTop />
+    </>
   );
 };
 

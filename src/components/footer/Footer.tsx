@@ -1,6 +1,5 @@
 import { Fade } from 'react-reveal';
 
-import { greeting } from '../../portfolio';
 import { Name, Text, Wrapper } from './Footer.style';
 
 const Footer = () => {
@@ -10,7 +9,10 @@ const Footer = () => {
     <Wrapper>
       <Fade>
         <Text>
-          Made with <span role="img">☕ & ❤️</span> by <Name>{greeting.title}</Name>
+          Made with <span role="img">☕ & ❤️</span> by{' '}
+          <Name onClick={() => window.open('https://github.com/Karim-Chammout', '_blank')}>
+            Karim Chammout
+          </Name>
         </Text>
         <Text>Copyright © {currentDate}</Text>
       </Fade>

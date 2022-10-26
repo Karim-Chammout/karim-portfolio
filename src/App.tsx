@@ -1,3 +1,5 @@
+import { Spinner } from 'components/Spinner';
+import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -13,12 +15,14 @@ const App = () => {
   return (
     <ThemeProvider theme={chosenTheme}>
       <GlobalStyles />
-      <QueryClientProvider client={client}>
-        <Router>
-          <Main />
-        </Router>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+      <Suspense fallback={<Spinner />}>
+        <QueryClientProvider client={client}>
+          <Router>
+            <Main />
+          </Router>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </Suspense>
     </ThemeProvider>
   );
 };

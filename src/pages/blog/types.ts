@@ -11,6 +11,10 @@ export interface PostType {
       url: string;
     };
   };
+  categories?: Array<{
+    title: string;
+    description: string;
+  }>;
   slug: {
     current: string;
   };

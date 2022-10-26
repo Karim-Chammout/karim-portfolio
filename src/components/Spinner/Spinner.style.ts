@@ -22,6 +22,7 @@ export default styled.div`
       `${theme.imageHighlight} transparent ${theme.imageHighlight} transparent`};
     animation: dual-ring 1.2s linear infinite;
   }
+
   @keyframes dual-ring {
     0% {
       transform: rotate(0deg);

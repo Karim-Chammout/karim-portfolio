@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Fade } from 'react-reveal';
 
+import NoResult from '../../assets/images/NoResult';
 import sanityClient from '../../client';
 import { Spinner } from '../../components/Spinner';
-import { H1, ImgWrapper, InfoWrapper, SectionWrapper, Text } from './Blog.style';
+import { H1, ImgWrapper, InfoWrapper, NoResultWrapper, SectionWrapper, Text } from './Blog.style';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
 import { PostType } from './types';
@@ -21,7 +22,7 @@ const fetchAllPosts = async () => {
         slug,
         description,
         mainImage,
-        category-> {
+        categories[] -> {
           title,
           description
         },
@@ -45,7 +46,15 @@ const Blog = () => {
   }
 
   const filteredPosts = data.filter((post) => {
-    return post.title?.toLowerCase().includes(searchQuery.toLowerCase());
+    return (
+      post.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.categories
+        ?.map((c) => c.title.toLowerCase())
+        .join(' ')
+        .toString()
+        .includes(searchQuery.toLowerCase())
+    );
   });
 
   return (
@@ -56,32 +65,51 @@ const Blog = () => {
             <BlogImage />
           </ImgWrapper>
           <InfoWrapper>
-            <H1>This is my Blog</H1>
+            <H1>Karim Blog</H1>
             <Text>
-              I post in my blog once a week, you can find here things related to JavaScript,
-              TypeScript, React, Web design, Styles, Tips and Tricks, Clean code Web design
+              I write articles related to web development. You can find here things about
+              JavaScript, TypeScript, React, Tips and Tricks and web technologies in general.
             </Text>
           </InfoWrapper>
         </SectionWrapper>
       </Fade>
       <Fade bottom duration={2000} distance="40px">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            margin: '50px 0',
+          }}
+        >
           <input
             type="search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search for an article..."
+            placeholder="Search by title, description, or tags"
             style={{
               width: '300px',
               height: '40px',
-              margin: '50px 0',
               padding: '8px',
               border: `1px solid #7F8DAA`,
               borderRadius: '4px',
             }}
           />
+          {searchQuery && filteredPosts.length > 0 && (
+            <p>
+              {filteredPosts.length} {filteredPosts.length > 1 ? 'results' : 'result'} found
+            </p>
+          )}
         </div>
-        {filteredPosts.length > 0 ? <BlogCard posts={filteredPosts} /> : <h1>No result found!</h1>}
+        {filteredPosts.length > 0 ? (
+          <BlogCard posts={filteredPosts} />
+        ) : (
+          <NoResultWrapper>
+            <p>No result found!</p>
+            <NoResult />
+          </NoResultWrapper>
+        )}
       </Fade>
     </>
   );

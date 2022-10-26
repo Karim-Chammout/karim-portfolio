@@ -1,11 +1,10 @@
 /* eslint-disable react/no-danger */
 import { chosenTheme as theme } from '../../theme';
-import './LoaderLogo.css';
+import { SVG } from './Loader.style';
 
 const LogoLoader = () => {
   return (
-    <svg
-      className="raw_logo"
+    <SVG
       width="80%"
       height="80%"
       viewBox="0 0 440 305"
@@ -78,7 +77,7 @@ const LogoLoader = () => {
           }}
         />
       </defs>
-    </svg>
+    </SVG>
   );
 };
 

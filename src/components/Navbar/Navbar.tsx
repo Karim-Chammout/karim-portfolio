@@ -2,9 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Fade } from 'react-reveal';
 import { NavLink } from 'react-router-dom';
 
-import { greeting } from '../../portfolio';
 import { Logo, Nav, NavItem, NavList } from './Navbar.style';
-import SeoHeader from './seoHeader/SeoHeader';
 
 const links = [
   {
@@ -51,9 +49,8 @@ const Navbar = () => {
 
   return (
     <Fade top duration={1000} distance="20px">
-      <SeoHeader />
       <Nav>
-        <Logo to="/splash">{`<${greeting.logo_name} />`}</Logo>
+        <Logo to="/splash">{`<Karim Chammout />`}</Logo>
         <input className="menu-btn" type="checkbox" id="menu-btn" ref={checkedInput} />
         <label className="menu-icon" htmlFor="menu-btn">
           <span className="navicon" />

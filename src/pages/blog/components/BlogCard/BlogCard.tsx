@@ -12,7 +12,16 @@ const BlogCard = ({ posts }: { posts: PostType[] }) => {
             <LinkCard to={`/blog/${post.slug.current}`}>
               <BlogName>{post.title}</BlogName>
               <BlogDesc>{post.description}</BlogDesc>
-              <Tags>Tags: {post.author?.name}</Tags>
+              <Tags>
+                Tags:
+                {post.categories?.map((c, i, cateArr) => (
+                  <span key={c.title}>
+                    {' '}
+                    {/*  i + 1 !== cateArr.length  => Check if not the last element to render a separator */}
+                    {c.title} {i + 1 !== cateArr.length && '-'}
+                  </span>
+                ))}
+              </Tags>
             </LinkCard>
           </Card>
         ))}
