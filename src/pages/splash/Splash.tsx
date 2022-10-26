@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import LoaderLogo from '../../components/Loader/LoaderLogo';
-import { LogoWrapper, Screen } from './Splash.style';
+import { BodyStyles, LogoWrapper, Screen } from './Splash.style';
 
 const AnimatedSplash = () => {
   return (
     <LogoWrapper>
+      <BodyStyles />
       <Screen>
         <LoaderLogo />
       </Screen>
