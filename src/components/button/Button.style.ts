@@ -8,6 +8,7 @@ const linkButtonStyles = styled.a`
   width: max-content;
   padding: 12px 22px;
   border-radius: 6px;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
   display: block;

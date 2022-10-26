@@ -43,7 +43,7 @@ const fetchPost = async (slug?: string) => {
   return sanityClient.fetch(singlePostQuery);
 };
 
-const imageLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
+const imgLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
 
 const publishedAtDate = (date: string) =>
   new Date(date).toDateString().split(' ').slice(1).join(' ');
@@ -78,7 +78,7 @@ const BlogDetails = () => {
           <div>
             {postData.author && (
               <AuthorImg
-                src={imgUrlFor(postData.author.image).url()}
+                src={imgLink(postData.author.image)}
                 alt={postData?.title}
                 loading="lazy"
                 onClick={() => window.open('https://github.com/Karim-Chammout', '_blank')}
@@ -99,9 +99,9 @@ const BlogDetails = () => {
         </AuthorSection>
         {postData.mainImage && (
           <Img
-            src={imgUrlFor(postData.mainImage).url()}
+            src={imgLink(postData.mainImage)}
             alt={postData.title}
-            onClick={() => window.open(imageLink(postData.mainImage), '_blank')}
+            onClick={() => window.open(imgLink(postData.mainImage), '_blank')}
             loading="lazy"
           />
         )}

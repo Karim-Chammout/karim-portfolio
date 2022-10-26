@@ -3,12 +3,16 @@ export interface PostType {
   title?: string;
   author?: {
     name: string;
-    image: string;
+    image: {
+      asset: {
+        _ref: string;
+      };
+    };
   };
   body: [];
   mainImage: {
-    assets: {
-      url: string;
+    asset: {
+      _ref: string;
     };
   };
   categories?: Array<{

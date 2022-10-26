@@ -4,11 +4,11 @@ import { imgUrlFor } from '../../../../client';
 import { PostType } from '../../types';
 import { Img } from '../BlogDetails.style';
 
-const imageLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
+const StyledImage = (value: PostType['mainImage']) => {
+  const imgLink = imgUrlFor(value).url();
 
-const StyledImage = (value: PostType['mainImage']) => (
-  <Img src={imgUrlFor(value).url()} onClick={() => window.open(imageLink(value), '_blank')} />
-);
+  return <Img src={imgLink} onClick={() => window.open(imgLink, '_blank')} />;
+};
 
 const CustomCodeBlock = (language: string, code: string) => {
   return <CodeBlock text={code} language={language} theme={dracula} showLineNumbers wrapLines />;
