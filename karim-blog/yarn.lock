@@ -1327,6 +1327,21 @@
     object-assign "^4.1.1"
     rxjs "^6.0.0"
 
+"@sanity/code-input@^2.35.0":
+  version "2.35.0"
+  resolved "https://registry.npmjs.org/@sanity/code-input/-/code-input-2.35.0.tgz#aff5818859f090e8190860d7832b6481127471ab"
+  integrity sha512-7mXNKCROyxdK+lXjEI44YEKd+oeexCTogNJn/cEmZ4AD9YqLuOgraQoLIUxPsfTb2fSKtumP0QbWqv297XO8Fg==
+  dependencies:
+    "@reach/auto-id" "^0.13.2"
+    "@sanity/base" "2.35.0"
+    "@sanity/form-builder" "2.35.0"
+    "@sanity/icons" "^1.3.4"
+    "@sanity/types" "2.35.0"
+    "@sanity/ui" "^0.37.22"
+    "@sanity/util" "2.35.0"
+    ace-builds "^1.4.13"
+    react-ace "^9.5.0"
+
 "@sanity/color@^2.1.11", "@sanity/color@^2.1.14":
   version "2.1.16"
   resolved "https://registry.npmjs.org/@sanity/color/-/color-2.1.16.tgz#4d4b36874279e1801c89827c6eb3332c960a729f"
@@ -2165,6 +2180,11 @@ accepts@~1.3.8:
   dependencies:
     mime-types "~2.1.34"
     negotiator "0.6.3"
+
+ace-builds@^1.4.13:
+  version "1.12.3"
+  resolved "https://registry.npmjs.org/ace-builds/-/ace-builds-1.12.3.tgz#db77530a5854ee38a0c660e9904d2cb29a247c2f"
+  integrity sha512-LHAsa5oOaRqmIlb8gBe81nj2kOqlfbV0XkWkFZL4mIfPXL4zoeTUcandHvBgHQCyjif3tGfoLTXelWSlnCT/dA==
 
 acorn-dynamic-import@^2.0.0:
   version "2.0.2"
@@ -6522,6 +6542,11 @@ lodash.foreach@^3.0.3:
     lodash._bindcallback "^3.0.0"
     lodash.isarray "^3.0.0"
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
+
 lodash.isarguments@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -6531,6 +6556,11 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.npmjs.org/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
   integrity sha512-JwObCrNJuT0Nnbuecmqr5DgtuBppuCvGD9lxjFpAzwnVtdGoDQ1zig+5W8k5/6Gcn0gZ3936HDAlGd28i7sOGQ==
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
 
 lodash.isplainobject@^4.0.0, lodash.isplainobject@^4.0.6:
   version "4.0.6"
@@ -8559,6 +8589,17 @@ raw-body@2.5.1:
     http-errors "2.0.0"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-ace@^9.5.0:
+  version "9.5.0"
+  resolved "https://registry.npmjs.org/react-ace/-/react-ace-9.5.0.tgz#b6c32b70d404dd821a7e01accc2d76da667ff1f7"
+  integrity sha512-4l5FgwGh6K7A0yWVMQlPIXDItM4Q9zzXRqOae8KkCl6MkOob7sC1CzHxZdOGvV+QioKWbX2p5HcdOVUv6cAdSg==
+  dependencies:
+    ace-builds "^1.4.13"
+    diff-match-patch "^1.0.5"
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    prop-types "^15.7.2"
 
 react-base16-styling@^0.6.0:
   version "0.6.0"

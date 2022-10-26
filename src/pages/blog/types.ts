@@ -5,7 +5,7 @@ export interface PostType {
     name: string;
     image: string;
   };
-  body: object;
+  body: [];
   mainImage: {
     assets: {
       url: string;

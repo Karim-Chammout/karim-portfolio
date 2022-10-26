@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import PortableText from 'react-portable-text';
+import { PortableText } from '@portabletext/react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
@@ -18,6 +17,7 @@ import {
   PortableStyles,
   SectionWrapper,
 } from './BlogDetails.style';
+import { CustomComponents } from './compositions';
 
 const fetchPost = async (slug?: string) => {
   const singlePostQuery = `
@@ -47,25 +47,6 @@ const imageLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
 
 const publishedAtDate = (date: string) =>
   new Date(date).toDateString().split(' ').slice(1).join(' ');
-
-const StyledImage = ({ asset }: { asset: PostType['mainImage'] }) => (
-  <Img src={imgUrlFor(asset).url()} onClick={() => window.open(imageLink(asset), '_blank')} />
-);
-
-const PortableContent = ({ content }: { content: any }) => {
-  if (!content) return null;
-
-  return (
-    <PortableText
-      dataset={import.meta.env.VITE_PUBLIC_SANITY_DATASET}
-      projectId={import.meta.env.VITE_PUBLIC_SANITY_PROJECT_ID}
-      content={content}
-      serializers={{
-        image: (props: any) => StyledImage(props),
-      }}
-    />
-  );
-};
 
 const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -125,7 +106,7 @@ const BlogDetails = () => {
           />
         )}
         <PortableStyles>
-          <PortableContent content={postData.body} />
+          <PortableText value={postData.body} components={CustomComponents} />
         </PortableStyles>
       </SectionWrapper>
       <ScrollToTop />
