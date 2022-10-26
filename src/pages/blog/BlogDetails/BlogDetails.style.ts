@@ -75,7 +75,6 @@ const imgStyles = styled.img`
 
 const portableStylesStyles = styled.div`
   margin-top: 50px;
-
   * > p {
     font-size: 1.25em;
     line-height: 1.5;
