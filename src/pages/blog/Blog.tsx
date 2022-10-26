@@ -20,6 +20,7 @@ const fetchAllPosts = async () => {
         },
         slug,
         description,
+        mainImage,
         category-> {
           title,
           description

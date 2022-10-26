@@ -22,6 +22,12 @@ const navStyles = styled.nav`
     margin-top: -15px;
     display: none;
     user-select: none;
+
+    /* Hacky solution for the hamburger icon for now */
+    @media (max-width: 320px) {
+      position: relative;
+      margin-top: 10px;
+    }
   }
 
   .navicon {

@@ -5,9 +5,15 @@ export interface PostType {
     name: string;
     image: string;
   };
-  body?: object;
+  body: object;
+  mainImage: {
+    assets: {
+      url: string;
+    };
+  };
   slug: {
     current: string;
   };
   description: string;
+  publishedAt: string;
 }
