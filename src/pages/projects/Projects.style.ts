@@ -64,6 +64,7 @@ const cardsSectionStyles = styled.section`
 const cardStyles = styled.article`
   background: ${({ theme }) => theme.highlight};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
+  border-radius: 4px;
   padding: 2rem;
   cursor: pointer;
   width: 48%;

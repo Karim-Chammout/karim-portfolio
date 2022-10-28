@@ -8,6 +8,7 @@ const cardContainerStyles = styled.div`
 `;
 
 const cardStyles = styled.article`
+  border-radius: 4px;
   background: ${({ theme }) => theme.highlight};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
   padding: 2rem;

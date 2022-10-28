@@ -13,7 +13,7 @@ import { PostType } from './types';
 
 const fetchAllPosts = async () => {
   const postQuery = `
-      *[_type == 'post']{
+      *[_type == 'post']| order(_createdAt desc){
         _id,
         title,
         author-> {

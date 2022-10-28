@@ -2,7 +2,7 @@ import { Fade } from 'react-reveal';
 
 import { Button, SocialMedia } from '../../../../components';
 import { greeting } from '../../../../portfolio';
-import FeelingProud from './FeelingProud';
+import Developer from './Developer';
 import {
   ButtonWrapper,
   Content,
@@ -28,7 +28,7 @@ const Greeting = () => {
           </ButtonWrapper>
         </Content>
         <ImageWrapper>
-          <FeelingProud />
+          <Developer />
         </ImageWrapper>
       </Wrapper>
     </Fade>

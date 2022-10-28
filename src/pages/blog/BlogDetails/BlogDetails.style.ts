@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const sectionWrapperStyles = styled.div`
   margin: 0 13%;
@@ -73,6 +73,7 @@ const imgStyles = styled.img`
   width: 100%;
   height: 500px;
   object-fit: cover;
+  border-radius: 4px;
 
   &:hover {
     cursor: pointer;
@@ -87,7 +88,7 @@ const portableStyles = styled.div`
 
   & > p {
     font-size: 1.25em;
-    line-height: 1.7;
+    line-height: 1.6;
     margin: 0;
 
     @media (max-width: 768px) {
@@ -99,7 +100,7 @@ const portableStyles = styled.div`
 const formStyles = styled.form`
   padding: 5px;
   max-width: 350px;
-  margin: auto;
+  margin: 0 auto 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,8 +118,7 @@ const h5Styles = styled.h5`
 `;
 
 const textStyles = styled.p`
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.25em;
   margin: 0;
 
   @media (max-width: 768px) {
@@ -126,7 +126,11 @@ const textStyles = styled.p`
   }
 `;
 
-const hrStyles = styled.hr``;
+const lineStyles = styled.div`
+  height: 1px;
+  background-color: ${({ theme }) => theme.secondaryText};
+  margin: 50px 0;
+`;
 
 const labelStyles = styled.label`
   display: block;
@@ -150,6 +154,12 @@ const inputStyles = styled.input`
   &:hover {
     border: 1px solid ${({ theme }) => theme.text};
   }
+
+  ${({ hasError }: { hasError: boolean }) =>
+    hasError &&
+    css`
+      border: 1px solid red;
+    `}
 `;
 
 const textAreaStyles = styled.textarea`
@@ -161,10 +171,17 @@ const textAreaStyles = styled.textarea`
   border-radius: 4px;
   resize: unset;
   font-family: inherit;
+  border: 1px solid ${({ theme }) => theme.secondaryText};
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.text};
   }
+
+  ${({ hasError }: { hasError: boolean }) =>
+    hasError &&
+    css`
+      border: 1px solid red;
+    `}
 `;
 
 const buttonWrapperStyles = styled.div`
@@ -190,7 +207,7 @@ export const PortableStyles = portableStyles;
 export const StyledForm = formStyles;
 export const Text = textStyles;
 export const H5 = h5Styles;
-export const Hr = hrStyles;
+export const Line = lineStyles;
 export const Label = labelStyles;
 export const Span = spanStyles;
 export const Input = inputStyles;
