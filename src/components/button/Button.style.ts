@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const linkButtonStyles = styled.a`
+const sharedStyles = css`
   background-color: ${({ theme }) => theme.text};
   border: solid 1px ${({ theme }) => theme.text};
   color: ${({ theme }) => theme.body};
@@ -29,7 +29,24 @@ const linkButtonStyles = styled.a`
   }
 `;
 
+const buttonStyles = styled.button`
+  ${sharedStyles}
+  ${({ disabled }: { disabled?: boolean }) =>
+    disabled &&
+    css`
+      background-color: ${({ theme }) => theme.secondaryText};
+      border: solid 1px ${({ theme }) => theme.secondaryText};
+      pointer-events: none;
+      user-selectable: none;
+    `};
+`;
+
+const linkButtonStyles = styled.a`
+  ${sharedStyles}
+`;
+
 /**
  * Component style declarations
  */
+export const StyledButton = buttonStyles;
 export const LinkButton = linkButtonStyles;

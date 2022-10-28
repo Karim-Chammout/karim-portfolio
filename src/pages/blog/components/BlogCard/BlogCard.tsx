@@ -14,7 +14,7 @@ const BlogCard = ({ posts }: { posts: PostType[] }) => {
               <BlogDesc>{post.description}</BlogDesc>
               <Tags>
                 Tags:
-                {post.categories?.map((c, i, cateArr) => (
+                {post.categories.map((c, i, cateArr) => (
                   <span key={c.title}>
                     {' '}
                     {/*  i + 1 !== cateArr.length  => Check if not the last element to render a separator */}

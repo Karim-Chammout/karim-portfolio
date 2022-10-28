@@ -1,18 +1,28 @@
-import { LinkButton } from './Button.style';
+import { LinkButton, StyledButton } from './Button.style';
 
 const Button = ({
   text,
   href,
   newTab,
   onClick,
+  disabled = false,
 }: {
   text: string;
   href?: string;
   newTab?: boolean;
-  onClick?: () => void;
+  onClick?: any;
+  disabled?: boolean;
 }) => {
+  if (onClick) {
+    return (
+      <StyledButton disabled={disabled} onClick={onClick}>
+        {text}
+      </StyledButton>
+    );
+  }
+
   return (
-    <LinkButton href={href} target={newTab ? '_blank' : '_self'} onClick={onClick}>
+    <LinkButton href={href} target={newTab ? '_blank' : '_self'}>
       {text}
     </LinkButton>
   );

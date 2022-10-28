@@ -5,6 +5,7 @@ import { Fade } from 'react-reveal';
 import NoResult from '../../assets/images/NoResult';
 import sanityClient from '../../client';
 import { Spinner } from '../../components/Spinner';
+import NotFound from '../notFound';
 import { H1, ImgWrapper, InfoWrapper, NoResultWrapper, SectionWrapper, Text } from './Blog.style';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
@@ -37,20 +38,20 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { data, isLoading, error } = useQuery<PostType[]>('posts', fetchAllPosts);
 
-  if (error || !data) {
-    return null;
-  }
-
   if (isLoading) {
     return <Spinner />;
   }
 
+  if (error || !data) {
+    return <NotFound />;
+  }
+
   const filteredPosts = data.filter((post) => {
     return (
-      post.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.categories
-        ?.map((c) => c.title.toLowerCase())
+        .map((c) => c.title.toLowerCase())
         .join(' ')
         .toString()
         .includes(searchQuery.toLowerCase())

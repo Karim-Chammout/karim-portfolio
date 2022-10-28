@@ -1,7 +1,7 @@
 export interface PostType {
   _id: string;
-  title?: string;
-  author?: {
+  title: string;
+  author: {
     name: string;
     image: {
       asset: {
@@ -15,7 +15,7 @@ export interface PostType {
       _ref: string;
     };
   };
-  categories?: Array<{
+  categories: Array<{
     title: string;
     description: string;
   }>;
@@ -23,5 +23,20 @@ export interface PostType {
     current: string;
   };
   description: string;
+  comments?: Array<Comment>;
   publishedAt: string;
+  _updatedAt: string;
+}
+
+export interface Comment {
+  comment: string;
+  name: string;
+  email: string;
+  approved: boolean;
+  _createdAt: string;
+  post: {
+    _ref: string;
+    _type: string;
+  };
+  _id: string;
 }

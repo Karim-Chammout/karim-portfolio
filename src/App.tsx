@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'styled-components';
 
 import { Spinner } from './components/Spinner';
@@ -17,6 +19,14 @@ const App = () => {
       <GlobalStyles />
       <Suspense fallback={<Spinner />}>
         <QueryClientProvider client={client}>
+          <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            theme="colored"
+            closeButton
+            pauseOnHover
+          />
           <Router>
             <Main />
           </Router>
