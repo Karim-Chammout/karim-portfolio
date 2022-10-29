@@ -7,14 +7,14 @@ export const BodyStyles = createGlobalStyle`
   }
 `;
 
-const logoWrapperStyles = styled.div`
+export const LogoWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
 `;
 
-const screenStyles = styled.div`
+export const Screen = styled.div`
   background: ${({ theme }) => theme.text};
   height: 100%;
   display: flex;
@@ -47,9 +47,3 @@ const screenStyles = styled.div`
     }
   }
 `;
-
-/**
- * Component style declarations
- */
-export const LogoWrapper = logoWrapperStyles;
-export const Screen = screenStyles;

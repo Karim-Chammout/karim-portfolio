@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const sectionWrapperStyles = styled.section`
+export const SectionWrapper = styled.section`
   display: flex;
 
   & > * {
@@ -12,7 +12,7 @@ const sectionWrapperStyles = styled.section`
   }
 `;
 
-const imgWrapperStyles = styled.div`
+export const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,11 +23,11 @@ const imgWrapperStyles = styled.div`
   }
 `;
 
-const InfoWrapperStyles = styled.div`
+export const InfoWrapper = styled.div`
   text-align: center;
 `;
 
-const h1Styles = styled.h1`
+export const H1 = styled.h1`
   color: ${({ theme }) => theme.text};
   font-size: 3.5em;
   font-weight: bold;
@@ -37,7 +37,7 @@ const h1Styles = styled.h1`
   }
 `;
 
-const textStyles = styled.p`
+export const Text = styled.p`
   color: ${({ theme }) => theme.secondaryText};
   font-size: 1.25em;
   line-height: 1.5;
@@ -48,20 +48,20 @@ const textStyles = styled.p`
   }
 `;
 
-const buttonWrapperStyles = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 40px;
 `;
 
-const cardsSectionStyles = styled.section`
+export const CardsSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   margin-top: 50px;
   width: 100%;
 `;
 
-const cardStyles = styled.article`
+export const Card = styled.article`
   background: ${({ theme }) => theme.highlight};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
   border-radius: 4px;
@@ -80,7 +80,7 @@ const cardStyles = styled.article`
   }
 `;
 
-const projectNameStyles = styled.h5`
+export const ProjectName = styled.h5`
   color: ${({ theme }) => theme.text};
   font-size: 1.5em;
   font-weight: bold;
@@ -94,7 +94,7 @@ const projectNameStyles = styled.h5`
   }
 `;
 
-const projectDescStyles = styled.p`
+export const ProjectDesc = styled.p`
   color: ${({ theme }) => theme.text};
   font-size: 1.25em;
   line-height: 1.4;
@@ -109,7 +109,7 @@ const projectDescStyles = styled.p`
   }
 `;
 
-const toolsStyles = styled.p`
+export const Tools = styled.p`
   color: ${({ theme }) => theme.secondaryText};
   margin: 0;
 
@@ -117,18 +117,3 @@ const toolsStyles = styled.p`
     font-size: 14px;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const SectionWrapper = sectionWrapperStyles;
-export const ImgWrapper = imgWrapperStyles;
-export const InfoWrapper = InfoWrapperStyles;
-export const H1 = h1Styles;
-export const Text = textStyles;
-export const ButtonWrapper = buttonWrapperStyles;
-export const CardsSection = cardsSectionStyles;
-export const Card = cardStyles;
-export const ProjectName = projectNameStyles;
-export const ProjectDesc = projectDescStyles;
-export const Tools = toolsStyles;

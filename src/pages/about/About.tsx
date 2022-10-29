@@ -1,9 +1,9 @@
-import { Greeting, Skills } from './compositions';
+import { Hero, Skills } from './compositions';
 
 const About = () => {
   return (
     <>
-      <Greeting />
+      <Hero />
       <Skills />
     </>
   );

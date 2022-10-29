@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { ThemeType } from '../../theme';
 
-const navStyles = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,7 +98,7 @@ const navStyles = styled.nav`
   }
 `;
 
-const navListStyles = styled.ul`
+export const NavList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -110,7 +110,7 @@ const navListStyles = styled.ul`
   }
 `;
 
-const navItemStyles = styled.li`
+export const NavItem = styled.li`
   list-style: none;
   font-size: 18px;
   @media (max-width: 768px) {
@@ -118,7 +118,7 @@ const navItemStyles = styled.li`
   }
 `;
 
-const logoStyles = styled(NavLink)`
+export const Logo = styled(NavLink)`
   display: block;
   text-decoration: none;
   font-size: 1.75em;
@@ -129,11 +129,3 @@ const logoStyles = styled(NavLink)`
     font-size: 1.5em;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const Nav = navStyles;
-export const NavList = navListStyles;
-export const NavItem = navItemStyles;
-export const Logo = logoStyles;

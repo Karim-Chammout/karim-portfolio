@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const sectionWrapperStyles = styled.div`
+export const SectionWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: ${({ isSecondSection }: { isSecondSection?: boolean }) =>
@@ -17,7 +17,7 @@ const sectionWrapperStyles = styled.div`
   }
 `;
 
-const imgWrapperStyles = styled.div`
+export const ImgWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
@@ -27,17 +27,17 @@ const imgWrapperStyles = styled.div`
   }
 `;
 
-const imgStyles = styled.img`
+export const Image = styled.img`
   border-radius: 50%;
   margin-bottom: 10px;
 `;
 
-const contactInfoStyles = styled.div`
+export const ContactInfo = styled.div`
   text-align: center;
   align-self: center;
 `;
 
-const h1Styles = styled.h1`
+export const H1 = styled.h1`
   color: ${({ theme }) => theme.text};
   font-size: 3.5em;
   font-weight: bold;
@@ -47,7 +47,7 @@ const h1Styles = styled.h1`
   }
 `;
 
-const subHeaderStyles = styled.span`
+export const SubHeader = styled.span`
   color: ${({ theme }) => theme.secondaryText};
   font-size: 1.25em;
   line-height: 1.5;
@@ -58,7 +58,7 @@ const subHeaderStyles = styled.span`
   }
 `;
 
-const textStyles = styled.p`
+export const Text = styled.p`
   color: ${({ theme }) => theme.secondaryText};
   font-size: 1.25em;
   line-height: 1.5;
@@ -69,13 +69,13 @@ const textStyles = styled.p`
   }
 `;
 
-const buttonWrapperStyles = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 0;
 `;
 
-const infoWrapperStyles = styled.div`
+export const InfoWrapper = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
@@ -83,7 +83,7 @@ const infoWrapperStyles = styled.div`
   }
 `;
 
-const h4Styles = styled.h4`
+export const H4 = styled.h4`
   color: ${({ theme }) => theme.text};
   margin: 0 0 5px 0;
   font-size: 2em;
@@ -93,17 +93,3 @@ const h4Styles = styled.h4`
     font-size: 1.5em;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const SectionWrapper = sectionWrapperStyles;
-export const ImgWrapper = imgWrapperStyles;
-export const Image = imgStyles;
-export const ContactInfo = contactInfoStyles;
-export const H1 = h1Styles;
-export const SubHeader = subHeaderStyles;
-export const Text = textStyles;
-export const ButtonWrapper = buttonWrapperStyles;
-export const InfoWrapper = infoWrapperStyles;
-export const H4 = h4Styles;

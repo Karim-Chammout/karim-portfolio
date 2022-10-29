@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const iconWrapperStyles = styled.span`
+export const IconWrapper = styled.span`
   img {
     background-color: ${({ backgroundColor }: { backgroundColor: string }) => backgroundColor};
     margin: 0 5px;
@@ -12,8 +12,3 @@ const iconWrapperStyles = styled.span`
     transition: 0.3s ease-in;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const IconWrapper = iconWrapperStyles;

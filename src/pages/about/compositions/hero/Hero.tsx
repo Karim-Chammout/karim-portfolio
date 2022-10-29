@@ -11,9 +11,9 @@ import {
   SocialMediaWrapper,
   Text,
   Wrapper,
-} from './Greeting.style';
+} from './Hero.style';
 
-const Greeting = () => {
+const Hero = () => {
   return (
     <Fade bottom duration={2000} distance="50px">
       <Wrapper>
@@ -35,4 +35,4 @@ const Greeting = () => {
   );
 };
 
-export default Greeting;
+export default Hero;

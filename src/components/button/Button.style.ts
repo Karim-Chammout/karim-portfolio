@@ -29,7 +29,7 @@ const sharedStyles = css`
   }
 `;
 
-const buttonStyles = styled.button`
+export const StyledButton = styled.button`
   ${sharedStyles}
   ${({ disabled }: { disabled?: boolean }) =>
     disabled &&
@@ -41,12 +41,6 @@ const buttonStyles = styled.button`
     `};
 `;
 
-const linkButtonStyles = styled.a`
+export const LinkButton = styled.a`
   ${sharedStyles}
 `;
-
-/**
- * Component style declarations
- */
-export const StyledButton = buttonStyles;
-export const LinkButton = linkButtonStyles;

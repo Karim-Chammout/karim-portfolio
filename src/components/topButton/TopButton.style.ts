@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const wrapperStyles = styled.div`
+export const Wrapper = styled.div`
   color: ${({ theme }) => theme.body};
   background-color: ${({ theme }) => theme.text};
   border: solid 1px ${({ theme }) => theme.text};
@@ -18,8 +18,3 @@ const wrapperStyles = styled.div`
     background-color: ${({ theme }) => theme.body};
   }
 `;
-
-/**
- * Component style declarations
- */
-export const Wrapper = wrapperStyles;
