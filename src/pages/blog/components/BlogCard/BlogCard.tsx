@@ -1,9 +1,9 @@
 import { Fade } from 'react-reveal';
 
-import { PostType } from '../../types';
+import { Post } from '../../types';
 import { BlogDesc, BlogName, Card, CardContainer, LinkCard, Tags } from './BlogCard.style';
 
-const BlogCard = ({ posts }: { posts: PostType[] }) => {
+const BlogCard = ({ posts }: { posts: Array<Post> }) => {
   return (
     <Fade bottom duration={2000} distance="40px">
       <CardContainer>
@@ -14,11 +14,11 @@ const BlogCard = ({ posts }: { posts: PostType[] }) => {
               <BlogDesc>{post.description}</BlogDesc>
               <Tags>
                 Tags:
-                {post.categories.map((c, i, cateArr) => (
+                {post.categories.map((c, i, categoryArr) => (
                   <span key={c.title}>
                     {' '}
-                    {/*  i + 1 !== cateArr.length  => Check if not the last element to render a separator */}
-                    {c.title} {i + 1 !== cateArr.length && '-'}
+                    {/*  i + 1 !== categoryArr.length => Check if not the last element to render a separator */}
+                    {c.title} {i + 1 !== categoryArr.length && '-'}
                   </span>
                 ))}
               </Tags>

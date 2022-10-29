@@ -238,7 +238,7 @@ export const CommentName = styled.p`
   font-weight: bold;
 `;
 
-export const Comment = styled.p`
+export const CommentText = styled.p`
   margin: 0px;
   line-height: 1.4;
 `;

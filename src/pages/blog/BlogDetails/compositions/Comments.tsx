@@ -1,14 +1,14 @@
-import { CommentType } from '../../types';
+import { Comment } from '../../types';
 import {
-  Comment,
   CommentAvatar,
   CommentContainer,
   CommentName,
   CommentSection,
+  CommentText,
 } from '../BlogDetails.style';
 import DisplayDate from './DisplayDate';
 
-const Comments = ({ comments }: { comments: CommentType }) => {
+const Comments = ({ comments }: { comments: Comment }) => {
   return (
     <CommentSection key={comments._id}>
       <DisplayDate
@@ -20,7 +20,7 @@ const Comments = ({ comments }: { comments: CommentType }) => {
         <CommentAvatar>{comments.name.substring(0, 1).toUpperCase()}</CommentAvatar>
         <div style={{ marginLeft: '20px' }}>
           <CommentName>{comments.name}</CommentName>
-          <Comment>{comments.comment}</Comment>
+          <CommentText>{comments.comment}</CommentText>
         </div>
       </CommentContainer>
     </CommentSection>

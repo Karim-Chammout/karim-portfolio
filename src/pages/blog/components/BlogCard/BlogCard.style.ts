@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const cardContainerStyles = styled.div`
+export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 `;
 
-const cardStyles = styled.article`
+export const Card = styled.article`
   border-radius: 4px;
   background: ${({ theme }) => theme.highlight};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
@@ -25,11 +25,11 @@ const cardStyles = styled.article`
   }
 `;
 
-const linkCardStyles = styled(Link)`
+export const LinkCard = styled(Link)`
   text-decoration: none;
 `;
 
-const blogNameStyles = styled.h5`
+export const BlogName = styled.h5`
   color: ${({ theme }) => theme.text};
   font-size: 1.5em;
   font-weight: bold;
@@ -43,7 +43,7 @@ const blogNameStyles = styled.h5`
   }
 `;
 
-const blogDescStyles = styled.p`
+export const BlogDesc = styled.p`
   color: ${({ theme }) => theme.text};
   font-size: 1.25em;
   line-height: 1.4;
@@ -58,7 +58,7 @@ const blogDescStyles = styled.p`
   }
 `;
 
-const tagsStyles = styled.p`
+export const Tags = styled.p`
   color: ${({ theme }) => theme.secondaryText};
   margin: 0;
 
@@ -66,13 +66,3 @@ const tagsStyles = styled.p`
     font-size: 14px;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const CardContainer = cardContainerStyles;
-export const Card = cardStyles;
-export const LinkCard = linkCardStyles;
-export const BlogName = blogNameStyles;
-export const BlogDesc = blogDescStyles;
-export const Tags = tagsStyles;

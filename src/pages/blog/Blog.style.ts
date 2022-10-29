@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const sectionWrapperStyles = styled.section`
+export const SectionWrapper = styled.section`
   display: flex;
   align-items: center;
   gap: 20px;
@@ -14,7 +14,7 @@ const sectionWrapperStyles = styled.section`
   }
 `;
 
-const imgWrapperStyles = styled.div`
+export const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,11 +25,11 @@ const imgWrapperStyles = styled.div`
   }
 `;
 
-const InfoWrapperStyles = styled.div`
+export const InfoWrapper = styled.div`
   text-align: center;
 `;
 
-const h1Styles = styled.h1`
+export const H1 = styled.h1`
   color: ${({ theme }) => theme.text};
   font-size: 3.5em;
   font-weight: bold;
@@ -39,7 +39,7 @@ const h1Styles = styled.h1`
   }
 `;
 
-const textStyles = styled.p`
+export const Text = styled.p`
   color: ${({ theme }) => theme.secondaryText};
   font-size: 1.25em;
   line-height: 1.5;
@@ -50,7 +50,23 @@ const textStyles = styled.p`
   }
 `;
 
-const noResultStyles = styled.div`
+export const SearchWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+`;
+
+export const SearchInput = styled.input`
+  width: 300px;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid ${({ theme }) => theme.secondaryText};
+  border-radius: 4px;
+`;
+
+export const NoResultWrapper = styled.div`
   color: ${({ theme }) => theme.text};
   font-size: 1.5em;
   font-weight: bold;
@@ -62,13 +78,3 @@ const noResultStyles = styled.div`
     height: 150px;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const SectionWrapper = sectionWrapperStyles;
-export const ImgWrapper = imgWrapperStyles;
-export const InfoWrapper = InfoWrapperStyles;
-export const H1 = h1Styles;
-export const Text = textStyles;
-export const NoResultWrapper = noResultStyles;

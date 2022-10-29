@@ -6,10 +6,19 @@ import NoResult from '../../assets/images/NoResult';
 import sanityClient from '../../client';
 import { Spinner } from '../../components/Spinner';
 import NotFound from '../notFound';
-import { H1, ImgWrapper, InfoWrapper, NoResultWrapper, SectionWrapper, Text } from './Blog.style';
+import {
+  H1,
+  ImgWrapper,
+  InfoWrapper,
+  NoResultWrapper,
+  SearchInput,
+  SearchWrapper,
+  SectionWrapper,
+  Text,
+} from './Blog.style';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
-import { PostType } from './types';
+import { Post } from './types';
 
 const fetchAllPosts = async () => {
   const postsQuery = `
@@ -35,7 +44,7 @@ const fetchAllPosts = async () => {
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const { data, isLoading, isError } = useQuery<PostType[]>(['posts'], fetchAllPosts);
+  const { data, isLoading, isError } = useQuery<Array<Post>>(['posts'], fetchAllPosts);
 
   if (isLoading) {
     return <Spinner />;
@@ -74,34 +83,19 @@ const Blog = () => {
         </SectionWrapper>
       </Fade>
       <Fade bottom duration={2000} distance="40px">
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-            margin: '50px 0',
-          }}
-        >
-          <input
+        <SearchWrapper>
+          <SearchInput
             type="search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by title, description, or tags"
-            style={{
-              width: '300px',
-              height: '40px',
-              padding: '8px',
-              border: `1px solid #7F8DAA`,
-              borderRadius: '4px',
-            }}
           />
           {searchQuery && filteredPosts.length > 0 && (
             <p>
               {filteredPosts.length} {filteredPosts.length > 1 ? 'results' : 'result'} found
             </p>
           )}
-        </div>
+        </SearchWrapper>
         {filteredPosts.length > 0 ? (
           <BlogCard posts={filteredPosts} />
         ) : (

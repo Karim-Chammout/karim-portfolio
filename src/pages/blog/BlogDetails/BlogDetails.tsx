@@ -10,7 +10,7 @@ import { Button, ScrollToTop } from '../../../components';
 import { Spinner } from '../../../components/Spinner';
 import { isValidEmail } from '../../../utils/isValidEmail';
 import NotFound from '../../notFound';
-import { PostType } from '../types';
+import { Post } from '../types';
 import {
   AuthorImg,
   AuthorName,
@@ -39,7 +39,7 @@ interface FormInputType {
   comment: string;
 }
 
-const imgLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
+const imgLink = (asset: Post['mainImage']) => imgUrlFor(asset).url();
 
 const fetchPost = async (slug?: string) => {
   const postQuery = `
@@ -131,7 +131,7 @@ const BlogDetails = () => {
     data: postData,
     isLoading,
     isError,
-  } = useQuery<PostType>(['post', slug], () => fetchPost(slug));
+  } = useQuery<Post>(['post', slug], () => fetchPost(slug));
 
   if (isLoading) {
     return <Spinner />;

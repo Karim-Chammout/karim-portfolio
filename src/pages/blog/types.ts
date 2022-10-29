@@ -1,4 +1,4 @@
-export interface PostType {
+export interface Post {
   _id: string;
   title: string;
   author: {
@@ -23,12 +23,12 @@ export interface PostType {
     current: string;
   };
   description: string;
-  comments?: Array<CommentType>;
+  comments?: Array<Comment>;
   publishedAt: string;
   _updatedAt: string;
 }
 
-export interface CommentType {
+export interface Comment {
   comment: string;
   name: string;
   email: string;

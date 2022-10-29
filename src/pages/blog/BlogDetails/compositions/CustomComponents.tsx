@@ -1,10 +1,10 @@
 import { CodeBlock, dracula } from 'react-code-blocks';
 
 import { imgUrlFor } from '../../../../client';
-import { PostType } from '../../types';
+import { Post } from '../../types';
 import { Img } from '../BlogDetails.style';
 
-const StyledImage = (value: PostType['mainImage']) => {
+const StyledImage = (value: Post['mainImage']) => {
   const imgLink = imgUrlFor(value).url();
 
   return <Img src={imgLink} onClick={() => window.open(imgLink, '_blank')} />;
@@ -16,7 +16,7 @@ const CustomCodeBlock = (language: string, code: string) => {
 
 export default {
   types: {
-    image: ({ value }: { value: PostType['mainImage'] }) => StyledImage(value),
+    image: ({ value }: { value: Post['mainImage'] }) => StyledImage(value),
     code: ({ value: { language, code } }: { value: { language: string; code: string } }) =>
       CustomCodeBlock(language, code),
   },
