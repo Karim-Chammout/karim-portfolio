@@ -239,18 +239,20 @@ export const CommentContent = styled.div`
 
 export const CommentHeader = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 5px;
 `;
 
 export const CommentName = styled.p`
-  margin: 0px;
+  margin: 0;
   text-transform: capitalize;
   font-weight: bold;
 `;
 
-export const CommentDate = styled(CommentName)`
-  text-transform: none;
+export const CommentDate = styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.secondaryText};
 `;
 
 export const CommentText = styled.p`
