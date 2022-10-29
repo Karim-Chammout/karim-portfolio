@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
+import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -42,7 +42,7 @@ interface FormInputType {
 const imgLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
 
 const fetchPost = async (slug?: string) => {
-  const singlePostQuery = `
+  const postQuery = `
     *[_type == 'post' && slug.current == '${slug}'][0]{
       _id,
       title,
@@ -68,7 +68,7 @@ const fetchPost = async (slug?: string) => {
     }
     `;
 
-  return sanityClient.fetch(singlePostQuery);
+  return sanityClient.fetch(postQuery);
 };
 
 const BlogDetails = () => {
@@ -130,16 +130,14 @@ const BlogDetails = () => {
   const {
     data: postData,
     isLoading,
-    isFetched,
-    isFetching,
-    error,
-  } = useQuery<PostType>('post', () => fetchPost(slug));
+    isError,
+  } = useQuery<PostType>(['post', slug], () => fetchPost(slug));
 
-  if (isLoading || (isFetching && !isFetched)) {
+  if (isLoading) {
     return <Spinner />;
   }
 
-  if (error || !postData) {
+  if (isError || !postData) {
     return <NotFound />;
   }
 

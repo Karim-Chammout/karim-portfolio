@@ -1,5 +1,5 @@
+import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { useQuery } from 'react-query';
 import { Fade } from 'react-reveal';
 
 import NoResult from '../../assets/images/NoResult';
@@ -12,7 +12,7 @@ import { BlogCard } from './components';
 import { PostType } from './types';
 
 const fetchAllPosts = async () => {
-  const postQuery = `
+  const postsQuery = `
       *[_type == 'post']| order(_createdAt desc){
         _id,
         title,
@@ -26,23 +26,22 @@ const fetchAllPosts = async () => {
         categories[] -> {
           title,
           description
-        },
-        body
+        }
       }
     `;
 
-  return sanityClient.fetch(postQuery);
+  return sanityClient.fetch(postsQuery);
 };
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const { data, isLoading, error } = useQuery<PostType[]>('posts', fetchAllPosts);
+  const { data, isLoading, isError } = useQuery<PostType[]>(['posts'], fetchAllPosts);
 
   if (isLoading) {
     return <Spinner />;
   }
 
-  if (error || !data) {
+  if (isError || !data) {
     return <NotFound />;
   }
 
