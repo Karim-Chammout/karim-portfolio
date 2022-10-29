@@ -199,7 +199,7 @@ export const SubmittedWrapper = styled.div`
   }
 `;
 
-export const CommentSection = styled.section`
+export const Wrapper = styled.section`
   max-width: 630px;
   background: hsl(198, 100%, 92%);
   box-shadow: 0 1px 3px 0 lightGrey, 0 0 0 1px lightGrey;
@@ -212,12 +212,12 @@ export const CommentSection = styled.section`
   }
 `;
 
-export const CommentContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const CommentAvatar = styled.div`
+export const Avatar = styled.div`
   background: #001c55;
   color: #edf9fe;
   min-height: 50px;
@@ -232,10 +232,25 @@ export const CommentAvatar = styled.div`
   font-weight: bold;
 `;
 
+export const CommentContent = styled.div`
+  margin-left: 20px;
+  width: 100%;
+`;
+
+export const CommentHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+`;
+
 export const CommentName = styled.p`
   margin: 0px;
   text-transform: capitalize;
   font-weight: bold;
+`;
+
+export const CommentDate = styled(CommentName)`
+  text-transform: none;
 `;
 
 export const CommentText = styled.p`

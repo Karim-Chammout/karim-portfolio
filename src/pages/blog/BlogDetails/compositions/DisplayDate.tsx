@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-const formatedDate = (date: string) => new Date(date).toDateString().split(' ').slice(1).join(' ');
+import { formatedDate } from '../../../../utils/formatDate';
 
 const DisplayDate = ({
   textLabel,
