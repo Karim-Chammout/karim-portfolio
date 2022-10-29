@@ -23,12 +23,12 @@ export interface PostType {
     current: string;
   };
   description: string;
-  comments?: Array<Comment>;
+  comments?: Array<CommentType>;
   publishedAt: string;
   _updatedAt: string;
 }
 
-export interface Comment {
+export interface CommentType {
   comment: string;
   name: string;
   email: string;

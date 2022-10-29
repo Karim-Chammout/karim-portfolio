@@ -1,6 +1,3 @@
-/* eslint-disable no-useless-escape */
-
-/* eslint-disable no-underscore-dangle */
 import { PortableText } from '@portabletext/react';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -11,6 +8,7 @@ import { toast } from 'react-toastify';
 import sanityClient, { imgUrlFor } from '../../../client';
 import { Button, ScrollToTop } from '../../../components';
 import { Spinner } from '../../../components/Spinner';
+import { isValidEmail } from '../../../utils/isValidEmail';
 import NotFound from '../../notFound';
 import { PostType } from '../types';
 import {
@@ -23,22 +21,25 @@ import {
   Img,
   Input,
   Label,
+  LikedArticle,
   Line,
   PortableStyles,
   SectionWrapper,
-  Span,
   StyledForm,
+  SubmittedWrapper,
   Text,
   TextArea,
 } from './BlogDetails.style';
-import { CustomComponents } from './compositions';
+import { Comments, CustomComponents, DisplayDate } from './compositions';
 
-interface IFormInput {
+interface FormInputType {
   _id: string;
   name: string;
   email: string;
   comment: string;
 }
+
+const imgLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
 
 const fetchPost = async (slug?: string) => {
   const singlePostQuery = `
@@ -70,16 +71,6 @@ const fetchPost = async (slug?: string) => {
   return sanityClient.fetch(singlePostQuery);
 };
 
-const imgLink = (asset: PostType['mainImage']) => imgUrlFor(asset).url();
-
-const isValidEmail = (email: string) =>
-  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
-
-const publishedAtDate = (date: string) =>
-  new Date(date).toDateString().split(' ').slice(1).join(' ');
-
 const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
   const [submitted, setSubmitted] = useState(false);
@@ -89,9 +80,9 @@ const BlogDetails = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInput>();
+  } = useForm<FormInputType>();
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+  const onSubmit: SubmitHandler<FormInputType> = async (data) => {
     const { name, email, comment, _id } = data;
     const trimedEmail = email.trimStart();
 
@@ -169,15 +160,17 @@ const BlogDetails = () => {
             )}
           </div>
           <div style={{ marginLeft: '10px' }}>
-            <AuthorName>
-              <em>{postData.author.name}</em>
-            </AuthorName>
-            <p style={{ margin: '0 0 5px 0', fontStyle: 'italic' }}>
-              Published on: <b>{publishedAtDate(postData.publishedAt)}</b>
-            </p>
-            <p style={{ margin: '5px 0', fontStyle: 'italic' }}>
-              Last updated on: <b>{publishedAtDate(postData._updatedAt)}</b>
-            </p>
+            <AuthorName>{postData.author.name}</AuthorName>
+            <DisplayDate
+              textLabel="Published on"
+              date={postData.publishedAt}
+              extraStyles={{ margin: '0 0 5px 0' }}
+            />
+            <DisplayDate
+              textLabel="Last updated on"
+              date={postData._updatedAt}
+              extraStyles={{ margin: '5px 0' }}
+            />
           </div>
         </AuthorSection>
         {postData.mainImage && (
@@ -194,14 +187,14 @@ const BlogDetails = () => {
         <Line />
         {!submitted && (
           <StyledForm>
-            <div style={{ width: '100%', textAlign: 'left', marginBottom: '10px' }}>
+            <LikedArticle>
               <Text style={{ fontWeight: 'bold' }}>Liked this article?</Text>
               <Text>Leave a comment bellow!</Text>
-            </div>
-            <input {...register('_id')} type="hidden" name="_id" value={postData._id} />
+            </LikedArticle>
 
+            <input {...register('_id')} type="hidden" name="_id" value={postData._id} />
             <Label>
-              <Span>Name</Span>
+              <span>Name</span>
               <Input
                 {...register('name', { required: true })}
                 placeholder="Your name"
@@ -210,7 +203,7 @@ const BlogDetails = () => {
               />
             </Label>
             <Label>
-              <Span>Email</Span>
+              <span>Email</span>
               <Input
                 {...register('email', { required: true })}
                 placeholder="Your email"
@@ -219,7 +212,7 @@ const BlogDetails = () => {
               />
             </Label>
             <Label>
-              <Span>Comment</Span>
+              <span>Comment</span>
               <TextArea
                 {...register('comment', { required: true })}
                 placeholder="Your comment"
@@ -237,86 +230,12 @@ const BlogDetails = () => {
           </StyledForm>
         )}
         {submitted && (
-          <div
-            style={{
-              maxWidth: '700px', // DON'T FORGET media query width, currently it's broken
-              background: '#a6e1f1', // Card color (just like the blog card's background)
-              padding: '20px',
-              border: '1px solid #7f8daa',
-              borderRadius: '4px',
-              margin: 'auto',
-            }}
-          >
+          <SubmittedWrapper>
             <h5 style={{ margin: 0, fontSize: '1.5em' }}>Thanks for submitting your comment</h5>
             <p style={{ marginBottom: 0 }}>Your comment will be displayed once it's approved</p>
-          </div>
+          </SubmittedWrapper>
         )}
-
-        {/* Comment section */}
-        {postData.comments &&
-          postData.comments?.map((c) => (
-            /* Add avatar icon (something related to devs maybe) and render it just like the author section */
-            <section
-              key={c._id}
-              style={{
-                /* WIP */
-                maxWidth: '700px', // DON'T FORGET media query width, currently it's broken
-                // border: '1px solid grey',
-                borderRadius: '4px',
-                background: 'hsl(198, 100%, 92%)',
-                // background: 'red',
-                padding: '15px',
-                margin: '15px auto',
-                // display: 'flex',
-                // alignItems: 'center',
-                // justifyContent: 'flex-start',
-                boxShadow: '0 1px 3px 0 lightGrey, 0 0 0 1px lightGrey',
-              }}
-            >
-              <p style={{ margin: '0 0 5px 70px', fontStyle: 'italic' }}>
-                Published on:<b>{publishedAtDate(c._createdAt)}</b>
-              </p>
-              <div
-                style={{
-                  /* WIP */
-                  // maxWidth: '700px',
-                  // border: '1px solid grey',
-                  // borderRadius: '4px',
-                  // background: 'hsl(198, 100%, 92%)',
-                  // padding: '15px',
-                  // margin: '5px auto',
-                  display: 'flex',
-                  alignItems: 'center',
-                  // boxShadow: '0 1px 3px 0 lightGrey, 0 0 0 1px lightGrey',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#a6e1f1',
-                    minHeight: '50px',
-                    minWidth: '50px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    alignSelf: 'start',
-                    border: '1px solid #7f8daa',
-                    borderRadius: '50%',
-                    fontSize: '1.5em',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {c.name.substring(0, 1).toUpperCase()}
-                </div>
-                <div style={{ marginLeft: '20px' }}>
-                  {/* <p style={{ margin: 0, fontWeight: 'bold' }}>Published on: {publishedAtDate(c._createdAt)}</p> */}
-                  <p style={{ margin: '0px', textTransform: 'capitalize', fontWeight: 'bold' }}>
-                    {c.name}
-                  </p>
-                  <p style={{ margin: '0', lineHeight: 1.4 }}>{c.comment}</p>
-                </div>
-              </div>
-            </section>
-          ))}
+        {postData.comments && postData.comments?.map((c) => <Comments key={c._id} comments={c} />)}
       </SectionWrapper>
       <ScrollToTop />
     </>

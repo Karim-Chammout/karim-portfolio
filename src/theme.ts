@@ -1,5 +1,7 @@
 const color = {
   darkBlue: '#55198b',
+  successGreen: '#07bc0c',
+  white: '#ffffff',
 };
 
 export const blueTheme = {
@@ -13,6 +15,8 @@ export const blueTheme = {
   jacketColor: '#0A2472',
   headerColor: '#0E6BA877',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const brownTheme = {
@@ -26,6 +30,8 @@ export const brownTheme = {
   jacketColor: '#FB6376',
   headerColor: '#E29F9577',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const purpleTheme = {
@@ -39,6 +45,8 @@ export const purpleTheme = {
   jacketColor: '#5E548E',
   headerColor: '#BE95C477',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const yelGreenTheme = {
@@ -64,6 +72,8 @@ export const redTheme = {
   jacketColor: '#9d0208',
   headerColor: '#dc2f0277',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const blackTheme = {
@@ -77,6 +87,8 @@ export const blackTheme = {
   jacketColor: '#8d99ae',
   headerColor: '#fca31177',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const pinkTheme = {
@@ -90,6 +102,8 @@ export const pinkTheme = {
   jacketColor: '#8d99ae',
   headerColor: '#ef476f77',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const violetTheme = {
@@ -103,6 +117,8 @@ export const violetTheme = {
   jacketColor: '#763D8B',
   headerColor: '#9b5de577',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const greenTheme = {
@@ -116,6 +132,8 @@ export const greenTheme = {
   jacketColor: '#56a3a6',
   headerColor: '#07beb877',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const orangeTheme = {
@@ -129,6 +147,8 @@ export const orangeTheme = {
   jacketColor: '#d7263d',
   headerColor: '#FF6B3577',
   btnBlue: color.darkBlue,
+  success: color.successGreen,
+  ...color,
 };
 
 export const chosenTheme = blueTheme;

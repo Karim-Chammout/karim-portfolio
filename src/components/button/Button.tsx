@@ -10,7 +10,7 @@ const Button = ({
   text: string;
   href?: string;
   newTab?: boolean;
-  onClick?: any;
+  onClick?: (() => Promise<void>) | (() => void);
   disabled?: boolean;
 }) => {
   if (onClick) {
