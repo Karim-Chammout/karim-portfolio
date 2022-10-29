@@ -230,11 +230,12 @@ export const Avatar = styled.div`
   border-radius: 50%;
   font-size: 1.5em;
   font-weight: bold;
+  user-select: none;
 `;
 
 export const CommentContent = styled.div`
   margin-left: 20px;
-  width: 100%;
+  width: calc(100% - 70px);
 `;
 
 export const CommentHeader = styled.div`
@@ -258,4 +259,5 @@ export const CommentDate = styled.p`
 export const CommentText = styled.p`
   margin: 0px;
   line-height: 1.4;
+  overflow-wrap: break-word;
 `;
