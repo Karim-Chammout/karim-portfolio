@@ -64,6 +64,10 @@ export const SearchInput = styled.input`
   padding: 8px;
   border: 1px solid ${({ theme }) => theme.secondaryText};
   border-radius: 4px;
+
+  @media (max-width: 350px) {
+    width: 100%;
+  }
 `;
 
 export const NoResultWrapper = styled.div`
