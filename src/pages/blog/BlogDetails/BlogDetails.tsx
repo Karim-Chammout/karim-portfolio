@@ -8,6 +8,8 @@ import { toast } from 'react-toastify';
 import sanityClient, { imgUrlFor } from '../../../client';
 import { Button, ScrollToTop } from '../../../components';
 import { Spinner } from '../../../components/Spinner';
+import { ProgressBar } from '../../../global';
+import useProgressBar from '../../../hook/useProgressBar';
 import { isValidEmail } from '../../../utils/isValidEmail';
 import NotFound from '../../notFound';
 import { Post } from '../types';
@@ -127,6 +129,8 @@ const BlogDetails = () => {
     }
   };
 
+  const { scrollPosi } = useProgressBar();
+
   const {
     data: postData,
     isLoading,
@@ -143,6 +147,7 @@ const BlogDetails = () => {
 
   return (
     <>
+      <ProgressBar scroll={scrollPosi} />
       <SectionWrapper>
         <BlogTitle>{postData.title}</BlogTitle>
         <BlogDesc>{postData.description}</BlogDesc>

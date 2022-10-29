@@ -218,7 +218,7 @@ export const Container = styled.div`
 `;
 
 export const Avatar = styled.div`
-  background: #001c55;
+  background: ${({ theme }) => theme.text};
   color: #edf9fe;
   min-height: 50px;
   min-width: 50px;
