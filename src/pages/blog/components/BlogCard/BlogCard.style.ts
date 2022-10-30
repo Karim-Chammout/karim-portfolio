@@ -16,7 +16,6 @@ export const Card = styled(Link)`
   height: 350px;
   display: flex;
   align-items: flex-end;
-  /* margin: 0 auto; */
   margin: calc(5% / 3);
   position: relative;
 
