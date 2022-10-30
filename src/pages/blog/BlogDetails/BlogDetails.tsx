@@ -33,6 +33,7 @@ import {
   TextArea,
 } from './BlogDetails.style';
 import { Comments, CustomComponents, DisplayDate } from './compositions';
+import { fetchPost } from './postQuery';
 
 interface FormInputType {
   _id: string;
@@ -42,36 +43,6 @@ interface FormInputType {
 }
 
 const imgLink = (asset: Post['mainImage']) => imgUrlFor(asset).url();
-
-const fetchPost = async (slug?: string) => {
-  const postQuery = `
-    *[_type == 'post' && slug.current == '${slug}'][0]{
-      _id,
-      title,
-      author-> {
-        name,
-        image
-      },
-      slug,
-      description,
-      mainImage,
-      publishedAt,
-      _updatedAt,
-      categories[]-> {
-        title,
-        description
-      },
-      body,
-      'comments': *[
-        _type == 'comment' &&
-        post._ref == ^._id &&
-        approved == true
-      ]| order(_createdAt desc)
-    }
-    `;
-
-  return sanityClient.fetch(postQuery);
-};
 
 const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();

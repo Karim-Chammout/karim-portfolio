@@ -80,7 +80,7 @@ export const Img = styled.img`
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
     transition: 0.3s ease-in-out;
-    scale: 1.01;
+    scale: 1.005;
   }
 `;
 

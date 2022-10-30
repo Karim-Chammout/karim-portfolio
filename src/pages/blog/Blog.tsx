@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Fade } from 'react-reveal';
 
 import NoResult from '../../assets/images/NoResult';
-import sanityClient from '../../client';
 import { Spinner } from '../../components/Spinner';
 import NotFound from '../notFound';
 import {
@@ -18,29 +17,8 @@ import {
 } from './Blog.style';
 import BlogImage from './BLogImage';
 import { BlogCard } from './components';
+import { fetchAllPosts } from './postsQuery';
 import { Post } from './types';
-
-const fetchAllPosts = async () => {
-  const postsQuery = `
-      *[_type == 'post']| order(_createdAt desc){
-        _id,
-        title,
-        author-> {
-          name,
-          image
-        },
-        slug,
-        description,
-        mainImage,
-        categories[] -> {
-          title,
-          description
-        }
-      }
-    `;
-
-  return sanityClient.fetch(postsQuery);
-};
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
