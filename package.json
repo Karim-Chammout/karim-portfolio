@@ -27,7 +27,8 @@
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "check-types": "tsc --noEmit"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.3.1",

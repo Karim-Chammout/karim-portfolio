@@ -49,7 +49,7 @@ const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const form = useRef<HTMLFormElement | null>(null);
+  const form = useRef<HTMLFormElement>(null);
 
   const {
     register,
