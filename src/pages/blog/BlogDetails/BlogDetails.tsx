@@ -1,6 +1,7 @@
+import emailjs from '@emailjs/browser';
 import { PortableText } from '@portabletext/react';
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -48,6 +49,7 @@ const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef<HTMLFormElement | null>(null);
 
   const {
     register,
@@ -93,6 +95,15 @@ const BlogDetails = () => {
       toast.success("Thank you! Your comment will be displayed once it's approved");
       setSubmitted(true);
       setIsSubmitting(false);
+
+      if (form.current) {
+        emailjs.sendForm(
+          import.meta.env.VITE_EMAIL_SERVICE_ID,
+          import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+          form.current,
+          import.meta.env.VITE_EMAIL_PUBLIC_KEY
+        );
+      }
     } catch (err) {
       setSubmitted(false);
       setIsSubmitting(false);
@@ -160,19 +171,22 @@ const BlogDetails = () => {
         </PortableStyles>
         <Line />
         {!submitted && (
-          <StyledForm>
+          <StyledForm ref={form}>
             <LikedArticle>
               <Text style={{ fontWeight: 'bold' }}>Liked this article?</Text>
               <Text>Leave a comment bellow!</Text>
             </LikedArticle>
 
             <input {...register('_id')} type="hidden" name="_id" value={postData._id} />
+            <input type="hidden" name="post_name" value={postData.title} />
+
             <Label>
               <span>Name</span>
               <Input
                 {...register('name', { required: true })}
                 placeholder="Your name"
                 type="text"
+                name="name"
                 hasError={!!errors.name}
               />
             </Label>
@@ -182,6 +196,7 @@ const BlogDetails = () => {
                 {...register('email', { required: true })}
                 placeholder="Your email"
                 type="email"
+                name="email"
                 hasError={!!errors.email}
               />
             </Label>
@@ -190,6 +205,7 @@ const BlogDetails = () => {
               <TextArea
                 {...register('comment', { required: true })}
                 placeholder="Your comment"
+                name="comment"
                 rows={6}
                 hasError={!!errors.comment}
               />
