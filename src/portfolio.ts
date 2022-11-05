@@ -1,7 +1,13 @@
+import factOfTheDay from './assets/images/didYouKnow.jpg';
 import githubImg from './assets/images/github.svg';
 import gmailImg from './assets/images/google.svg';
+import googleAssistant from './assets/images/googleAssistantlogo.svg';
 import instagramImg from './assets/images/instagram.svg';
 import linkedinImg from './assets/images/linkedin.svg';
+import oxygenDevs from './assets/images/oxygenDevs.png';
+import portfolioImg from './assets/images/portfolioImg.png';
+import teslaColne from './assets/images/teslaClone.png';
+import tvShows from './assets/images/tvShows.png';
 import twitterImg from './assets/images/twitter.svg';
 
 // About Page
@@ -51,7 +57,7 @@ const skills = {
   data: [
     {
       title: 'Front-end Development',
-      fileName: 'DataScienceImg',
+      skillName: 'Front-end',
       skills: [
         '⚡ Building responsive website front end using modern tools like React',
         '⚡ Creating and optimizing interactive, user-friendly, and feature-rich websites',
@@ -85,7 +91,7 @@ const skills = {
     },
     {
       title: 'Wireframing & Design',
-      fileName: 'FullStackImg',
+      skillName: 'Designing',
       skills: [
         "⚡ Understanding the client's needs to come up with the best design wanted",
         '⚡ Designing fast load time and lag-free interaction website is the highest priority',
@@ -118,6 +124,7 @@ const projectsData = {
     {
       id: 1,
       name: 'The fact of the day',
+      imgUrl: factOfTheDay,
       url: 'https://fact-of-the-day.karim-dev.com',
       description: 'A web application where we share a new fact everyday to learn something new',
       tools: 'HTML - CSS - JS - TS - @emotion/react - MUI - React - Firebase',
@@ -125,6 +132,7 @@ const projectsData = {
     {
       id: 2,
       name: 'OxygenDevs',
+      imgUrl: oxygenDevs,
       url: 'https://github.com/Karim-Chammout/Oxygen-Devs',
       description: 'Web Design Agency',
       tools: 'HTML - CSS - BootStrap',
@@ -132,6 +140,7 @@ const projectsData = {
     {
       id: 3,
       name: 'Google Assistant Bootstrap',
+      imgUrl: googleAssistant,
       url: 'https://github.com/Karim-Chammout/Google-Assistant-Bootstrap',
       description: 'Google Assistant Design with Bootstrap',
       tools: 'HTML - CSS - BootStrap',
@@ -139,6 +148,7 @@ const projectsData = {
     {
       id: 4,
       name: 'Portfolio Design',
+      imgUrl: portfolioImg,
       url: 'https://github.com/Karim-Chammout/Temporary-Portfolio',
       description: 'Designing a template for a portfolio',
       tools: 'HTML - CSS - BootStrap',
@@ -146,6 +156,7 @@ const projectsData = {
     {
       id: 5,
       name: 'React TV Show',
+      imgUrl: tvShows,
       url: 'https://github.com/Karim-Chammout/react-tvshow-project',
       description: 'TV Shows Application To search for your favorite shows',
       tools: 'HTML - CSS - BootStrap - React - React-router-dom',
@@ -153,6 +164,7 @@ const projectsData = {
     {
       id: 6,
       name: 'React Tesla clone',
+      imgUrl: teslaColne,
       url: 'https://github.com/Karim-Chammout/tesla-clone',
       description: 'Cloning the original Tesla website using React.js',
       tools: 'HTML - CSS - Styled-components - React - React-redux - React-reveal',
@@ -169,16 +181,6 @@ const contactPageData = {
     description:
       'I am available on almost every social media. You can fire me an email and I will reply within 24 hours.',
     ctaText: 'See My Resume',
-  },
-  addressSection: {
-    title: 'Address',
-    subtitle: 'Turkey - Istanbul',
-    ctaText: 'Visit on Google Maps',
-    location_map_link: 'https://goo.gl/maps/Nd8VGEBZYKLXc4oB6',
-  },
-  phoneSection: {
-    title: 'Phone Number',
-    phone_num: '+90 536 812 08 35',
   },
 };
 

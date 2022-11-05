@@ -20,7 +20,7 @@ export const ImgWrapper = styled.div`
   justify-content: center;
 
   & > * {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
   }
 `;
@@ -58,6 +58,18 @@ export const SearchWrapper = styled.div`
   margin: 50px 0;
 `;
 
+export const InputWrppaer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  & > label {
+    color: ${({ theme }) => theme.text};
+    font-size: 1.25em;
+  }
+`;
+
 export const SearchInput = styled.input`
   width: 300px;
   height: 40px;
@@ -71,11 +83,13 @@ export const SearchInput = styled.input`
 `;
 
 export const NoResultWrapper = styled.div`
-  color: ${({ theme }) => theme.text};
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
+  & > p {
+    color: ${({ theme }) => theme.text};
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
 
   & > svg {
     width: 100%;

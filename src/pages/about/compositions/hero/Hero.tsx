@@ -1,8 +1,8 @@
 import { Fade } from 'react-reveal';
 
+import ProgrammerSVG from '../../../../assets/ProgrammerSVG';
 import { Button, SocialMedia } from '../../../../components';
 import { greeting } from '../../../../portfolio';
-import Developer from './Developer';
 import {
   ButtonWrapper,
   Content,
@@ -28,7 +28,7 @@ const Hero = () => {
           </ButtonWrapper>
         </Content>
         <ImageWrapper>
-          <Developer />
+          <ProgrammerSVG />
         </ImageWrapper>
       </Wrapper>
     </Fade>

@@ -80,7 +80,6 @@ export const Img = styled.img`
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
     transition: 0.3s ease-in-out;
-    scale: 1.005;
   }
 `;
 
@@ -188,9 +187,11 @@ export const LikedArticle = styled.div`
 
 export const SubmittedWrapper = styled.div`
   max-width: 630px;
-  background: ${({ theme }) => theme.success};
-  color: ${({ theme }) => theme.white};
+  background: ${({ theme }) => theme.highlight};
+  color: ${({ theme }) => theme.text};
   padding: 20px;
+  box-shadow: 0 1px 3px 0 ${({ theme }) => theme.lightGreyShadow},
+    0 0 0 1px ${({ theme }) => theme.lightGreyShadow};
   border-radius: 4px;
   margin: auto;
 
@@ -201,8 +202,9 @@ export const SubmittedWrapper = styled.div`
 
 export const Wrapper = styled.section`
   max-width: 630px;
-  background: hsl(198, 100%, 92%);
-  box-shadow: 0 1px 3px 0 lightGrey, 0 0 0 1px lightGrey;
+  background: ${({ theme }) => theme.highlight};
+  box-shadow: 0 1px 3px 0 ${({ theme }) => theme.lightGreyShadow},
+    0 0 0 1px ${({ theme }) => theme.lightGreyShadow};
   padding: 15px;
   border-radius: 4px;
   margin: 15px auto;
@@ -219,14 +221,14 @@ export const Container = styled.div`
 
 export const Avatar = styled.div`
   background: ${({ theme }) => theme.text};
-  color: #edf9fe;
+  color: ${({ theme }) => theme.body};
   min-height: 50px;
   min-width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: start;
-  border: 1px solid #7f8daa;
+  border: 1px solid ${({ theme }) => theme.lightGreyShadow};
   border-radius: 50%;
   font-size: 1.5em;
   font-weight: bold;

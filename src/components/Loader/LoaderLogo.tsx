@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import { chosenTheme as theme } from '../../theme';
+import theme from '../../theme';
 import { SVG } from './Loader.style';
 
 const LogoLoader = () => {
@@ -39,40 +39,40 @@ const LogoLoader = () => {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              .letter{
+              .letter {
                 opacity: 0;
-                -webkit-animation: fadein 2s linear forwards 2.5s;
-                -o-animation: fadein 2s linear forwards 2.5s;
-                -moz-animation: fadein 2s linear forwards 2.5s;
-                animation: fadein 2s linear forwards 2.5s;
+                -webkit-animation: fadein 1s linear forwards 1s;
+                -o-animation: fadein 1s linear forwards 1s;
+                -moz-animation: fadein 1s linear forwards 1s;
+                animation: fadein 1s linear forwards 1s;
               }
 
-              @-webkit-keyframes fadein{
-                from{
-                  opacity: 0;
+              @-webkit-keyframes fadein {
+                  from{
+                    opacity: 0;
+                  }
+                  to{
+                    opacity: 1;
+                  }
                 }
-                to{
-                  opacity: 1;
-                }
-              }
 
-                .myHexagon{
-                stroke-dasharray: 800;
-                stroke-dashoffset: 800;
-                -webkit-animation: dash 4s linear forwards 0.5s;
-                -o-animation: dash 4s linear forwards 0.5s;
-                -moz-animation: dash 4s linear forwards 0.5s;
-                animation: dash 4s linear forwards 0.5s;
-              }
-
-              @-webkit-keyframes dash{
-                from{
+                .myHexagon {
+                  stroke-dasharray: 800;
                   stroke-dashoffset: 800;
+                  -webkit-animation: dash 2s linear forwards 0.5s;
+                  -o-animation: dash 2s linear forwards 0.5s;
+                  -moz-animation: dash 2s linear forwards 0.5s;
+                  animation: dash 2s linear forwards 0.5s;
                 }
-                to{
-                  stroke-dashoffset: 0;
+
+              @-webkit-keyframes dash {
+                  from{
+                    stroke-dashoffset: 800;
+                  }
+                  to{
+                    stroke-dashoffset: 0;
+                  }
                 }
-              }
               `,
           }}
         />

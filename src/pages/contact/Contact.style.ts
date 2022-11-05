@@ -74,22 +74,3 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   margin: 20px 0;
 `;
-
-export const InfoWrapper = styled.div`
-  text-align: center;
-
-  @media (max-width: 768px) {
-    margin-top: 50px;
-  }
-`;
-
-export const H4 = styled.h4`
-  color: ${({ theme }) => theme.text};
-  margin: 0 0 5px 0;
-  font-size: 2em;
-  font-weight: bold;
-
-  @media (max-width: 768px) {
-    font-size: 1.5em;
-  }
-`;

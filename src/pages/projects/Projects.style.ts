@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
   display: flex;
+  align-items: center;
 
   & > * {
     flex: 1;
@@ -13,12 +14,12 @@ export const SectionWrapper = styled.section`
 `;
 
 export const ImgWrapper = styled.div`
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 
   & > * {
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
   }
 `;
@@ -57,26 +58,72 @@ export const ButtonWrapper = styled.div`
 export const CardsSection = styled.section`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 100px;
   width: 100%;
 `;
 
 export const Card = styled.article`
-  background: ${({ theme }) => theme.highlight};
+  border-radius: 16px;
+  background: ${({ imgurl }: { imgurl: string }) => `url(${imgurl})`} no-repeat top center/cover;
+  background-color: rgba(0, 0, 0, 0.1);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
-  border-radius: 4px;
-  padding: 2rem;
   cursor: pointer;
-  width: 48%;
-  margin: 1%;
+  overflow: hidden;
+  width: 30%;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  margin: calc(5% / 3);
+  position: relative;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+
+    .content_hover {
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 990px) {
+    width: 47%;
+    margin: 1.5%;
+    height: 300px;
   }
 
   @media (max-width: 768px) {
     width: 100%;
     margin: 15px 0;
+  }
+`;
+
+export const Content = styled.article`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: ${({ theme }) => theme.white};
+  padding: 20px;
+  border-top-left-radius: 20px;
+  transform: translateY(46%);
+  transition: transform 0.3s;
+
+  @media (max-width: 990px) {
+    transform: translateY(48%);
+  }
+
+  @media (max-width: 768px) {
+    transform: translateY(38%);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -52px;
+    right: -48px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+    box-shadow: inset -48px -48px ${({ theme }) => theme.white};
   }
 `;
 
@@ -111,7 +158,7 @@ export const ProjectDesc = styled.p`
 
 export const Tools = styled.p`
   color: ${({ theme }) => theme.secondaryText};
-  margin: 0;
+  margin: 10px 0;
 
   @media (max-width: 768px) {
     font-size: 14px;

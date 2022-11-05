@@ -92,10 +92,6 @@ export const Content = styled.article`
   }
 `;
 
-export const LinkCard = styled(Link)`
-  text-decoration: none;
-`;
-
 export const BlogName = styled.h5`
   color: ${({ theme }) => theme.text};
   font-size: 1.5em;

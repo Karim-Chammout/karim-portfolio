@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-const wrapperStyles = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   padding: 20px 10px;
   margin: 0px auto;
   margin-top: 4rem;
 `;
 
-const h1Styles = styled.h1`
+export const H1 = styled.h1`
   color: ${({ theme }) => theme.text};
   font-size: 3.5em;
   text-align: center;
@@ -17,7 +17,7 @@ const h1Styles = styled.h1`
   }
 `;
 
-const h3Styles = styled.h3`
+export const H3 = styled.h3`
   color: ${({ theme }) => theme.text};
   font-size: 2.75em;
   font-weight: bold;
@@ -28,7 +28,7 @@ const h3Styles = styled.h3`
   }
 `;
 
-const textStyles = styled.p`
+export const Text = styled.p`
   color: ${({ theme }) => theme.secondaryText};
   font-size: 1.5em;
 
@@ -38,7 +38,7 @@ const textStyles = styled.p`
   }
 `;
 
-const skillWrapperStyles = styled.div`
+export const SkillWrapper = styled.div`
   display: flex;
   overflow: hidden;
   & > * {
@@ -54,7 +54,7 @@ const skillWrapperStyles = styled.div`
   }
 `;
 
-const imageWrapperStyles = styled.div`
+export const ImgWrapper = styled.div`
   & > * {
     max-width: 100%;
     height: auto;
@@ -68,7 +68,7 @@ const imageWrapperStyles = styled.div`
   }
 `;
 
-const contentWrapperStyles = styled.div`
+export const ContentWrapper = styled.div`
   align-self: center;
   margin-left: 50px;
 
@@ -77,14 +77,3 @@ const contentWrapperStyles = styled.div`
     margin: 20px;
   }
 `;
-
-/**
- * Component style declarations
- */
-export const Wrapper = wrapperStyles;
-export const SkillWrapper = skillWrapperStyles;
-export const ImgWrapper = imageWrapperStyles;
-export const ContentWrapper = contentWrapperStyles;
-export const H1 = h1Styles;
-export const H3 = h3Styles;
-export const Text = textStyles;

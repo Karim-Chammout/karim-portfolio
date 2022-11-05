@@ -22,7 +22,7 @@ export const Screen = styled.div`
   justify-content: center;
   overflow: hidden;
   border-radius: 50%;
-  animation: grow 5.5s forwards;
+  animation: grow 3s forwards;
 
   @keyframes grow {
     0% {

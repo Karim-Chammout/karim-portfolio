@@ -1,10 +1,10 @@
 import { Fade } from 'react-reveal';
 
+import ProjectSVG from '../../assets/ProjectSVG';
 import { Button } from '../../components';
 import { projectsData } from '../../portfolio';
 import ProjectCard from './projectCard';
 import { ButtonWrapper, H1, ImgWrapper, InfoWrapper, SectionWrapper, Text } from './Projects.style';
-import ProjectsImg from './ProjectsImg';
 
 const Projects = () => {
   return (
@@ -12,7 +12,7 @@ const Projects = () => {
       <Fade bottom duration={2000} distance="40px">
         <SectionWrapper>
           <ImgWrapper>
-            <ProjectsImg />
+            <ProjectSVG />
           </ImgWrapper>
           <InfoWrapper>
             <H1>{projectsData.title}</H1>

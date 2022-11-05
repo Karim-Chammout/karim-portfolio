@@ -19,7 +19,7 @@ export default styled.div`
     border-radius: 50%;
     border: 6px solid #fff;
     border-color: ${({ theme }: { theme: ThemeType }) =>
-      `${theme.imageHighlight} transparent ${theme.imageHighlight} transparent`};
+      `${theme.highlight} transparent ${theme.highlight} transparent`};
     animation: dual-ring 1.2s linear infinite;
   }
 

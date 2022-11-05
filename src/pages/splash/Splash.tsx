@@ -19,7 +19,7 @@ const Splash = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    const myTimeout = setTimeout(() => setRedirect(true), 5300);
+    const myTimeout = setTimeout(() => setRedirect(true), 3000);
 
     return () => clearTimeout(myTimeout);
   }, []);

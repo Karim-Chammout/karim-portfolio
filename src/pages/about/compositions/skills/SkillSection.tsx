@@ -1,16 +1,19 @@
 import { Fade } from 'react-reveal';
 
+import DesignSVG from '../../../../assets/DesignSVG';
+import FrontendSVG from '../../../../assets/FrontendSVG';
 import { skills } from '../../../../portfolio';
-import DataScienceImg from './DataScienceImg';
-import DesignImg from './DesignImg';
-import FullStackImg from './FullStackImg';
 import { ContentWrapper, H3, ImgWrapper, SkillWrapper, Text } from './Skills.style';
 
-const GetSkillSvg = ({ fileName }: { fileName: string }) => {
-  if (fileName === 'DataScienceImg') return <DataScienceImg />;
-  if (fileName === 'FullStackImg') return <FullStackImg />;
-
-  return <DesignImg />;
+const GetSkillSvg = ({ skillName }: { skillName: string }) => {
+  switch (skillName) {
+    case 'Front-end':
+      return <FrontendSVG />;
+    case 'Designing':
+      return <DesignSVG />;
+    default:
+      return null;
+  }
 };
 
 const SkillSection = () => {
@@ -20,10 +23,9 @@ const SkillSection = () => {
         <SkillWrapper key={skill.title}>
           <Fade left duration={2000}>
             <ImgWrapper>
-              <GetSkillSvg fileName={skill.fileName} />
+              <GetSkillSvg skillName={skill.skillName} />
             </ImgWrapper>
           </Fade>
-
           <ContentWrapper>
             <Fade right duration={1000}>
               <H3>{skill.title}</H3>

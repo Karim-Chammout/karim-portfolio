@@ -92,7 +92,9 @@ const BlogDetails = () => {
         email: trimedEmail,
         comment: comment.trimStart(),
       });
-      toast.success("Thank you! Your comment will be displayed once it's approved");
+      toast.success("Thank you! Your comment will be displayed once it's approved", {
+        theme: 'dark',
+      });
       setSubmitted(true);
       setIsSubmitting(false);
 

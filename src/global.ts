@@ -35,7 +35,7 @@ export const ProgressBar = styled.div`
   position: fixed;
   background: linear-gradient(
     to right,
-    ${({ theme }) => theme.text} ${({ scroll }: { scroll: number }) => `${scroll}%`},
+    ${({ theme }) => theme.highlight} ${({ scroll }: { scroll: number }) => `${scroll}%`},
     transparent 0
   );
   width: 100%;

@@ -16,7 +16,7 @@ const TopButton = () => {
   useEffect(() => {
     const scrollListener = () => {
       if (scrollRef.current) {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 130) {
           scrollRef.current.style.visibility = 'visible';
         } else {
           scrollRef.current.style.visibility = 'hidden';

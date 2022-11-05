@@ -9,13 +9,13 @@ import { ThemeProvider } from 'styled-components';
 import { Spinner } from './components/Spinner';
 import Main from './containers/Main';
 import { GlobalStyles } from './global';
-import { chosenTheme } from './theme';
+import theme from './theme';
 
 const client = new QueryClient();
 
 const App = () => {
   return (
-    <ThemeProvider theme={chosenTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Suspense fallback={<Spinner />}>
         <QueryClientProvider client={client}>
