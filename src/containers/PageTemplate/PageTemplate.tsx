@@ -16,7 +16,9 @@ const PageTemplate = ({ children }: { children: ReactNode }) => {
     <Container>
       <Seo />
       <Navbar />
-      <Suspense fallback={<Spinner />}>{children}</Suspense>
+      <Suspense fallback={<Spinner />}>
+        <main>{children}</main>
+      </Suspense>
       <TopButton />
       <Footer />
     </Container>
