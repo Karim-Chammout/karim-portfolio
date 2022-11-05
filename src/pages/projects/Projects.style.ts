@@ -14,10 +14,6 @@ export const SectionWrapper = styled.section`
 `;
 
 export const ImgWrapper = styled.div`
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-
   & > * {
     max-width: 95%;
     height: auto;
@@ -60,40 +56,6 @@ export const CardsSection = styled.section`
   flex-wrap: wrap;
   margin-top: 100px;
   width: 100%;
-`;
-
-export const Card = styled.article`
-  border-radius: 16px;
-  background: ${({ imgurl }: { imgurl: string }) => `url(${imgurl})`} no-repeat top center/cover;
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
-  cursor: pointer;
-  overflow: hidden;
-  width: 30%;
-  height: 350px;
-  display: flex;
-  align-items: flex-end;
-  margin: calc(5% / 3);
-  position: relative;
-
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
-
-    .content_hover {
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 990px) {
-    width: 47%;
-    margin: 1.5%;
-    height: 300px;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin: 15px 0;
-  }
 `;
 
 export const Content = styled.article`
@@ -150,6 +112,7 @@ export const ProjectDesc = styled.p`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   margin: 10px 0;
+  display: none;
 
   @media (max-width: 768px) {
     font-size: 1em;
@@ -158,9 +121,52 @@ export const ProjectDesc = styled.p`
 
 export const Tools = styled.p`
   color: ${({ theme }) => theme.secondaryText};
-  margin: 10px 0;
+  margin: 10px 0 100px 0;
 
   @media (max-width: 768px) {
+    margin: 10px 0 50px 0;
     font-size: 14px;
+  }
+`;
+
+export const Card = styled.article`
+  border-radius: 16px;
+  background: ${({ imgurl }: { imgurl: string }) => `url(${imgurl})`} no-repeat top center/cover;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 30%;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  margin: calc(5% / 3);
+  position: relative;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+
+    ${Content} {
+      transform: translateY(0);
+    }
+
+    ${ProjectDesc} {
+      display: block;
+    }
+
+    ${Tools} {
+      margin: 10px 0;
+    }
+  }
+
+  @media (max-width: 990px) {
+    width: 47%;
+    margin: 1.5%;
+    height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 15px 0;
   }
 `;

@@ -11,7 +11,7 @@ const ProjectCard = () => {
       <CardsSection>
         {projectsData.projectsList.map((project) => (
           <Card key={project.id} onClick={() => goToLink(project.url)} imgurl={project.imgUrl}>
-            <Content className="content_hover">
+            <Content>
               <ProjectName>{project.name}</ProjectName>
               <Tools>Tools: {project.tools}</Tools>
               <ProjectDesc title={project.description}>{project.description}</ProjectDesc>
