@@ -85,6 +85,7 @@ export const Nav = styled('nav')(
       padding: 20px;
       box-sizing: border-box;
       color: ${theme?.text};
+
       &:hover {
         background: ${theme?.highlight};
         color: ${theme?.textHover};
@@ -148,4 +149,9 @@ export const ToggleWrapper = styled('span')(css`
   padding: 20px;
   cursor: pointer;
   user-select: none;
+
+  &:hover {
+    filter: drop-shadow(0 0 10px);
+    transition: 0.2s ease-in;
+  }
 `);
