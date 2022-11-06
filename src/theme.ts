@@ -1,16 +1,16 @@
 const color = {
-  floralWhite: '#FAF9F6',
   black: '#000000',
   white: '#ffffff',
-  schoolBusYellow: '#fbd90c',
   grey: '#595959',
-  lightGrey: '#d3d3d3',
-  cardDarkBackground: 'rgba(255, 255, 255, 0.1)',
-  cardLightBackground: 'rgba(0, 0, 0, 0.1)',
-  lightBlack: '#424242',
-  raisinBlack: '#232323',
   silver: '#c5c5c5',
+  floralWhite: '#FAF9F6',
+  lightBlack: '#424242',
+  lightGrey: '#d3d3d3',
+  raisinBlack: '#232323',
+  schoolBusYellow: '#fbd90c',
   successGreen: '#07bc0c',
+  cardDarkShadow: 'rgba(255, 255, 255, 0.1)',
+  cardLightShadow: 'rgba(0, 0, 0, 0.2)',
 };
 
 const lightTheme = {
@@ -22,7 +22,8 @@ const lightTheme = {
   cardBgColor: color.white,
   commentBgColor: color.white,
   textHover: color.black,
-  ...color,
+  cardBoxShadow: color.cardLightShadow,
+  otherColors: { ...color },
 };
 
 const darkTheme = {
@@ -34,7 +35,8 @@ const darkTheme = {
   cardBgColor: color.lightBlack,
   commentBgColor: color.lightBlack,
   textHover: color.raisinBlack,
-  ...color,
+  cardBoxShadow: color.cardDarkShadow,
+  otherColors: { ...color },
 };
 
 export { lightTheme, darkTheme };

@@ -21,7 +21,7 @@ export const LogoWrapper = styled('div')(
 
 export const Screen = styled('div')(
   ({ theme }: { theme?: ThemeType }) => css`
-    background: ${theme?.black};
+    background: ${theme?.otherColors.black};
     height: 100%;
     display: flex;
     align-items: center;
