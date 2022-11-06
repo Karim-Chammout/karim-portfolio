@@ -141,7 +141,6 @@ const BlogDetails = () => {
               <AuthorImg
                 src={imgLink(postData.author.image)}
                 alt={postData.title}
-                loading="lazy"
                 onClick={() => window.open('https://github.com/Karim-Chammout', '_blank')}
               />
             )}
@@ -165,7 +164,6 @@ const BlogDetails = () => {
             src={imgLink(postData.mainImage)}
             alt={postData.title}
             onClick={() => window.open(imgLink(postData.mainImage), '_blank')}
-            loading="lazy"
           />
         )}
         <PortableStyles>
