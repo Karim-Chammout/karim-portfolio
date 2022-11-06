@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import sanityClient, { imgUrlFor } from '../../../client';
 import { Button, ScrollToTop } from '../../../components';
 import { Spinner } from '../../../components/Spinner';
-import { ProgressBar } from '../../../global';
+import { ProgressBar } from '../../../globals/global';
 import useProgressBar from '../../../hook/useProgressBar';
 import { isValidEmail } from '../../../utils/isValidEmail';
 import NotFound from '../../notFound';

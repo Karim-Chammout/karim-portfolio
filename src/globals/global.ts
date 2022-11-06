@@ -1,8 +1,9 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-import { ThemeType } from './theme';
+import { darkTheme, lightTheme, ThemeType } from '../theme';
 
-export const GlobalStyles = createGlobalStyle`
+export const globalStyles = (selectedTheme: string) => css`
   *,
   *::after,
   *::before {
@@ -23,27 +24,26 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }: { theme: ThemeType }) => theme.body};
-    color: ${({ theme }: { theme: ThemeType }) => theme.text};
+    background-color: ${selectedTheme === 'light' ? lightTheme.body : darkTheme.body};
+    color: ${selectedTheme === 'light' ? lightTheme.text : darkTheme.text};
     display: block;
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }`;
-
-export const ProgressBar = styled.div`
-  position: fixed;
-  background: linear-gradient(
-    to right,
-    ${({ theme }) => theme.highlight} ${({ scroll }: { scroll: number }) => `${scroll}%`},
-    transparent 0
-  );
-  width: 100%;
-  height: 7px;
-  z-index: 3;
-  left: 0;
-  bottom: 0;
+  }
 `;
+
+export const ProgressBar = styled('div')(
+  ({ theme, scroll }: { theme?: ThemeType; scroll: number }) => css`
+    position: fixed;
+    background: linear-gradient(to right, ${theme?.highlight} ${scroll}%, transparent 0);
+    width: 100%;
+    height: 7px;
+    z-index: 3;
+    left: 0;
+    bottom: 0;
+  `
+);
 
 export const FullWidthSection = css`
   @media screen and (min-width: 768px) {

@@ -11,10 +11,12 @@ const ProjectCard = () => {
       <CardsSection>
         {projectsData.projectsList.map((project) => (
           <Card key={project.id} onClick={() => goToLink(project.url)} imgurl={project.imgUrl}>
-            <Content>
+            <Content className="content_hover">
               <ProjectName>{project.name}</ProjectName>
-              <Tools>Tools: {project.tools}</Tools>
-              <ProjectDesc title={project.description}>{project.description}</ProjectDesc>
+              <Tools className="tools_hover">Tools: {project.tools}</Tools>
+              <ProjectDesc className="desc_hover" title={project.description}>
+                {project.description}
+              </ProjectDesc>
             </Content>
           </Card>
         ))}

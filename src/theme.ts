@@ -4,6 +4,11 @@ const color = {
   schoolBusYellow: '#fbd90c',
   grey: '#595959',
   lightGrey: '#d3d3d3',
+  cardDarkBackground: 'rgba(255, 255, 255, 0.1)',
+  cardLightBackground: 'rgba(0, 0, 0, 0.1)',
+  lightBlack: '#424242',
+  raisinBlack: '#232323',
+  silver: '#c5c5c5',
 
   /* ______________ */
   darkBlue: '#55198b',
@@ -30,24 +35,43 @@ const color = {
 
 /* ---------------  WIP  ---------------- */
 // const darkTheme = {
-//   body: '#000000',
+//   body: color.raisinBlack,
 //   text: '#ffffff',
 //   highlight: '#fbd90c',
 //   dark: '#00072D',
 //   secondaryText: '#c5c5c5',
+//   darkGrey: '#282828',
 //   lightGreyShadow: '#d3d3d3',
+//   cardBgColor: color.lightBlack,
+//   commentBgColor: color.lightBlack,
+//   textHover: color.raisinBlack,
 //   ...color,
 // };
 /* ---------------  WIP  ---------------- */
 
-const theme = {
+const lightTheme = {
   body: color.floralWhite,
   text: color.black,
-  highlight: color.schoolBusYellow,
   secondaryText: color.grey,
+  highlight: color.schoolBusYellow,
   lightGreyShadow: color.lightGrey,
+  cardBgColor: color.white,
+  commentBgColor: color.white,
+  textHover: color.black,
   ...color,
 };
 
-export default theme;
-export type ThemeType = typeof theme;
+const darkTheme = {
+  body: color.raisinBlack,
+  text: color.white,
+  secondaryText: color.silver,
+  highlight: color.schoolBusYellow,
+  lightGreyShadow: color.lightGrey,
+  cardBgColor: color.lightBlack,
+  commentBgColor: color.lightBlack,
+  textHover: color.raisinBlack,
+  ...color,
+};
+
+export { lightTheme, darkTheme };
+export type ThemeType = typeof darkTheme | typeof darkTheme;

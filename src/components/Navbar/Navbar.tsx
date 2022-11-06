@@ -1,8 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { Fade } from 'react-reveal';
 import { NavLink } from 'react-router-dom';
 
-import { Logo, Nav, NavItem, NavList } from './Navbar.style';
+import Dark from '../../assets/Dark';
+import Light from '../../assets/Light';
+import { ThemeContext } from '../../globals/context';
+import { Logo, Nav, NavItem, NavList, ToggleWrapper } from './Navbar.style';
 
 const links = [
   {
@@ -24,12 +27,19 @@ const links = [
 ];
 
 const Navbar = () => {
+  const { selectedTheme, themeToggler } = useContext(ThemeContext);
+
   const checkedInput = useRef<HTMLInputElement>(null);
 
   const closeNav = () => {
     if (checkedInput.current) {
       checkedInput.current.checked = false;
     }
+  };
+
+  const handleThemeToggler = () => {
+    themeToggler();
+    closeNav();
   };
 
   useEffect(() => {
@@ -56,6 +66,9 @@ const Navbar = () => {
           <span className="navicon" />
         </label>
         <NavList>
+          <ToggleWrapper onClick={handleThemeToggler}>
+            {selectedTheme === 'light' ? <Dark /> : <Light />}
+          </ToggleWrapper>
           {links.map((link) => (
             <NavItem key={link.name}>
               <NavLink

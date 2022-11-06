@@ -1,3 +1,4 @@
+import { Global } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ import { BodyStyles, LogoWrapper, Screen } from './Splash.style';
 const AnimatedSplash = () => {
   return (
     <LogoWrapper>
-      <BodyStyles />
+      <Global styles={BodyStyles} />
       <Screen>
         <LoaderLogo />
       </Screen>

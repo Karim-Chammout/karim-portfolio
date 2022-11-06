@@ -1,10 +1,13 @@
-import styled from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
-  height: 63vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-`;
+export const Wrapper = styled('div')(
+  css`
+    height: 63vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  `
+);

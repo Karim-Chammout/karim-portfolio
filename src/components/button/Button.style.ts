@@ -1,9 +1,12 @@
-import styled, { css } from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-const sharedStyles = css`
-  background-color: ${({ theme }) => theme.text};
-  border: solid 1px ${({ theme }) => theme.text};
-  color: ${({ theme }) => theme.body};
+import { ThemeType } from '../../theme';
+
+const sharedStyles = ({ theme }: { theme?: ThemeType }) => css`
+  background-color: ${theme?.text};
+  border: solid 1px ${theme?.text};
+  color: ${theme?.body};
   font-weight: 500;
   width: max-content;
   padding: 12px 22px;
@@ -16,8 +19,8 @@ const sharedStyles = css`
   letter-spacing: 2px;
   :hover {
     transition: ease-in 0.2s;
-    background-color: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
+    background-color: ${theme?.body};
+    color: ${theme?.text};
   }
 
   @media (max-width: 768px) {
@@ -29,18 +32,19 @@ const sharedStyles = css`
   }
 `;
 
-export const StyledButton = styled.button`
-  ${sharedStyles}
-  ${({ disabled }: { disabled?: boolean }) =>
-    disabled &&
+export const StyledButton = styled('button')(
+  ({ theme, disabled }: { theme?: ThemeType; disabled?: boolean }) => css`
+    ${disabled &&
     css`
-      background-color: ${({ theme }) => theme.secondaryText};
-      border: solid 1px ${({ theme }) => theme.secondaryText};
+      background-color: ${theme?.secondaryText};
+      border: solid 1px ${theme?.secondaryText};
       pointer-events: none;
       user-selectable: none;
     `};
-`;
+  `,
+  sharedStyles
+);
 
-export const LinkButton = styled.a`
+export const LinkButton = styled('a')`
   ${sharedStyles}
 `;

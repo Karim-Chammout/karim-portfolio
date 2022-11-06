@@ -1,20 +1,29 @@
-import styled from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
-  margin: 6rem 0 2rem 0;
-`;
+import { ThemeType } from '../../theme';
 
-export const Text = styled.p`
-  text-align: center;
-  font-weight: bold;
-  color: ${({ theme }) => theme.secondaryText};
-`;
+export const Wrapper = styled('div')(
+  css`
+    margin: 6rem 0 2rem 0;
+  `
+);
 
-export const Name = styled.span`
-  font-weight: 900;
-  font-style: italic;
+export const Text = styled('p')(
+  ({ theme }: { theme?: ThemeType }) => css`
+    text-align: center;
+    font-weight: bold;
+    color: ${theme?.secondaryText};
+  `
+);
 
-  &:hover {
-    cursor: pointer;
-  }
-`;
+export const Name = styled('span')(
+  css`
+    font-weight: 900;
+    font-style: italic;
+
+    &:hover {
+      cursor: pointer;
+    }
+  `
+);
