@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 const useProgressBar = () => {
-  const [scrollPosi, setScrollPosi] = useState(0);
+  const [percentageScrollPosition, setPercentageScrollPosition] = useState(0);
 
   const getDocHeight = () => {
     return Math.max(
@@ -19,8 +19,8 @@ const useProgressBar = () => {
     const windowHeight = window.innerHeight;
     const docHeight = getDocHeight();
     const totalDocScrollLength = docHeight - windowHeight;
-    const scrollPostion = Math.floor((scrollTop / totalDocScrollLength) * 100);
-    setScrollPosi(scrollPostion);
+    const scrollPosition = Math.floor((scrollTop / totalDocScrollLength) * 100);
+    setPercentageScrollPosition(scrollPosition);
   }, []);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const useProgressBar = () => {
     });
   }, [calculateScrollDistance]);
 
-  return { scrollPosi };
+  return { percentageScrollPosition };
 };
 
 export default useProgressBar;

@@ -113,7 +113,7 @@ const BlogDetails = () => {
     }
   };
 
-  const { scrollPosi } = useProgressBar();
+  const { percentageScrollPosition } = useProgressBar();
 
   const {
     data: postData,
@@ -131,7 +131,7 @@ const BlogDetails = () => {
 
   return (
     <>
-      <ProgressBar scroll={scrollPosi} />
+      <ProgressBar scroll={percentageScrollPosition} />
       <SectionWrapper>
         <BlogTitle>{postData.title}</BlogTitle>
         <BlogDesc>{postData.description}</BlogDesc>
