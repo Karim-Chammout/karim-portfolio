@@ -13,7 +13,7 @@ export const IconWrapper = styled('span')(
     }
 
     img:hover {
-      background-color: ${theme?.text};
+      background-color: ${theme?.textHover};
       transition: 0.3s ease-in;
     }
   `

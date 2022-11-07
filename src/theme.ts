@@ -9,8 +9,8 @@ const color = {
   raisinBlack: '#232323',
   schoolBusYellow: '#fbd90c',
   successGreen: '#07bc0c',
-  cardDarkShadow: 'rgba(255, 255, 255, 0.1)',
-  cardLightShadow: 'rgba(0, 0, 0, 0.2)',
+  darkShadow: 'rgba(255, 255, 255, 0.1)',
+  lightShadow: 'rgba(0, 0, 0, 0.2)',
 };
 
 const lightTheme = {
@@ -22,7 +22,7 @@ const lightTheme = {
   cardBgColor: color.white,
   commentBgColor: color.white,
   textHover: color.black,
-  cardBoxShadow: color.cardLightShadow,
+  cardBoxShadow: color.lightShadow,
   otherColors: { ...color },
 };
 
@@ -35,7 +35,7 @@ const darkTheme = {
   cardBgColor: color.lightBlack,
   commentBgColor: color.lightBlack,
   textHover: color.raisinBlack,
-  cardBoxShadow: color.cardDarkShadow,
+  cardBoxShadow: color.darkShadow,
   otherColors: { ...color },
 };
 
