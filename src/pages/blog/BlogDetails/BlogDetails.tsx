@@ -99,6 +99,7 @@ const BlogDetails = () => {
       setIsSubmitting(false);
 
       if (form.current) {
+        /* Sending an email when someone comments on a post */
         emailjs.sendForm(
           import.meta.env.VITE_EMAIL_SERVICE_ID,
           import.meta.env.VITE_EMAIL_TEMPLATE_ID,
