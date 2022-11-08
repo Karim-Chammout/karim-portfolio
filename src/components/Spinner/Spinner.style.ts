@@ -20,7 +20,7 @@ export default styled('div')(
       height: 64px;
       margin: 8px;
       border-radius: 50%;
-      border: 6px solid ${theme?.otherColors.white};
+      border: 6px solid ${theme?.colors.white};
       border-color: ${`${theme?.highlight} transparent ${theme?.highlight} transparent`};
       animation: dual-ring 1.2s linear infinite;
     }

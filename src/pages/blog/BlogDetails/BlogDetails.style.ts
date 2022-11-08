@@ -101,13 +101,19 @@ export const Img = styled('img')(
 );
 
 export const PortableStyles = styled('div')(
-  css`
+  ({ theme }: { theme?: ThemeType }) => css`
     margin-top: 50px;
 
     & > p {
       font-size: 1.25em;
       line-height: 1.6;
       margin: 0;
+
+      /* Sanityio class for highlighted elements */
+      .unknown__pt__mark__highlight {
+        background-color: ${`${theme?.highlight}`};
+        color: ${theme?.colors.black};
+      }
 
       @media (max-width: 768px) {
         font-size: 1em;

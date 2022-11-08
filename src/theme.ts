@@ -23,7 +23,7 @@ const lightTheme = {
   commentBgColor: color.white,
   textHover: color.black,
   cardBoxShadow: color.lightShadow,
-  otherColors: { ...color },
+  colors: { ...color },
 };
 
 const darkTheme = {
@@ -36,7 +36,7 @@ const darkTheme = {
   commentBgColor: color.lightBlack,
   textHover: color.raisinBlack,
   cardBoxShadow: color.darkShadow,
-  otherColors: { ...color },
+  colors: { ...color },
 };
 
 export { lightTheme, darkTheme };
