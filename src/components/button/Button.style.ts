@@ -7,7 +7,7 @@ const sharedStyles = ({ theme }: { theme?: ThemeType }) => css`
   background-color: ${theme?.text};
   border: solid 1px ${theme?.text};
   color: ${theme?.body};
-  font-weight: 500;
+  font-weight: 600;
   width: max-content;
   padding: 12px 22px;
   border-radius: 6px;
@@ -17,6 +17,7 @@ const sharedStyles = ({ theme }: { theme?: ThemeType }) => css`
   display: block;
   font-size: 18px;
   letter-spacing: 2px;
+
   :hover {
     transition: ease-in 0.2s;
     background-color: ${theme?.body};
@@ -27,6 +28,7 @@ const sharedStyles = ({ theme }: { theme?: ThemeType }) => css`
     font-size: 16px;
     padding: 12px 18px;
   }
+
   @media (max-width: 320px) {
     font-size: 12px;
   }

@@ -10,14 +10,20 @@ import teslaColne from './assets/images/teslaClone.png';
 import tvShows from './assets/images/tvShows.png';
 import twitterImg from './assets/images/twitter.svg';
 
+// Blog Page
+const blog = {
+  title: 'Karim blog',
+  description: `I write articles related to web development. You can find here things about JavaScript, TypeScript, React, Tips and Tricks and web technologies in general.`,
+  githubLink: 'https://github.com/Karim-Chammout',
+};
+
 // About Page
-const greeting = {
+const about = {
   title: 'Karim Chammout',
   ctaText: 'Follow Me On GitHub',
   subTitle:
     "I'm a Front-end developer who's writing code and moving pixels in the WWW.😎 I'm looking for learning new things and new experiences in this vast world of creativity.",
-  resumeLink: 'https://drive.google.com/file/d/16TK1GMZjrEca2DaRFMmZ0yjx6vB1CeWd/view',
-  portfolio_repository: 'https://github.com/Karim-Chammout',
+  githubLink: 'https://github.com/Karim-Chammout',
 };
 
 const socialMediaLinks = [
@@ -53,66 +59,24 @@ const socialMediaLinks = [
   },
 ];
 
-const skills = {
-  data: [
-    {
-      title: 'Front-end Development',
-      skillName: 'Front-end',
-      skills: [
-        '⚡ Building responsive website front end using modern tools like React',
-        '⚡ Creating and optimizing interactive, user-friendly, and feature-rich websites',
-      ],
-      softwareSkills: [
-        {
-          skillName: 'HTML5',
-        },
-        {
-          skillName: 'CSS3',
-        },
-        {
-          skillName: 'Sass',
-        },
-        {
-          skillName: 'JavaScript',
-        },
-        {
-          skillName: 'ReactJS',
-        },
-        {
-          skillName: 'NodeJS',
-        },
-        {
-          skillName: 'NPM',
-        },
-        {
-          skillName: 'Yarn',
-        },
-      ],
-    },
-    {
-      title: 'Wireframing & Design',
-      skillName: 'Designing',
-      skills: [
-        "⚡ Understanding the client's needs to come up with the best design wanted",
-        '⚡ Designing fast load time and lag-free interaction website is the highest priority',
-      ],
-      softwareSkills: [
-        {
-          skillName: 'Tensorflow',
-        },
-        {
-          skillName: 'Keras',
-        },
-        {
-          skillName: 'PyTorch',
-        },
-        {
-          skillName: 'Python',
-        },
-      ],
-    },
-  ],
-};
+const skills = [
+  {
+    title: 'Front-end Development',
+    skillName: 'Front-end',
+    skillsList: [
+      '⚡ Building responsive website front end using modern tools like React',
+      '⚡ Creating and optimizing interactive, user-friendly, and feature-rich websites',
+    ],
+  },
+  {
+    title: 'Wireframing & Design',
+    skillName: 'Designing',
+    skillsList: [
+      "⚡ Understanding the client's needs to come up with the best design wanted",
+      '⚡ Designing fast load time and lag-free interaction website is the highest priority',
+    ],
+  },
+];
 
 // Projects Page
 const projectsData = {
@@ -120,6 +84,7 @@ const projectsData = {
   description:
     'I always strive to include new and innovative interactions to enhance the user experience. My projects makes use of vast variety of latest technology tools.',
   ctaText: 'More Projects',
+  githubLink: 'https://github.com/Karim-Chammout',
   projectsList: [
     {
       id: 1,
@@ -133,7 +98,7 @@ const projectsData = {
       id: 2,
       name: 'OxygenDevs',
       imgUrl: oxygenDevs,
-      url: 'https://github.com/Karim-Chammout/Oxygen-Devs',
+      url: 'https://oxygendevs.netlify.app',
       description: 'Web Design Agency',
       tools: 'HTML - CSS - BootStrap',
     },
@@ -141,7 +106,7 @@ const projectsData = {
       id: 3,
       name: 'Google Assistant Bootstrap',
       imgUrl: googleAssistant,
-      url: 'https://github.com/Karim-Chammout/Google-Assistant-Bootstrap',
+      url: 'https://google-assistant-bootstrap-karim-chammout.vercel.app/',
       description: 'Google Assistant Design with Bootstrap',
       tools: 'HTML - CSS - BootStrap',
     },
@@ -149,7 +114,7 @@ const projectsData = {
       id: 4,
       name: 'Portfolio Design',
       imgUrl: portfolioImg,
-      url: 'https://github.com/Karim-Chammout/Temporary-Portfolio',
+      url: 'https://karim-chammout.github.io/Temporary-Portfolio',
       description: 'Designing a template for a portfolio',
       tools: 'HTML - CSS - BootStrap',
     },
@@ -157,7 +122,7 @@ const projectsData = {
       id: 5,
       name: 'React TV Show',
       imgUrl: tvShows,
-      url: 'https://github.com/Karim-Chammout/react-tvshow-project',
+      url: 'https://react-tvshow-project.stackblitz.io',
       description: 'TV Shows Application To search for your favorite shows',
       tools: 'HTML - CSS - BootStrap - React - React-router-dom',
     },
@@ -165,7 +130,7 @@ const projectsData = {
       id: 6,
       name: 'React Tesla clone',
       imgUrl: teslaColne,
-      url: 'https://github.com/Karim-Chammout/tesla-clone',
+      url: 'https://tesla-clone-xi.vercel.app',
       description: 'Cloning the original Tesla website using React.js',
       tools: 'HTML - CSS - Styled-components - React - React-redux - React-reveal',
     },
@@ -174,14 +139,13 @@ const projectsData = {
 
 // Contact Page
 const contactPageData = {
-  contactSection: {
-    title: 'Contact Me',
-    alt_img_name: 'Karim Chammout',
-    subHeader: "Say Hello, I won't bite... 😁",
-    description:
-      'I am available on almost every social media. You can fire me an email and I will reply within 24 hours.',
-    ctaText: 'See My Resume',
-  },
+  title: 'Contact Me',
+  altImgName: 'Karim Chammout',
+  subHeader: "Say Hello, I won't bite... 😁",
+  description:
+    'I am available on almost every social media. You can fire me an email and I will reply within 24 hours.',
+  ctaText: 'See My Resume',
+  resumeLink: 'https://drive.google.com/file/d/16TK1GMZjrEca2DaRFMmZ0yjx6vB1CeWd/view',
 };
 
-export { greeting, socialMediaLinks, skills, projectsData, contactPageData };
+export { blog, about, socialMediaLinks, skills, projectsData, contactPageData };

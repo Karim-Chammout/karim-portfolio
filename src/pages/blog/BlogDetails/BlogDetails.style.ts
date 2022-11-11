@@ -82,6 +82,10 @@ export const AuthorName = styled('p')(
     margin: 10px 0;
     font-weight: bold;
     font-style: italic;
+
+    &:hover {
+      cursor: pointer;
+    }
   `
 );
 
@@ -109,15 +113,15 @@ export const PortableStyles = styled('div')(
       line-height: 1.6;
       margin: 0;
 
-      /* Sanityio class for highlighted elements */
-      .unknown__pt__mark__highlight {
-        background-color: ${`${theme?.highlight}`};
-        color: ${theme?.colors.black};
-      }
-
       @media (max-width: 768px) {
         font-size: 1em;
       }
+    }
+
+    /* Sanityio class for highlighted elements */
+    .unknown__pt__mark__highlight {
+      background-color: ${theme?.highlight};
+      color: ${theme?.colors.black};
     }
   `
 );
@@ -227,12 +231,21 @@ export const LikedArticle = styled('div')(
 export const SubmittedWrapper = styled('div')(
   ({ theme }: { theme?: ThemeType }) => css`
     max-width: 630px;
-    background: ${theme?.highlight};
+    background: ${theme?.commentBgColor};
     color: ${theme?.text};
     padding: 20px;
     box-shadow: 0 1px 3px 0 ${theme?.lightGreyShadow}, 0 0 0 1px ${theme?.lightGreyShadow};
     border-radius: 4px;
-    margin: auto;
+    margin: 10px auto;
+
+    h5 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
 
     @media (max-width: 768px) {
       max-width: 98%;

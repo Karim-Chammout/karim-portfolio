@@ -9,5 +9,13 @@ export const Wrapper = styled('div')(
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
   `
 );

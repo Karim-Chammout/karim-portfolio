@@ -2,7 +2,7 @@ import { Fade } from 'react-reveal';
 
 import ProgrammerSVG from '../../../../assets/ProgrammerSVG';
 import { Button, SocialMedia } from '../../../../components';
-import { greeting } from '../../../../portfolio';
+import { about } from '../../../../portfolio';
 import {
   ButtonWrapper,
   Content,
@@ -13,18 +13,20 @@ import {
   Wrapper,
 } from './Hero.style';
 
+const { title, subTitle, ctaText, githubLink } = about;
+
 const Hero = () => {
   return (
     <Fade bottom duration={2000} distance="50px">
       <Wrapper>
         <Content>
-          <H1>{greeting.title}</H1>
-          <Text>{greeting.subTitle}</Text>
+          <H1>{title}</H1>
+          <Text>{subTitle}</Text>
           <SocialMediaWrapper>
             <SocialMedia />
           </SocialMediaWrapper>
           <ButtonWrapper>
-            <Button text={greeting.ctaText} href={greeting.portfolio_repository} newTab />
+            <Button text={ctaText} href={githubLink} newTab />
           </ButtonWrapper>
         </Content>
         <ImageWrapper>

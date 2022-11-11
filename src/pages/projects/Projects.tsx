@@ -6,6 +6,8 @@ import { projectsData } from '../../portfolio';
 import ProjectCard from './projectCard';
 import { ButtonWrapper, H1, ImgWrapper, InfoWrapper, SectionWrapper, Text } from './Projects.style';
 
+const { title, description, ctaText, githubLink } = projectsData;
+
 const Projects = () => {
   return (
     <>
@@ -15,14 +17,14 @@ const Projects = () => {
             <ProjectSVG />
           </ImgWrapper>
           <InfoWrapper>
-            <H1>{projectsData.title}</H1>
-            <Text>{projectsData.description}</Text>
+            <H1>{title}</H1>
+            <Text>{description}</Text>
           </InfoWrapper>
         </SectionWrapper>
       </Fade>
       <ProjectCard />
       <ButtonWrapper>
-        <Button text={projectsData.ctaText} href="https://github.com/Karim-Chammout" newTab />
+        <Button text={ctaText} href={githubLink} newTab />
       </ButtonWrapper>
     </>
   );

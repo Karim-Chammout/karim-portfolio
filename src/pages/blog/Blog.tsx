@@ -5,6 +5,7 @@ import { Fade } from 'react-reveal';
 import BlogSVG from '../../assets/BlogSVG';
 import NoResultSVG from '../../assets/NoResultSVG';
 import { Spinner } from '../../components/Spinner';
+import { blog } from '../../portfolio';
 import NotFound from '../notFound';
 import {
   H1,
@@ -20,6 +21,8 @@ import {
 import { BlogCard } from './components';
 import { fetchAllPosts } from './postsQuery';
 import { Post } from './types';
+
+const { title, description } = blog;
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -53,11 +56,8 @@ const Blog = () => {
             <BlogSVG />
           </ImgWrapper>
           <InfoWrapper>
-            <H1>Karim blog</H1>
-            <Text>
-              I write articles related to web development. You can find here things about
-              JavaScript, TypeScript, React, Tips and Tricks and web technologies in general.
-            </Text>
+            <H1>{title}</H1>
+            <Text>{description}</Text>
           </InfoWrapper>
         </SectionWrapper>
       </Fade>

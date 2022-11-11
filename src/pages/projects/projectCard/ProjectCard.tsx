@@ -9,13 +9,13 @@ const ProjectCard = () => {
   return (
     <Fade bottom duration={2000} distance="40px">
       <CardsSection>
-        {projectsData.projectsList.map((project) => (
-          <Card key={project.id} onClick={() => goToLink(project.url)} imgurl={project.imgUrl}>
+        {projectsData.projectsList.map(({ id, url, imgUrl, name, tools, description }) => (
+          <Card key={id} onClick={() => goToLink(url)} imgurl={imgUrl}>
             <Content className="content_hover">
-              <ProjectName>{project.name}</ProjectName>
-              <Tools className="tools_hover">Tools: {project.tools}</Tools>
-              <ProjectDesc className="desc_hover" title={project.description}>
-                {project.description}
+              <ProjectName>{name}</ProjectName>
+              <Tools className="tools_hover">Tools: {tools}</Tools>
+              <ProjectDesc className="desc_hover" title={description}>
+                {description}
               </ProjectDesc>
             </Content>
           </Card>

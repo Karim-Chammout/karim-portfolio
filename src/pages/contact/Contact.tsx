@@ -3,7 +3,7 @@ import { Fade } from 'react-reveal';
 import profileImag from '../../assets/images/profileImag.png';
 import { Button } from '../../components';
 import SocialMedia from '../../components/socialMedia/SocialMedia';
-import { contactPageData, greeting } from '../../portfolio';
+import { contactPageData } from '../../portfolio';
 import {
   ButtonWrapper,
   ContactInfo,
@@ -15,16 +15,14 @@ import {
   Text,
 } from './Contact.style';
 
-const {
-  contactSection: { alt_img_name, title, subHeader, description, ctaText },
-} = contactPageData;
+const { altImgName, title, subHeader, description, ctaText, resumeLink } = contactPageData;
 
 const Contact = () => {
   return (
     <Fade bottom duration={1000} distance="40px">
       <SectionWrapper>
         <ImgWrapper>
-          <Image src={profileImag} alt={alt_img_name} />
+          <Image src={profileImag} alt={altImgName} />
         </ImgWrapper>
         <ContactInfo>
           <H1>{title}</H1>
@@ -32,7 +30,7 @@ const Contact = () => {
           <Text>{description}</Text>
           <SocialMedia />
           <ButtonWrapper>
-            <Button text={ctaText} href={greeting.resumeLink} newTab />
+            <Button text={ctaText} href={resumeLink} newTab />
           </ButtonWrapper>
         </ContactInfo>
       </SectionWrapper>

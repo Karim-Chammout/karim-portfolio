@@ -19,20 +19,20 @@ const GetSkillSvg = ({ skillName }: { skillName: string }) => {
 const SkillSection = () => {
   return (
     <>
-      {skills.data.map((skill) => (
-        <SkillWrapper key={skill.title}>
+      {skills.map(({ title, skillName, skillsList }) => (
+        <SkillWrapper key={title}>
           <Fade left duration={2000}>
             <ImgWrapper>
-              <GetSkillSvg skillName={skill.skillName} />
+              <GetSkillSvg skillName={skillName} />
             </ImgWrapper>
           </Fade>
           <ContentWrapper>
             <Fade right duration={1000}>
-              <H3>{skill.title}</H3>
+              <H3>{title}</H3>
             </Fade>
             <Fade right duration={2000}>
-              {skill.skills.map((skillSentence) => (
-                <Text key={skillSentence}>{skillSentence}</Text>
+              {skillsList.map((s) => (
+                <Text key={s}>{s}</Text>
               ))}
             </Fade>
           </ContentWrapper>

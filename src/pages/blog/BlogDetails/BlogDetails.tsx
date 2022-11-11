@@ -9,8 +9,7 @@ import { toast } from 'react-toastify';
 import sanityClient, { imgUrlFor } from '../../../client';
 import { Button, ScrollToTop } from '../../../components';
 import { Spinner } from '../../../components/Spinner';
-import { ProgressBar } from '../../../globals/global';
-import useProgressBar from '../../../hook/useProgressBar';
+import { blog } from '../../../portfolio';
 import { isValidEmail } from '../../../utils/isValidEmail';
 import NotFound from '../../notFound';
 import { Post } from '../types';
@@ -114,8 +113,6 @@ const BlogDetails = () => {
     }
   };
 
-  const { percentageScrollPosition } = useProgressBar();
-
   const {
     data: postData,
     isLoading,
@@ -132,7 +129,6 @@ const BlogDetails = () => {
 
   return (
     <>
-      <ProgressBar scroll={percentageScrollPosition} />
       <SectionWrapper>
         <BlogTitle>{postData.title}</BlogTitle>
         <BlogDesc>{postData.description}</BlogDesc>
@@ -142,12 +138,14 @@ const BlogDetails = () => {
               <AuthorImg
                 src={imgLink(postData.author.image)}
                 alt={postData.title}
-                onClick={() => window.open('https://github.com/Karim-Chammout', '_blank')}
+                onClick={() => window.open(blog.githubLink, '_blank')}
               />
             )}
           </div>
           <div style={{ marginLeft: '10px' }}>
-            <AuthorName>{postData.author.name}</AuthorName>
+            <AuthorName onClick={() => window.open(blog.githubLink, '_blank')}>
+              {postData.author.name}
+            </AuthorName>
             <DisplayDate
               textLabel="Published on"
               date={postData.publishedAt}
@@ -222,8 +220,8 @@ const BlogDetails = () => {
         )}
         {submitted && (
           <SubmittedWrapper>
-            <h5 style={{ margin: 0, fontSize: '1.5em' }}>Thanks for submitting your comment</h5>
-            <p style={{ marginBottom: 0 }}>Your comment will be displayed once it's approved</p>
+            <h5>Thanks for submitting your comment</h5>
+            <p>Your comment will be displayed once it's approved</p>
           </SubmittedWrapper>
         )}
         {postData.comments && postData.comments?.map((c) => <Comments key={c._id} comments={c} />)}

@@ -8,8 +8,8 @@ const NotFound = () => {
 
   return (
     <Wrapper>
-      <h1 style={{ margin: '0' }}>Dude! Where is my page?</h1>
-      <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>Oops, Page not found!</p>
+      <h1>Oops, Page not found!</h1>
+      <p>Dude! Where is my page?</p>
       <Button text="Go to Blog page" onClick={() => navigate('/blog')} />
     </Wrapper>
   );
