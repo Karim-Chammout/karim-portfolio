@@ -6,3 +6,4 @@ export { default as Seo } from './Seo';
 export { default as Footer } from './footer';
 export { default as TopButton } from './topButton';
 export { default as ScrollToTop } from './ScrollToTop';
+export { default as ErrorBoundary } from './ErrorBoundary';
