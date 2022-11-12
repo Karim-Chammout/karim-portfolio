@@ -18,6 +18,7 @@ import {
   AuthorName,
   AuthorSection,
   BlogDesc,
+  BlogTags,
   BlogTitle,
   ButtonWrapper,
   Img,
@@ -127,46 +128,62 @@ const BlogDetails = () => {
     return <NotFound />;
   }
 
+  const {
+    _id,
+    title,
+    description,
+    categories,
+    author,
+    publishedAt,
+    _updatedAt,
+    mainImage,
+    body,
+    comments,
+  } = postData;
+
   return (
     <>
       <SectionWrapper>
-        <BlogTitle>{postData.title}</BlogTitle>
-        <BlogDesc>{postData.description}</BlogDesc>
+        <BlogTitle>{title}</BlogTitle>
+        <div style={{ margin: '15px 0' }}>
+          {categories.map((c) => (
+            <BlogTags key={c.title}>{c.title}</BlogTags>
+          ))}
+        </div>
+        <BlogDesc>{description}</BlogDesc>
         <AuthorSection>
           <div>
-            {postData.author && (
-              <AuthorImg
-                src={imgLink(postData.author.image)}
-                alt={postData.title}
-                onClick={() => window.open(blog.githubLink, '_blank')}
-              />
-            )}
+            <AuthorImg
+              src={imgLink(author.image)}
+              alt={title}
+              onClick={() => window.open(blog.githubLink, '_blank')}
+            />
           </div>
           <div style={{ marginLeft: '10px' }}>
             <AuthorName onClick={() => window.open(blog.githubLink, '_blank')}>
-              {postData.author.name}
+              {author.name}
             </AuthorName>
             <DisplayDate
               textLabel="Published on"
-              date={postData.publishedAt}
+              date={publishedAt}
               extraStyles={{ margin: '0 0 5px 0' }}
             />
             <DisplayDate
               textLabel="Last updated on"
-              date={postData._updatedAt}
+              date={_updatedAt}
               extraStyles={{ margin: '5px 0' }}
             />
           </div>
         </AuthorSection>
-        {postData.mainImage && (
+        {mainImage && (
           <Img
-            src={imgLink(postData.mainImage)}
-            alt={postData.title}
-            onClick={() => window.open(imgLink(postData.mainImage), '_blank')}
+            src={imgLink(mainImage)}
+            alt={title}
+            onClick={() => window.open(imgLink(mainImage), '_blank')}
           />
         )}
         <PortableStyles>
-          <PortableText value={postData.body} components={CustomComponents} />
+          <PortableText value={body} components={CustomComponents} />
         </PortableStyles>
         <Line />
         {!submitted && (
@@ -176,8 +193,8 @@ const BlogDetails = () => {
               <Text>Leave a comment bellow!</Text>
             </LikedArticle>
 
-            <input {...register('_id')} type="hidden" name="_id" value={postData._id} />
-            <input type="hidden" name="post_name" value={postData.title} />
+            <input {...register('_id')} type="hidden" name="_id" value={_id} />
+            <input type="hidden" name="post_name" value={title} />
 
             <Label>
               <span>Name</span>
@@ -224,7 +241,7 @@ const BlogDetails = () => {
             <p>Your comment will be displayed once it's approved</p>
           </SubmittedWrapper>
         )}
-        {postData.comments && postData.comments?.map((c) => <Comments key={c._id} comments={c} />)}
+        {comments && comments?.map((c) => <Comments key={c._id} comments={c} />)}
       </SectionWrapper>
       <ScrollToTop />
     </>

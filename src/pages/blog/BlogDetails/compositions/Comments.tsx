@@ -12,16 +12,18 @@ import {
 } from '../BlogDetails.style';
 
 const Comments = ({ comments }: { comments: Comment }) => {
+  const { _id, name, comment, _createdAt } = comments;
+
   return (
-    <Wrapper key={comments._id}>
+    <Wrapper key={_id}>
       <Container>
-        <Avatar>{comments.name.substring(0, 1).toUpperCase()}</Avatar>
+        <Avatar>{name.substring(0, 1).toUpperCase()}</Avatar>
         <CommentContent>
           <CommentHeader>
-            <CommentName>{comments.name}</CommentName>
-            <CommentDate>{formatedDate(comments._createdAt)}</CommentDate>
+            <CommentName>{name}</CommentName>
+            <CommentDate>{formatedDate(_createdAt)}</CommentDate>
           </CommentHeader>
-          <CommentText>{comments.comment}</CommentText>
+          <CommentText>{comment}</CommentText>
         </CommentContent>
       </Container>
     </Wrapper>

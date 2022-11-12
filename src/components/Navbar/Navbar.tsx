@@ -22,7 +22,7 @@ const links = [
   },
   {
     to: '/contact',
-    name: 'Contact Me',
+    name: 'Contact',
   },
 ];
 
@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <Fade top duration={1000} distance="20px">
       <Nav>
-        <Logo to="/splash">{`<Karim Chammout />`}</Logo>
+        <Logo to="/splash">{`<KarimChammout />`}</Logo>
         <input className="menu-btn" type="checkbox" id="menu-btn" ref={checkedInput} />
         <label className="menu-icon" htmlFor="menu-btn">
           <span className="navicon" />
@@ -69,17 +69,17 @@ const Navbar = () => {
           <ToggleWrapper onClick={handleThemeToggler}>
             {selectedTheme === 'light' ? <Dark /> : <Light />}
           </ToggleWrapper>
-          {links.map((link) => (
-            <NavItem key={link.name}>
+          {links.map(({ name, to }) => (
+            <NavItem key={name}>
               <NavLink
                 className="nav-link"
-                to={link.to}
+                to={to}
                 onClick={closeNav}
                 style={({ isActive }) => ({
                   fontWeight: isActive ? 'bold' : '',
                 })}
               >
-                {link.name}
+                {name}
               </NavLink>
             </NavItem>
           ))}

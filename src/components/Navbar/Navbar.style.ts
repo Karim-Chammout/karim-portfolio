@@ -131,6 +131,7 @@ export const NavItem = styled('li')(
 export const Logo = styled(NavLink)(
   ({ theme }: { theme?: ThemeType }) => css`
     display: block;
+    min-width: 280px;
     text-decoration: none;
     font-size: 1.75em;
     font-weight: bold;

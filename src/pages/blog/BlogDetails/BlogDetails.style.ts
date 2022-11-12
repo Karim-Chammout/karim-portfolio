@@ -35,6 +35,17 @@ export const BlogTitle = styled('h1')(
   `
 );
 
+export const BlogTags = styled('span')(
+  ({ theme }: { theme?: ThemeType }) => css`
+    color: ${theme?.colors.black};
+    background-color: ${theme?.highlight};
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    user-select: none;
+  `
+);
+
 export const BlogDesc = styled('p')(
   ({ theme }: { theme?: ThemeType }) => css`
     color: ${theme?.secondaryText};
