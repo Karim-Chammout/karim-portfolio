@@ -16,7 +16,11 @@ const CustomCodeBlock = (language: string, code: string) => {
 };
 
 const CustomLink = (text: string, href: string) => {
-  return <Link href={href}>{text}</Link>;
+  return (
+    <Link href={href} target="_blank">
+      {text}
+    </Link>
+  );
 };
 
 export default {
