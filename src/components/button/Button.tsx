@@ -1,48 +1,30 @@
-import './Button.css';
-
-const onMouseEnter = (event: any, color: string, bgColor: string) => {
-  const el = event.target;
-  el.style.color = color;
-  el.style.backgroundColor = bgColor;
-};
-
-const onMouseOut = (event: any, color: string, bgColor: string) => {
-  const el = event.target;
-  el.style.color = color;
-  el.style.backgroundColor = bgColor;
-};
+import { LinkButton, StyledButton } from './Button.style';
 
 const Button = ({
   text,
-  className,
   href,
   newTab,
-  theme,
+  onClick,
+  disabled = false,
 }: {
   text: string;
-  className?: string;
-  href: string;
-  newTab: boolean;
-  theme: any;
+  href?: string;
+  newTab?: boolean;
+  onClick?: (() => Promise<void>) | (() => void);
+  disabled?: boolean;
 }) => {
-  return (
-    <div className={className}>
-      <a
-        className="main-button"
-        href={href}
-        target={newTab ? '_blank' : '_self'}
-        rel="noreferrer"
-        style={{
-          color: theme.body,
-          backgroundColor: theme.text,
-          border: `solid 1px ${theme.text}`,
-        }}
-        onMouseEnter={(event) => onMouseEnter(event, theme.text, theme.body)}
-        onMouseOut={(event) => onMouseOut(event, theme.body, theme.text)}
-      >
+  if (onClick) {
+    return (
+      <StyledButton disabled={disabled} onClick={onClick}>
         {text}
-      </a>
-    </div>
+      </StyledButton>
+    );
+  }
+
+  return (
+    <LinkButton href={href} target={newTab ? '_blank' : '_self'}>
+      {text}
+    </LinkButton>
   );
 };
 

@@ -1,211 +1,151 @@
-/* Change this file to get your personal Porfolio */
+import factOfTheDay from './assets/images/didYouKnow.jpg';
+import githubImg from './assets/images/github.svg';
+import gmailImg from './assets/images/google.svg';
+import googleAssistant from './assets/images/googleAssistantlogo.svg';
+import instagramImg from './assets/images/instagram.svg';
+import linkedinImg from './assets/images/linkedin.svg';
+import oxygenDevs from './assets/images/oxygenDevs.png';
+import portfolioImg from './assets/images/portfolioImg.png';
+import teslaColne from './assets/images/teslaClone.png';
+import tvShows from './assets/images/tvShows.png';
+import twitterImg from './assets/images/twitter.svg';
 
-// Website related settings
-const settings = {
-  isSplash: true, // Change this to false if you don't want Splash screen.
+// Blog Page
+const blog = {
+  title: 'Karim blog',
+  description: `I write articles related to web development. You can find here things about JavaScript, TypeScript, React, Tips and Tricks and web technologies in general.`,
+  githubLink: 'https://github.com/Karim-Chammout',
 };
 
-// SEO Related settings
-const seo = {
+// About Page
+const about = {
   title: 'Karim Chammout',
-  description:
-    "I'm a Front-end developer who's writing code and moving pixels in the www. I'm looking for learning new things and new experiences in this vast world of creativity.",
-  og: {
-    title: 'Karim Chammout Portfolio',
-    type: 'website',
-    url: 'https://github.com/Karim-Chammout',
-  },
-};
-
-// Home Page
-const greeting = {
-  title: 'Karim Chammout',
-  logo_name: 'Karim Chammout',
-  nickname: 'Karim',
+  ctaText: 'Follow Me On GitHub',
   subTitle:
     "I'm a Front-end developer who's writing code and moving pixels in the WWW.😎 I'm looking for learning new things and new experiences in this vast world of creativity.",
-  resumeLink: 'https://drive.google.com/file/d/16TK1GMZjrEca2DaRFMmZ0yjx6vB1CeWd/view',
-  portfolio_repository: 'https://github.com/Karim-Chammout',
+  githubLink: 'https://github.com/Karim-Chammout',
 };
 
 const socialMediaLinks = [
-  /* Your Social Media Link */
-  // github: "https://github.com/Karim-Chammout",
-  // linkedin: "https://www.linkedin.com/in/karim-chammout/",
-  // gmail: "chammout.karim@gmail.com",
-  // twitter: "https://twitter.com/karim_chammout",
-  // instagram: "https://www.instagram.com/karim_chammout/"
-
   {
     name: 'Github',
     link: 'https://github.com/Karim-Chammout',
-    fontAwesomeIcon: 'fa-github', // Reference https://fontawesome.com/icons/github?style=brands
-    backgroundColor: '#181717', // Reference https://simpleicons.org/?q=github
+    imgSrc: githubImg,
+    backgroundColor: '#181717',
   },
   {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/karim-chammout/',
-    fontAwesomeIcon: 'fa-linkedin-in', // Reference https://fontawesome.com/icons/linkedin-in?style=brands
-    backgroundColor: '#0077B5', // Reference https://simpleicons.org/?q=linkedin
+    imgSrc: linkedinImg,
+    backgroundColor: '#0077B5',
   },
   {
     name: 'Gmail',
     link: 'mailto:chammout.karim@gmail.com',
-    fontAwesomeIcon: 'fa-google', // Reference https://fontawesome.com/icons/google?style=brands
-    backgroundColor: '#D14836', // Reference https://simpleicons.org/?q=gmail
+    imgSrc: gmailImg,
+    backgroundColor: '#D14836',
   },
   {
     name: 'Twitter',
     link: 'https://twitter.com/karim_chammout',
-    fontAwesomeIcon: 'fa-twitter', // Reference https://fontawesome.com/icons/twitter?style=brands
-    backgroundColor: '#1DA1F2', // Reference https://simpleicons.org/?q=twitter
+    imgSrc: twitterImg,
+    backgroundColor: '#1DA1F2',
   },
   {
     name: 'Instagram',
     link: 'https://www.instagram.com/karim_chammout/',
-    fontAwesomeIcon: 'fa-instagram', // Reference https://fontawesome.com/icons/instagram?style=brands
-    backgroundColor: '#E4405F', // Reference https://simpleicons.org/?q=instagram
+    imgSrc: instagramImg,
+    backgroundColor: '#E4405F',
   },
 ];
 
-const skills = {
-  data: [
+const skills = [
+  {
+    title: 'Front-end Development',
+    skillName: 'Front-end',
+    skillsList: [
+      '⚡ Building responsive website front end using modern tools like React',
+      '⚡ Creating and optimizing interactive, user-friendly, and feature-rich websites',
+    ],
+  },
+  {
+    title: 'Wireframing & Design',
+    skillName: 'Designing',
+    skillsList: [
+      "⚡ Understanding the client's needs to come up with the best design wanted",
+      '⚡ Designing fast load time and lag-free interaction website is the highest priority',
+    ],
+  },
+];
+
+// Projects Page
+const projectsData = {
+  title: 'Projects',
+  description:
+    'I always strive to include new and innovative interactions to enhance the user experience. My projects makes use of vast variety of latest technology tools.',
+  ctaText: 'More Projects',
+  githubLink: 'https://github.com/Karim-Chammout',
+  projectsList: [
     {
-      title: 'Front-end Development',
-      fileName: 'DataScienceImg',
-      skills: [
-        '⚡ Building responsive website front end using modern tools like React',
-        '⚡ Creating and optimizing interactive, user-friendly, and feature-rich websites',
-      ],
-      softwareSkills: [
-        {
-          skillName: 'HTML5',
-          fontAwesomeClassname: 'simple-icons:html5',
-          style: {
-            color: '#E34F26',
-          },
-        },
-        {
-          skillName: 'CSS3',
-          fontAwesomeClassname: 'fa-css3',
-          style: {
-            color: '#1572B6',
-          },
-        },
-        {
-          skillName: 'Sass',
-          fontAwesomeClassname: 'simple-icons:sass',
-          style: {
-            color: '#CC6699',
-          },
-        },
-        {
-          skillName: 'JavaScript',
-          fontAwesomeClassname: 'simple-icons:javascript',
-          style: {
-            backgroundColor: '#000000',
-            color: '#F7DF1E',
-          },
-        },
-        {
-          skillName: 'ReactJS',
-          fontAwesomeClassname: 'simple-icons:react',
-          style: {
-            color: '#61DAFB',
-          },
-        },
-        {
-          skillName: 'NodeJS',
-          fontAwesomeClassname: 'simple-icons:node-dot-js',
-          style: {
-            color: '#339933',
-          },
-        },
-        {
-          skillName: 'NPM',
-          fontAwesomeClassname: 'simple-icons:npm',
-          style: {
-            color: '#CB3837',
-          },
-        },
-        {
-          skillName: 'Yarn',
-          fontAwesomeClassname: 'simple-icons:yarn',
-          style: {
-            color: '#2C8EBB',
-          },
-        },
-      ],
+      id: 1,
+      name: 'The fact of the day',
+      imgUrl: factOfTheDay,
+      url: 'https://fact-of-the-day.karim-dev.com',
+      description: 'A web application where we share a new fact everyday to learn something new',
+      tools: 'HTML - CSS - JS - TS - @emotion/react - MUI - React - Firebase',
     },
     {
-      title: 'Wireframing & Design',
-      fileName: 'FullStackImg',
-      skills: [
-        "⚡ Understanding the client's needs to come up with the best design wanted",
-        '⚡ Designing fast load time and lag-free interaction website is the highest priority',
-      ],
-      softwareSkills: [
-        {
-          skillName: 'Tensorflow',
-          fontAwesomeClassname: 'logos-tensorflow',
-          style: {
-            backgroundColor: 'transparent',
-          },
-        },
-        {
-          skillName: 'Keras',
-          fontAwesomeClassname: 'simple-icons:keras',
-          style: {
-            backgroundColor: 'white',
-            color: '#D00000',
-          },
-        },
-        {
-          skillName: 'PyTorch',
-          fontAwesomeClassname: 'logos-pytorch',
-          style: {
-            backgroundColor: 'transparent',
-          },
-        },
-        {
-          skillName: 'Python',
-          fontAwesomeClassname: 'ion-logo-python',
-          style: {
-            backgroundColor: 'transparent',
-            color: '#3776AB',
-          },
-        },
-      ],
+      id: 2,
+      name: 'OxygenDevs',
+      imgUrl: oxygenDevs,
+      url: 'https://oxygendevs.netlify.app',
+      description: 'Web Design Agency',
+      tools: 'HTML - CSS - BootStrap',
+    },
+    {
+      id: 3,
+      name: 'Google Assistant Bootstrap',
+      imgUrl: googleAssistant,
+      url: 'https://google-assistant-bootstrap-karim-chammout.vercel.app/',
+      description: 'Google Assistant Design with Bootstrap',
+      tools: 'HTML - CSS - BootStrap',
+    },
+    {
+      id: 4,
+      name: 'Portfolio Design',
+      imgUrl: portfolioImg,
+      url: 'https://karim-chammout.github.io/Temporary-Portfolio',
+      description: 'Designing a template for a portfolio',
+      tools: 'HTML - CSS - BootStrap',
+    },
+    {
+      id: 5,
+      name: 'React TV Show',
+      imgUrl: tvShows,
+      url: 'https://react-tvshow-project.stackblitz.io',
+      description: 'TV Shows Application To search for your favorite shows',
+      tools: 'HTML - CSS - BootStrap - React - React-router-dom',
+    },
+    {
+      id: 6,
+      name: 'React Tesla clone',
+      imgUrl: teslaColne,
+      url: 'https://tesla-clone-xi.vercel.app',
+      description: 'Cloning the original Tesla website using React.js',
+      tools: 'HTML - CSS - Styled-components - React - React-redux - React-reveal',
     },
   ],
 };
 
-// Projects Page
-const projectsHeader = {
-  title: 'Projects',
-  description:
-    'I always strive to include new and innovative interactions to enhance the user experience. My projects makes use of vast variety of latest technology tools.',
-  avatar_image_path: 'projects_image.svg',
-};
-
 // Contact Page
 const contactPageData = {
-  contactSection: {
-    title: 'Contact Me',
-    profile_image_path: 'karim_image.png',
-    description:
-      'I am available on almost every social media. You can fire me an email and I will reply within 24 hours.',
-  },
-  addressSection: {
-    title: 'Address',
-    subtitle: 'Turkey - Istanbul',
-    avatar_image_path: 'address_image.svg',
-    location_map_link: 'https://goo.gl/maps/Nd8VGEBZYKLXc4oB6',
-  },
-  phoneSection: {
-    title: 'Phone Number',
-    subtitle: '+90 536 812 08 35',
-  },
+  title: 'Contact Me',
+  altImgName: 'Karim Chammout',
+  subHeader: "Say Hello, I won't bite... 😁",
+  description:
+    'I am available on almost every social media. You can fire me an email and I will reply within 24 hours.',
+  ctaText: 'See My Resume',
+  resumeLink: 'https://drive.google.com/file/d/16TK1GMZjrEca2DaRFMmZ0yjx6vB1CeWd/view',
 };
 
-export { settings, seo, greeting, socialMediaLinks, skills, projectsHeader, contactPageData };
+export { blog, about, socialMediaLinks, skills, projectsData, contactPageData };

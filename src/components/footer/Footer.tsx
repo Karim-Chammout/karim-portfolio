@@ -1,18 +1,22 @@
 import { Fade } from 'react-reveal';
 
-import { greeting } from '../../portfolio';
-import { ThemeType } from '../../theme';
-import './Footer.css';
+import { Name, Text, Wrapper } from './Footer.style';
 
-const Footer = ({ theme }: { theme: ThemeType }) => {
+const Footer = () => {
+  const currentDate = new Date().getFullYear();
+
   return (
-    <div className="footer-div">
+    <Wrapper>
       <Fade>
-        <p className="footer-text" style={{ color: theme.secondaryText }}>
-          Made with <span role="img">☕ & ❤️</span> by {greeting.title}
-        </p>
+        <Text>
+          Made with <span role="img">☕ & ❤️</span> by{' '}
+          <Name onClick={() => window.open('https://github.com/Karim-Chammout', '_blank')}>
+            Karim Chammout
+          </Name>
+        </Text>
+        <Text>Copyright © {currentDate}</Text>
       </Fade>
-    </div>
+    </Wrapper>
   );
 };
 

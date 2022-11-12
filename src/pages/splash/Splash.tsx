@@ -1,32 +1,33 @@
+import { Global } from '@emotion/react';
 import { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import LoaderLogo from '../../components/Loader/LoaderLogo';
-import { ThemeType } from '../../theme';
-import './Splash.css';
+import { BodyStyles, LogoWrapper, Screen } from './Splash.style';
 
-function AnimatedSplash({ theme }: { theme: ThemeType }) {
+const AnimatedSplash = () => {
   return (
-    <div className="logo_wrapper">
-      <div className="screen" style={{ backgroundColor: theme.text }}>
-        <LoaderLogo id="logo" theme={theme} />
-      </div>
-    </div>
+    <LogoWrapper>
+      <Global styles={BodyStyles} />
+      <Screen>
+        <LoaderLogo />
+      </Screen>
+    </LogoWrapper>
   );
-}
+};
 
-const Splash = ({ theme }: { theme: ThemeType }) => {
+const Splash = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    const myTimeout = setTimeout(() => setRedirect(true), 5300);
+    const myTimeout = setTimeout(() => setRedirect(true), 3000);
 
     return () => clearTimeout(myTimeout);
   }, []);
 
-  if (!redirect) return <AnimatedSplash theme={theme} />;
+  if (!redirect) return <AnimatedSplash />;
 
-  return <Redirect to="/home" />;
+  return <Navigate to="/blog" replace />;
 };
 
 export default Splash;

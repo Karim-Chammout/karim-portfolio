@@ -1,36 +1,30 @@
-import { Route, Switch } from 'react-router-dom';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Contact from '../pages/contact/ContactComponent';
-import Home from '../pages/home/HomeComponent';
-import Projects from '../pages/projects/Projects';
-import Splash from '../pages/splash/Splash';
-import { settings } from '../portfolio';
-import { ThemeType } from '../theme';
+import About from '../pages/about';
+import Contact from '../pages/contact';
+import NotFound from '../pages/notFound';
+import Projects from '../pages/projects';
+import Splash from '../pages/splash';
+import PageTemplate from './PageTemplate';
 
-const Main = ({ theme }: { theme: ThemeType }) => {
-  if (settings.isSplash) {
-    return (
-      <div>
-        <Switch>
-          <Route path="/" exact render={(props) => <Splash {...props} theme={theme} />} />
-          <Route path="/home" render={(props) => <Home {...props} theme={theme} />} />
-          <Route path="/contact" render={(props) => <Contact {...props} theme={theme} />} />
-          <Route path="/splash" render={(props) => <Splash {...props} theme={theme} />} />
-          <Route path="/projects" render={(props) => <Projects {...props} theme={theme} />} />
-        </Switch>
-      </div>
-    );
-  }
+const Blog = lazy(() => import('../pages/blog'));
+const BlogDetails = lazy(() => import('../pages/blog/BlogDetails'));
 
+const Main = () => {
   return (
-    <div>
-      <Switch>
-        <Route path="/" exact render={(props) => <Home {...props} theme={theme} />} />
-        <Route path="/home" render={(props) => <Home {...props} theme={theme} />} />
-        <Route path="/contact" render={(props) => <Contact {...props} theme={theme} />} />
-        <Route path="/projects" render={(props) => <Projects {...props} theme={theme} />} />
-      </Switch>
-    </div>
+    <PageTemplate>
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/splash" element={<Splash />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </PageTemplate>
   );
 };
 

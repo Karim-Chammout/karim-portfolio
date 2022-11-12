@@ -1,9 +1,16 @@
+import 'components/init';
 import { createRoot } from 'react-dom/client';
 
 import App from './App';
-import './App.css';
-import './assets/font-awesome/css/all.css';
+import { ErrorBoundary } from './components';
+import { ThemeProvider } from './globals/context';
 
-const app = document.getElementById('root') as HTMLElement;
-const root = createRoot(app);
-root.render(<App />);
+const root = document.getElementById('root') as HTMLElement;
+const app = createRoot(root);
+app.render(
+  <ThemeProvider>
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  </ThemeProvider>
+);
