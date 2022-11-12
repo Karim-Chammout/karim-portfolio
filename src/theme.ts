@@ -11,6 +11,7 @@ const color = {
   successGreen: '#07bc0c',
   darkShadow: 'rgba(255, 255, 255, 0.1)',
   lightShadow: 'rgba(0, 0, 0, 0.2)',
+  lighterShadow: 'rgba(0, 0, 0, 0.1)',
 };
 
 const lightTheme = {
@@ -23,6 +24,7 @@ const lightTheme = {
   commentBgColor: color.white,
   textHover: color.black,
   cardBoxShadow: color.lightShadow,
+  codeBg: color.lighterShadow,
   colors: {
     ...color,
   },
@@ -38,6 +40,7 @@ const darkTheme = {
   commentBgColor: color.lightBlack,
   textHover: color.raisinBlack,
   cardBoxShadow: color.darkShadow,
+  codeBg: color.darkShadow,
   colors: {
     ...color,
   },

@@ -115,6 +115,12 @@ export const Img = styled('img')(
   `
 );
 
+export const Link = styled('a')(
+  ({ theme }: { theme?: ThemeType }) => css`
+    color: ${theme?.text};
+  `
+);
+
 export const PortableStyles = styled('div')(
   ({ theme }: { theme?: ThemeType }) => css`
     margin-top: 50px;
@@ -123,6 +129,10 @@ export const PortableStyles = styled('div')(
       font-size: 1.25em;
       line-height: 1.6;
       margin: 0;
+
+      & > code {
+        background: ${theme?.codeBg};
+      }
 
       @media (max-width: 768px) {
         font-size: 1em;

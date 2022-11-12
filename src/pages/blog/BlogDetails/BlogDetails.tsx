@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import { useQuery } from '@tanstack/react-query';
 import { useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -183,7 +183,10 @@ const BlogDetails = () => {
           />
         )}
         <PortableStyles>
-          <PortableText value={body} components={CustomComponents} />
+          <PortableText
+            value={body}
+            components={CustomComponents as Partial<PortableTextReactComponents>}
+          />
         </PortableStyles>
         <Line />
         {!submitted && (
