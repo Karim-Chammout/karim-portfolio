@@ -14,7 +14,7 @@ export const Card = styled(Link)(
   ({ theme, imgurl }: { theme?: ThemeType; imgurl: string }) => css`
     border-radius: 16px;
     background: ${`url(${imgurl})`} no-repeat top center/cover;
-    box-shadow: ${theme?.cardBoxShadow} 0px 10px 30px -15px;
+    box-shadow: ${theme?.boxShadow} 0px 10px 30px -15px;
     overflow: hidden;
     width: 30%;
     height: 350px;
@@ -24,7 +24,7 @@ export const Card = styled(Link)(
     position: relative;
 
     &:hover {
-      box-shadow: ${theme?.cardBoxShadow} 0px 20px 30px -10px;
+      box-shadow: ${theme?.boxShadow} 0px 20px 30px -10px;
 
       .content_hover {
         transform: translateY(0);

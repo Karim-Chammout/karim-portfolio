@@ -76,11 +76,11 @@ export const CardsSection = styled('section')(
 );
 
 export const Card = styled('article')(
-  ({ imgurl }: { imgurl: string }) => css`
+  ({ theme, imgurl }: { theme?: ThemeType; imgurl: string }) => css`
     border-radius: 16px;
     background: ${`url(${imgurl})`} no-repeat top center/cover;
-    background-color: rgba(0, 0, 0, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
+    background-color: ${theme?.cardShadow};
+    box-shadow: ${theme?.boxShadow} 0px 10px 30px -15px;
     cursor: pointer;
     overflow: hidden;
     width: 30%;
@@ -91,7 +91,7 @@ export const Card = styled('article')(
     position: relative;
 
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+      box-shadow: ${theme?.boxShadow} 0px 20px 30px -10px;
 
       .content_hover {
         transform: translateY(0);

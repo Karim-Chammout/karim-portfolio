@@ -73,7 +73,7 @@ export const AuthorSection = styled('div')(
 );
 
 export const AuthorImg = styled('img')(
-  css`
+  ({ theme }: { theme?: ThemeType }) => css`
     object-fit: cover;
     border-radius: 50%;
     height: 75px;
@@ -81,7 +81,7 @@ export const AuthorImg = styled('img')(
 
     &:hover {
       cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+      box-shadow: ${theme?.boxShadow} 0px 20px 30px -10px;
       transition: 0.3s ease-in-out;
       scale: 1.009;
     }
@@ -101,15 +101,21 @@ export const AuthorName = styled('p')(
 );
 
 export const Img = styled('img')(
-  css`
+  ({ theme }: { theme?: ThemeType }) => css`
     width: 100%;
     height: 500px;
     object-fit: cover;
     border-radius: 4px;
 
+    @media (max-width: 768px) {
+      object-fit: contain;
+      height: auto;
+      max-height: 500px;
+    }
+
     &:hover {
       cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px -10px;
+      box-shadow: ${theme?.boxShadow} 0px 20px 30px -10px;
       transition: 0.3s ease-in-out;
     }
   `
@@ -188,7 +194,7 @@ export const Label = styled('label')(
 
 export const Input = styled('input')(
   ({ theme, hasError }: { theme?: ThemeType; hasError: boolean }) => css`
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px -10px;
+    box-shadow: ${theme?.boxShadow} 0px 10px 20px -10px;
     border-radius: 4px;
     padding: 8px 16px;
     display: block;
@@ -209,7 +215,7 @@ export const Input = styled('input')(
 
 export const TextArea = styled('textarea')(
   ({ theme, hasError }: { theme?: ThemeType; hasError: boolean }) => css`
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px -10px;
+    box-shadow: ${theme?.boxShadow} 0px 10px 20px -10px;
     display: block;
     width: 100%;
     padding: 8px 16px;

@@ -21,9 +21,10 @@ const lightTheme = {
   highlight: color.schoolBusYellow,
   lightGreyShadow: color.lightGrey,
   cardBgColor: color.white,
+  cardShadow: color.lighterShadow,
   commentBgColor: color.white,
   textHover: color.black,
-  cardBoxShadow: color.lightShadow,
+  boxShadow: color.lightShadow,
   codeBg: color.lighterShadow,
   colors: {
     ...color,
@@ -37,9 +38,10 @@ const darkTheme = {
   highlight: color.schoolBusYellow,
   lightGreyShadow: color.lightGrey,
   cardBgColor: color.lightBlack,
+  cardShadow: color.lighterShadow,
   commentBgColor: color.lightBlack,
   textHover: color.raisinBlack,
-  cardBoxShadow: color.darkShadow,
+  boxShadow: color.darkShadow,
   codeBg: color.darkShadow,
   colors: {
     ...color,
