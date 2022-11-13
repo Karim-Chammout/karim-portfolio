@@ -26,6 +26,7 @@ export const globalStyles = (selectedTheme: string) => css`
     background-color: ${selectedTheme === 'light' ? lightTheme.body : darkTheme.body};
     color: ${selectedTheme === 'light' ? lightTheme.text : darkTheme.text};
     display: block;
+    transition: all 0.2s linear;
     font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
