@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import { ThemeType } from '../../theme';
 
-export const Wrapper = styled('div')(
+export const Wrapper = styled('footer')(
   css`
     margin: 6rem 0 2rem 0;
   `

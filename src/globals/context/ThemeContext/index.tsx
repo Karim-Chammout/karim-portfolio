@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
+import { createContext, ReactNode, useCallback, useMemo, useState } from 'react';
 
 interface ThemeContextType {
   selectedTheme: string;
@@ -20,14 +20,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       localStorage.setItem('currentTheme', 'dark');
     }
   }, [selectedTheme]);
-
-  useEffect(() => {
-    if (savedTheme === 'light') {
-      setSelectedTheme('light');
-    } else {
-      setSelectedTheme('dark');
-    }
-  }, [savedTheme, selectedTheme]);
 
   const value = useMemo(
     () => ({
