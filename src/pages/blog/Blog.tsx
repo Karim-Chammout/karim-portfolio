@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import BlogSVG from '../../assets/BlogSVG';
 import NoResultSVG from '../../assets/NoResultSVG';
@@ -50,7 +50,7 @@ const Blog = () => {
 
   return (
     <>
-      <Fade bottom duration={2000} distance="40px">
+      <Fade duration={1000}>
         <SectionWrapper>
           <ImgWrapper>
             <BlogSVG />
@@ -61,7 +61,7 @@ const Blog = () => {
           </InfoWrapper>
         </SectionWrapper>
       </Fade>
-      <Fade bottom duration={2000} distance="40px">
+      <Fade duration={2000}>
         <SearchWrapper>
           <InputWrppaer>
             <label htmlFor="search">Search</label>

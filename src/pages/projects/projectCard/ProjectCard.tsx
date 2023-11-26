@@ -1,4 +1,4 @@
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import { projectsData } from '../../../portfolio';
 import { Card, CardsSection, Content, ProjectDesc, ProjectName, Tools } from '../Projects.style';
@@ -7,7 +7,7 @@ const goToLink = (url: string) => window.open(url, '_blank');
 
 const ProjectCard = () => {
   return (
-    <Fade bottom duration={2000} distance="40px">
+    <Fade duration={1000}>
       <CardsSection>
         {projectsData.projectsList.map(({ id, url, imgUrl, name, tools, description }) => (
           <Card key={id} onClick={() => goToLink(url)} imgurl={imgUrl}>

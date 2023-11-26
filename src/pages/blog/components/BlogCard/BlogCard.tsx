@@ -1,5 +1,5 @@
 import { imgUrlFor } from 'client';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import code from '../../../../assets/images/code.jpg';
 import { Post } from '../../types';
@@ -7,7 +7,7 @@ import { BlogDesc, BlogName, Card, CardContainer, Content, Tag, Tags } from './B
 
 const BlogCard = ({ posts }: { posts: Array<Post> }) => {
   return (
-    <Fade bottom duration={2000} distance="40px">
+    <Fade duration={1000}>
       <CardContainer>
         {posts.map((post) => (
           <Card

@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef } from 'react';
-import { Fade } from 'react-reveal';
 import { NavLink } from 'react-router-dom';
 
 import Dark from '../../assets/Dark';
@@ -58,34 +57,32 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Fade top duration={1000} distance="20px">
-      <Nav>
-        <Logo to="/splash">{`<KarimChammout />`}</Logo>
-        <input className="menu-btn" type="checkbox" id="menu-btn" ref={checkedInput} />
-        <label className="menu-icon" htmlFor="menu-btn">
-          <span className="navicon" />
-        </label>
-        <NavList>
-          <ToggleWrapper onClick={handleThemeToggler}>
-            {selectedTheme === 'light' ? <Dark /> : <Light />}
-          </ToggleWrapper>
-          {links.map(({ name, to }) => (
-            <NavItem key={name}>
-              <NavLink
-                className="nav-link"
-                to={to}
-                onClick={closeNav}
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? 'bold' : '',
-                })}
-              >
-                {name}
-              </NavLink>
-            </NavItem>
-          ))}
-        </NavList>
-      </Nav>
-    </Fade>
+    <Nav>
+      <Logo to="/splash">{`<KarimChammout />`}</Logo>
+      <input className="menu-btn" type="checkbox" id="menu-btn" ref={checkedInput} />
+      <label className="menu-icon" htmlFor="menu-btn">
+        <span className="navicon" />
+      </label>
+      <NavList>
+        <ToggleWrapper onClick={handleThemeToggler}>
+          {selectedTheme === 'light' ? <Dark /> : <Light />}
+        </ToggleWrapper>
+        {links.map(({ name, to }) => (
+          <NavItem key={name}>
+            <NavLink
+              className="nav-link"
+              to={to}
+              onClick={closeNav}
+              style={({ isActive }) => ({
+                fontWeight: isActive ? 'bold' : '',
+              })}
+            >
+              {name}
+            </NavLink>
+          </NavItem>
+        ))}
+      </NavList>
+    </Nav>
   );
 };
 export default Navbar;

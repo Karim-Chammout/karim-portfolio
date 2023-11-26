@@ -1,4 +1,4 @@
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import ProgrammerSVG from '../../../../assets/ProgrammerSVG';
 import { Button, SocialMedia } from '../../../../components';
@@ -17,7 +17,7 @@ const { title, subTitle, ctaText, githubLink } = about;
 
 const Hero = () => {
   return (
-    <Fade bottom duration={2000} distance="50px">
+    <Fade duration={1000}>
       <Wrapper>
         <Content>
           <H1>{title}</H1>

@@ -1,4 +1,4 @@
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import ProjectSVG from '../../assets/ProjectSVG';
 import { Button } from '../../components';
@@ -11,7 +11,7 @@ const { title, description, ctaText, githubLink } = projectsData;
 const Projects = () => {
   return (
     <>
-      <Fade bottom duration={2000} distance="40px">
+      <Fade duration={1000}>
         <SectionWrapper>
           <ImgWrapper>
             <ProjectSVG />

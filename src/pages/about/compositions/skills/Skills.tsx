@@ -1,4 +1,4 @@
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import { H1, Wrapper } from './Skills.style';
 import SkillSection from './SkillSection';
@@ -6,7 +6,7 @@ import SkillSection from './SkillSection';
 const Skills = () => {
   return (
     <Wrapper>
-      <Fade bottom duration={2000} distance="30px">
+      <Fade direction="down" duration={1000}>
         <H1>What I Do?</H1>
       </Fade>
       <SkillSection />

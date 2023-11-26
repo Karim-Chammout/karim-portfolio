@@ -1,4 +1,4 @@
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import DesignSVG from '../../../../assets/DesignSVG';
 import FrontendSVG from '../../../../assets/FrontendSVG';
@@ -21,16 +21,16 @@ const SkillSection = () => {
     <>
       {skills.map(({ title, skillName, skillsList }) => (
         <SkillWrapper key={title}>
-          <Fade left duration={2000}>
+          <Fade direction="left" duration={1000}>
             <ImgWrapper>
               <GetSkillSvg skillName={skillName} />
             </ImgWrapper>
           </Fade>
           <ContentWrapper>
-            <Fade right duration={1000}>
+            <Fade direction="right" duration={1000}>
               <H3>{title}</H3>
             </Fade>
-            <Fade right duration={2000}>
+            <Fade direction="right" duration={1000}>
               {skillsList.map((s) => (
                 <Text key={s}>{s}</Text>
               ))}

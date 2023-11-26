@@ -1,4 +1,4 @@
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 import profileImag from '../../assets/images/profileImag.png';
 import { Button } from '../../components';
@@ -19,7 +19,7 @@ const { altImgName, title, subHeader, description, ctaText, resumeLink } = conta
 
 const Contact = () => {
   return (
-    <Fade bottom duration={1000} distance="40px">
+    <Fade duration={1000}>
       <SectionWrapper>
         <ImgWrapper>
           <Image src={profileImag} alt={altImgName} />
