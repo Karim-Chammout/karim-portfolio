@@ -1,15 +1,15 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import About from '../pages/about';
-import Contact from '../pages/contact';
-import NotFound from '../pages/notFound';
-import Projects from '../pages/projects';
-import Splash from '../pages/splash';
 import PageTemplate from './PageTemplate';
 
+const Splash = lazy(() => import('../pages/splash'));
 const Blog = lazy(() => import('../pages/blog'));
 const BlogDetails = lazy(() => import('../pages/blog/BlogDetails'));
+const Projects = lazy(() => import('../pages/projects'));
+const About = lazy(() => import('../pages/about'));
+const Contact = lazy(() => import('../pages/contact'));
+const NotFound = lazy(() => import('../pages/notFound'));
 
 const Main = () => {
   return (
