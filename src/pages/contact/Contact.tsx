@@ -15,7 +15,8 @@ import {
   Text,
 } from './Contact.style';
 
-const { altImgName, title, subHeader, description, ctaText, resumeLink } = contactPageData;
+// Comment out the resume until updating it :)
+const { altImgName, title, subHeader, description, ctaText/* , resumeLink */ } = contactPageData;
 
 const Contact = () => {
   return (
@@ -29,9 +30,9 @@ const Contact = () => {
           <SubHeader>{subHeader}</SubHeader>
           <Text>{description}</Text>
           <SocialMedia />
-          <ButtonWrapper>
+{/*           <ButtonWrapper>
             <Button text={ctaText} href={resumeLink} newTab />
-          </ButtonWrapper>
+          </ButtonWrapper> */}
         </ContactInfo>
       </SectionWrapper>
     </Fade>
