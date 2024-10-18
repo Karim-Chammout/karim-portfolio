@@ -11,10 +11,10 @@ const links = [
     to: '/blog',
     name: 'Blog',
   },
-  {
-    to: '/projects',
-    name: 'Projects',
-  },
+  // {
+  //   to: '/projects',
+  //   name: 'Projects',
+  // },
   {
     to: '/about',
     name: 'About',

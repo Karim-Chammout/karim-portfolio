@@ -6,7 +6,7 @@ import PageTemplate from './PageTemplate';
 const Splash = lazy(() => import('../pages/splash'));
 const Blog = lazy(() => import('../pages/blog'));
 const BlogDetails = lazy(() => import('../pages/blog/BlogDetails'));
-const Projects = lazy(() => import('../pages/projects'));
+// const Projects = lazy(() => import('../pages/projects'));
 const About = lazy(() => import('../pages/about'));
 const Contact = lazy(() => import('../pages/contact'));
 const NotFound = lazy(() => import('../pages/notFound'));
@@ -19,7 +19,8 @@ const Main = () => {
         <Route path="/splash" element={<Splash />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetails />} />
-        <Route path="/projects" element={<Projects />} />
+        {/* Hide the "projects" page temporarily */}
+        {/* <Route path="/projects" element={<Projects />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
