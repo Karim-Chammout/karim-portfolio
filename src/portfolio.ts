@@ -5,9 +5,6 @@ import googleAssistant from './assets/images/googleAssistantlogo.svg';
 import instagramImg from './assets/images/instagram.svg';
 import linkedinImg from './assets/images/linkedin.svg';
 import oxygenDevs from './assets/images/oxygenDevs.png';
-import portfolioImg from './assets/images/portfolioImg.png';
-import teslaColne from './assets/images/teslaClone.png';
-import tvShows from './assets/images/tvShows.png';
 import twitterImg from './assets/images/twitter.svg';
 
 // Blog Page
@@ -109,30 +106,6 @@ const projectsData = {
       url: 'https://google-assistant-bootstrap-karim-chammout.vercel.app/',
       description: 'Google Assistant Design with Bootstrap',
       tools: 'HTML - CSS - BootStrap',
-    },
-    {
-      id: 4,
-      name: 'Portfolio Design',
-      imgUrl: portfolioImg,
-      url: 'https://karim-chammout.github.io/Temporary-Portfolio',
-      description: 'Designing a template for a portfolio',
-      tools: 'HTML - CSS - BootStrap',
-    },
-    {
-      id: 5,
-      name: 'React TV Show',
-      imgUrl: tvShows,
-      url: 'https://react-tvshow-project.stackblitz.io',
-      description: 'TV Shows Application To search for your favorite shows',
-      tools: 'HTML - CSS - BootStrap - React - React-router-dom',
-    },
-    {
-      id: 6,
-      name: 'React Tesla clone',
-      imgUrl: teslaColne,
-      url: 'https://tesla-clone-xi.vercel.app',
-      description: 'Cloning the original Tesla website using React.js',
-      tools: 'HTML - CSS - Styled-components - React - React-redux - React-reveal',
     },
   ],
 };
